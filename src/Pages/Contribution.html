@@ -1,0 +1,180 @@
+<html>
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapCSS&action=raw&ctype=text/css" />
+<script
+    src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript"></script>
+
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+
+<style>
+    .carousel-item {
+        background-color: #1A1A1A;
+        height: 350px;
+    }
+
+
+
+
+    .carousel-caption .slide_tittle {
+        height: 50px;
+        width: 363px;
+        color: #ffffff;
+        font-size: 42px;
+        font-weight: 900;
+        letter-spacing: -0.6px;
+        line-height: 50px;
+    }
+
+    .carousel-caption .slide_text {
+        height: 88px;
+        width: 857px;
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: -0.26px;
+        line-height: 22px;
+    }
+
+    .page_content_sections .page_content_section {
+        display: none;
+    }
+
+    .page_content_sections .page_content_section_active {
+        display: block;
+    }
+</style>
+
+
+
+
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+
+        <div class="carousel-inner">
+            <div class="carousel-inner">
+                <div class="carousel-item active ">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h3 class="slide_tittle">Suicide circuit</h3>
+                            <p class="slide_text">Our suicide circuit itself, along with its proposed implementation and
+                                characterization, is a
+                                huge step forward in the direction of safe engineered organism release, behaving as a
+                                new
+                                and evolving biocontainment strategy. The modules themselves are an excellent tool for
+                                other
+                                genetic circuits.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item ">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h3 class="slide_tittle">Suicide circuit 2 </h3>
+                            <p class="slide_text">Our suicide circuit itself, along with its proposed implementation and
+                                characterization, is a
+                                huge step forward in the direction of safe engineered organism release, behaving as a
+                                new
+                                and evolving biocontainment strategy. The modules themselves are an excellent tool for
+                                other
+                                genetic circuits.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item ">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h3 class="slide_tittle">Suicide circuit 3 </h3>
+                            <p class="slide_text">Our suicide circuit itself, along with its proposed implementation and
+                                characterization, is a
+                                huge step forward in the direction of safe engineered organism release, behaving as a
+                                new
+                                and evolving biocontainment strategy. The modules themselves are an excellent tool for
+                                other
+                                genetic circuits.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="page_content_sections">
+
+
+
+            <div id="text_div_1" class="page_content_section page_content_section_active"> TEST 1
+
+
+
+
+            </div>
+            <div id="text_div_2" class="page_content_section"> TEST 2
+
+
+
+
+            </div>
+            <div id="text_div_3" class="page_content_section"> TEST 3
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+</body>
+
+
+
+
+<script>
+    var divs_ids = ["text_div_1", "text_div_2", "text_div_3"];
+    var myCarousel = document.getElementById('carouselExampleIndicators')
+    myCarousel.addEventListener('slide.bs.carousel', function (event) {
+        var div_from = document.getElementById(divs_ids[event.from]);
+        div_from.style.display = "none";
+        var div_to = document.getElementById(divs_ids[event.to]);
+        div_to.style.display = "block";
+    })
+</script>
+
+
+
+
+
+
+</html>
