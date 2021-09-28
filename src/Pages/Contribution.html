@@ -10,40 +10,60 @@
 
 
 <style>
-    .carousel-item {
-        background-color: #1A1A1A;
-        height: 350px;
-    }
 
-
-
-
+    
     .carousel-caption .slide_tittle {
-        height: 50px;
-        width: 363px;
         color: #ffffff;
         font-size: 42px;
         font-weight: 900;
         letter-spacing: -0.6px;
-        line-height: 50px;
     }
 
     .carousel-caption .slide_text {
-        height: 88px;
-        width: 857px;
         color: #FFFFFF;
         font-size: 18px;
         font-weight: 500;
         letter-spacing: -0.26px;
-        line-height: 22px;
     }
 
     .page_content_sections .page_content_section {
         display: none;
+        padding: 10%;
+        padding-top: 20px;
     }
 
     .page_content_sections .page_content_section_active {
         display: block;
+    }
+
+    .page_content_sections .card {
+        border-radius: 10px;
+        padding: 10px;
+        margin: 20px;
+        vertical-align: middle;
+        min-height: 400px;
+    }
+
+    .page_content_section_title {
+        color: #E2474B;
+        font-size: 56px;
+        font-weight: bold;
+        letter-spacing: -0.8px;
+    }
+
+    .card-title {
+        color: #27262D;
+        font-size: 42px;
+        letter-spacing: -0.6px;
+        font-weight: 900;
+    }
+
+    .card-text {
+        font-size: 18px;
+    }
+
+    .contribution_jumbotron {
+        background-image: url("../assets/images/jumbotron.png");
     }
 </style>
 
@@ -51,7 +71,24 @@
 
 
 <body>
+
+
+
+
+
+    <div class="jumbotron jumbotron-fluid p-5 contribution_jumbotron">
+        <div class="container ">
+            <h1 class="display-4">Contribution</h1>
+            <p class="lead w-50 ">As a team, we have contributed in several areas to improve as well as expand future
+                iGEMers’ project development experience. </p>
+        </div>
+    </div>
+
+
+
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -61,14 +98,18 @@
                 aria-label="Slide 3"></button>
         </div>
 
-
         <div class="carousel-inner">
             <div class="carousel-inner">
                 <div class="carousel-item active ">
+                    <svg class="bd-placeholder-img" width="100%" height="250px" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="#1A1A1A" />
+                    </svg>
                     <div class="container">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption text-start">
                             <h3 class="slide_tittle">Suicide circuit</h3>
-                            <p class="slide_text">Our suicide circuit itself, along with its proposed implementation and
+                            <p class="slide_text w-75">Our suicide circuit itself, along with its proposed
+                                implementation and
                                 characterization, is a
                                 huge step forward in the direction of safe engineered organism release, behaving as a
                                 new
@@ -82,10 +123,14 @@
 
 
                 <div class="carousel-item ">
+                    <svg class="bd-placeholder-img" width="100%" height="250px" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="#1A1A1A" />
+                    </svg>
                     <div class="container">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption text-start">
                             <h3 class="slide_tittle">Suicide circuit 2 </h3>
-                            <p class="slide_text">Our suicide circuit itself, along with its proposed implementation and
+                            <p class="slide_text  w-75">Our suicide circuit itself, along with its proposed implementation and
                                 characterization, is a
                                 huge step forward in the direction of safe engineered organism release, behaving as a
                                 new
@@ -98,10 +143,14 @@
                 </div>
 
                 <div class="carousel-item ">
+                    <svg class="bd-placeholder-img" width="100%" height="250px" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="#1A1A1A" />
+                    </svg>
                     <div class="container">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption text-start">
                             <h3 class="slide_tittle">Suicide circuit 3 </h3>
-                            <p class="slide_text">Our suicide circuit itself, along with its proposed implementation and
+                            <p class="slide_text w-75">Our suicide circuit itself, along with its proposed implementation and
                                 characterization, is a
                                 huge step forward in the direction of safe engineered organism release, behaving as a
                                 new
@@ -132,24 +181,188 @@
 
 
 
-            <div id="text_div_1" class="page_content_section page_content_section_active"> TEST 1
+            <div id="text_div_1" class="page_content_section page_content_section_active">
+                <h1 class="page_content_section_title">Modules</h1>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card card-contribution">
+                            <div class="card-body">
+                                <h5 class="card-title">Counter</h5>
+                                <p class="card-text">
+                                    The architecture of the counter module itself is novel and one of a kind, allowing a
+                                    count more efficient than any existing one and permitting its own reset, which
+                                    furthers its efficiency and gives rise to different counter-reset designs and
+                                    applications. It harnesses serine recombinases’ potential, building up on previous
+                                    authors work while giving it a special twist marked by the application of sequential
+                                    logic.</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Initiation Module</h5>
+                                <p class="card-text">Offers a great way to prevent the start of the counter module
+                                    during lab work, an essential requirement for our project but also many other
+                                    synthetic biology systems that can’t rely on inducible promoters (positive feedback)
+                                    for this purpose.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card card-contribution">
+                            <div class="card-body">
+                                <h5 class="card-title">Overcount</h5>
+                                <p class="card-text">
+                                    The architecture of the counter module itself is novel and one of a kind, allowing a
+                                    count more efficient than any existing one and permitting its own reset, which
+                                    furthers its efficiency and gives rise to different counter-reset designs and
+                                    applications. It harnesses serine recombinases’ potential, building up on previous
+                                    authors work while giving it a special twist marked by the application of sequential
+                                    logic.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Amplify</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card card-contribution">
+                            <div class="card-body">
+                                <h5 class="card-title">Killswitch</h5>
+                                <p class="card-text">
+                                    The architecture of the counter module itself is novel and one of a kind, allowing a
+                                    count more efficient than any existing one and permitting its own reset, which
+                                    furthers its efficiency and gives rise to different counter-reset designs and
+                                    applications. It harnesses serine recombinases’ potential, building up on previous
+                                    authors work while giving it a special twist marked by the application of sequential
+                                    logic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Lorem Ipsum</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
 
 
 
             </div>
-            <div id="text_div_2" class="page_content_section"> TEST 2
+            <div id="text_div_2" class="page_content_section">
+                <h1 class="page_content_section_title">Modules 2 </h1>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card card-contribution">
+                            <div class="card-body">
+                                <h5 class="card-title">ESTO CAMBIA</h5>
+                                <p class="card-text">
+                                    The architecture of the counter module itself is novel and one of a kind, allowing a
+                                    count more efficient than any existing one and permitting its own reset, which
+                                    furthers its efficiency and gives rise to different counter-reset designs and
+                                    applications. It harnesses serine recombinases’ potential, building up on previous
+                                    authors work while giving it a special twist marked by the application of sequential
+                                    logic.</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Initiation Module</h5>
+                                <p class="card-text">Offers a great way to prevent the start of the counter module
+                                    during lab work, an essential requirement for our project but also many other
+                                    synthetic biology systems that can’t rely on inducible promoters (positive feedback)
+                                    for this purpose.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card card-contribution">
+                            <div class="card-body">
+                                <h5 class="card-title">Overcount</h5>
+                                <p class="card-text">
+                                    The architecture of the counter module itself is novel and one of a kind, allowing a
+                                    count more efficient than any existing one and permitting its own reset, which
+                                    furthers its efficiency and gives rise to different counter-reset designs and
+                                    applications. It harnesses serine recombinases’ potential, building up on previous
+                                    authors work while giving it a special twist marked by the application of sequential
+                                    logic.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Amplify</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card card-contribution">
+                            <div class="card-body">
+                                <h5 class="card-title">Killswitch</h5>
+                                <p class="card-text">
+                                    The architecture of the counter module itself is novel and one of a kind, allowing a
+                                    count more efficient than any existing one and permitting its own reset, which
+                                    furthers its efficiency and gives rise to different counter-reset designs and
+                                    applications. It harnesses serine recombinases’ potential, building up on previous
+                                    authors work while giving it a special twist marked by the application of sequential
+                                    logic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Lorem Ipsum</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="text_div_3" class="page_content_section">
+                test3
 
 
             </div>
-            <div id="text_div_3" class="page_content_section"> TEST 3
 
-
-
-
-            </div>
 
 
 
