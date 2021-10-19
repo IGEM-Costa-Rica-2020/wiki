@@ -143,14 +143,14 @@
 
                     <div class="nav nav-pills  justify-content-start mt-4 mb-2 " id="nav-tab-main" role="tablist">
                         <button class="btn btn-light btn-lg  active mx-2 wiki-tab-btn" id="nav-design-tab" data-bs-toggle="tab"
-                            data-bs-target="#pills-design" type="button" role="tab" aria-controls="pills-design"
-                            aria-selected="true">Design</button>
+                            data-bs-target="#pills-circuit" type="button" role="tab" aria-controls="pills-circuit"
+                            aria-selected="true">Circuit</button>
                         <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-social-tab" data-bs-toggle="tab"
-                            data-bs-target="#pills-social" type="button" role="tab" aria-controls="pills-social"
-                            aria-selected="false">Social Sciences</button>
-                        <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-other-tab" data-bs-toggle="tab"
+                            data-bs-target="#pills-framework" type="button" role="tab" aria-controls="pills-framework"
+                            aria-selected="false">Framework</button>
+                        <!-- <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-other-tab" data-bs-toggle="tab"
                             data-bs-target="#pills-other" type="button" role="tab" aria-controls="pills-other"
-                            aria-selected="false">Other</button>
+                            aria-selected="false">Other</button> -->
                     </div>
         </div>
 
@@ -159,10 +159,10 @@
             <!-- <nav>
                 <div class="nav nav-pills  justify-content-center py-4 " id="nav-tab-main" role="tablist">
                     <button class="btn btn-lg btn-outline-primary active mx-2" id="nav-design-tab" data-bs-toggle="tab"
-                        data-bs-target="#pills-design" type="button" role="tab" aria-controls="pills-design"
+                        data-bs-target="#pills-circuit" type="button" role="tab" aria-controls="pills-circuit"
                         aria-selected="true">Design</button>
                     <button class="btn btn-lg btn-outline-primary mx-2 " id="nav-social-tab" data-bs-toggle="tab"
-                        data-bs-target="#pills-social" type="button" role="tab" aria-controls="pills-social"
+                        data-bs-target="#pills-framework" type="button" role="tab" aria-controls="pills-framework"
                         aria-selected="false">Social Sciences</button>
                     <button class="btn btn-lg btn-outline-primary mx-2" id="nav-other-tab" data-bs-toggle="tab"
                         data-bs-target="#pills-other" type="button" role="tab" aria-controls="pills-other"
@@ -175,17 +175,17 @@
 
 
 
-                <!-- pills-design -->
-                <div class="tab-pane fade show active" id="pills-design" role="tabpanel"
-                    aria-labelledby="pills-design-tab">
+                <!-- pills-circuit -->
+                <div class="tab-pane fade show active" id="pills-circuit" role="tabpanel"
+                    aria-labelledby="pills-circuit-tab">
 
 
-                    <main-carousel v-bind:current_slide="current_slide_index['design']"
-                        v-bind:slides_content="slides_content['design']" :id="0">
+                    <main-carousel v-bind:current_slide="current_slide_index['circuit']"
+                        v-bind:slides_content="slides_content['circuit']" :id="0">
                     </main-carousel>
 
 
-                    <div v-if="current_slide_index['design'].index==0" class="container mx-auto">
+                    <div v-if="current_slide_index['circuit'].index==0" class="container mx-auto">
 
                         <div class="container wiki-card mx-auto p-3 row">
                             <div class="col-sm-6 row">
@@ -214,12 +214,12 @@
                     </div>
 
 
-                    <div v-if="current_slide_index['design'].index==1" class="container">
+                    <div v-if="current_slide_index['circuit'].index==1" class="container">
 
 
                     </div>
 
-                    <div v-if="current_slide_index['design'].index==2" class="container">
+                    <div v-if="current_slide_index['circuit'].index==2" class="container">
 
                     </div>
 
@@ -235,67 +235,38 @@
 
 
                 </div>
-                <!-- pills-design -->
+                <!-- pills-circuit -->
 
 
-                <!-- pills-social -->
-                <div class="tab-pane fade" id="pills-social" role="tabpanel" aria-labelledby="pills-social-tab">
+                <!-- pills-framework -->
+                <div class="tab-pane fade" id="pills-framework" role="tabpanel" aria-labelledby="pills-framework-tab">
 
 
-                    <main-carousel v-bind:current_slide="current_slide_index['social']"
-                        v-bind:slides_content="slides_content['social']" :id="1">
+                    <main-carousel v-bind:current_slide="current_slide_index['framework']"
+                        v-bind:slides_content="slides_content['framework']" :id="1">
                     </main-carousel>
 
 
-                    <div v-if="current_slide_index['social'].index==0" class="container">
+                    <div v-if="current_slide_index['framework'].index==0" class="container">
 
 
                     </div>
 
 
-                    <div v-if="current_slide_index['social'].index==1" class="container">
+                    <div v-if="current_slide_index['framework'].index==1" class="container">
 
 
                     </div>
 
-                    <div v-if="current_slide_index['social'].index==2" class="container">
+                    <div v-if="current_slide_index['framework'].index==2" class="container">
 
                     </div>
 
 
                 </div>
-                <!-- pills-social -->
+                <!-- pills-framework -->
 
-                <!-- pills-other -->
-                <div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab">
-                    <main-carousel v-bind:current_slide="current_slide_index['other']"
-                        v-bind:slides_content="slides_content['other']" :id="2">
-                    </main-carousel>
-
-
-                    <div v-if="current_slide_index['other'].index==0" class="container">
-
-
-                    </div>
-
-
-                    <div v-if="current_slide_index['other'].index==1" class="container">
-
-
-                    </div>
-
-                    <div v-if="current_slide_index['other'].index==2" class="container">
-
-                    </div>
-
-
-
-
-
-
-
-                </div>
-                <!-- pills-other -->
+                
             </div>
         </div>
         <!-- DEMO TABS -->
@@ -493,52 +464,42 @@
                 isActive: true,
                 message: 'hello app',
                 current_slide_index: {
-                    "other": {
+                    "circuit": {
                         index: 0
                     },
-                    "design": {
-                        index: 0
-                    },
-                    "social": {
+                    "framework": {
                         index: 0
                     }
                 },
                 slides_content: {
-                    "design": [
-                      {
-                        "title": " User Driven Mindset",
-                        "content": "An iterative design process in which designers focus on the users and their needs in each phase of the design process."
-                      },
-                      {
-                        "title": "Communication",
-                        "content": "Our means of understanding each other. It is our tool to get what we need and what we want, as well as what we are."
-                      },
-                      {
-                        "title": "Design & Development",
-                        "content": "It seeks to ensure that the person who comes to the site has a good browsing experience, and can understand and interact correctly with the resources they need."
-                      }
+                    "circuit": [{
+                            title: " design Suicide Circuit",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "Math Model",
+                            content: "We made sure that the DBTL cycle was applied to all the areas of our project, and modeling was no exception. Here we describe how the mathematical models were built upon interaction with professionals, and based on their feedback we progressively improved our models."
+                        },
+                        {
+                            title: "Framework",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        }
+
                     ],
-                    "social": [
-                      {
-                        "title": " Overlook",
-                        "content": "Why is interdisciplinarity vital?"
-                      },
-                      {
-                        "title": "Intersection: Human Practices",
-                        "content": "We made sure that the DBTL cycle was applied to all the areas of our project, and modeling was no exception. Here we describe how the mathematical models were built upon interaction with professionals, and based on their feedback we progressively improved our models."
-                      },
-                      {
-                        "title": "Educational Material",
-                        "content": "In order to make the social sciences perspective for synthetic biologists and other people from STEM, we developed easy to understand and apply educational content focused in different segments. "
-                      }
-                    ],
-                    "other": [
-                      {
-                        "title": " Intellectual Property & Regulation",
-                        "content": "Our design process, not jus graphic but communication and development, was built on three pillars."
-                      }
+                    "framework": [{
+                            title: " social Suicide Circuit",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "Math Model",
+                            content: "We made sure that the DBTL cycle was applied to all the areas of our project, and modeling was no exception. Here we describe how the mathematical models were built upon interaction with professionals, and based on their feedback we progressively improved our models."
+                        },
+                        {
+                            title: "Framework",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        }
                     ]
-                  },
+                },
             }
         },
         methods: {},
