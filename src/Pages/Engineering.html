@@ -33,33 +33,33 @@
                     <div class="position-relative es-container" >
                         <div class="position-absolute top-0 start-0 engineering_success_box ">
                             <div class="circular_spacer_1"></div>
-                            <h4>
+                            <!-- <h4>
                                 {{item.design}}
-                            </h4>
+                            </h4> -->
                             <p>{{item.design}}</p>
                         </div>
 
                         <div class="position-absolute top-0 end-0 engineering_success_box text-end">
                             <div class="circular_spacer_2"></div>
-                            <h4>
+                            <!-- <h4>
                                 {{item.build}}
-                            </h4>
+                            </h4> -->
                             <p>{{item.build}}</p>
                         </div>
 
                         <div class="position-absolute bottom-0 start-0 engineering_success_box  ">
                             <div class="circular_spacer_3"></div>
-                            <h4>
+                            <!-- <h4>
                                 {{item.learn}}
-                            </h4>
+                            </h4> -->
                             <p>{{item.learn}}</p>
                         </div>
 
                         <div class="position-absolute bottom-0 end-0 engineering_success_box text-end">
                             <div class="circular_spacer_4"></div>
-                            <h4>
+                            <!-- <h4>
                                 {{item.test}}
-                            </h4>
+                            </h4> -->
                             <p>{{item.test}}</p>
                         </div>
 
@@ -100,7 +100,7 @@
     .engineering_success_div .tab-pane {}
 
     .engineering_success_div .es-container {
-        min-height: 500px;
+        min-height: 600px;
     }
 
     .engineering_success_div .nav-pills {
@@ -124,7 +124,7 @@
     }
 
     .engineering_success_box p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
 
@@ -302,7 +302,8 @@
         <div class="position-relative overflow-hidden p-3 p-md-5  text-start  main-title">
             <img class="main-title-bg" src="https://picsum.photos/id/1042/1200/400" alt="">
             <h1>ENGINEERING FOR SUCCESS</h1>
-            <h5 class="">In order to successfully implement synthetic biology an engineering framework is necessary. The framework used for our project consisted of four stages: design, build, test, and learn.</h5>
+            <h5 class="">In order to successfully implement synthetic biology an engineering framework is necessary. The
+                framework used for our project consisted of four stages: design, build, test, and learn.</h5>
         </div>
 
 
@@ -507,55 +508,46 @@
                 items: {
                     "circuit": [{
                             id: 'nav-iteration-cir-1',
-                            design: "design circuit",
-                            build: "build",
-                            test: "test",
-                            learn: "learn",
-                            title: "First iteration"
+                            design: "The first thing we did was decide on our problem, then we brainstormed and researched ways to fulfill the three design requirements for our solution ({Description}). Soon we focused on counter circuits and explored the available alternatives. At this stage we also decided on our chassis: E. coli, because of its extensive characterization and available parts and tools.",
+                            build: "Then we used parts discovered during research to create several novel circuit architectures, figuring out their general limitations.",
+                            test: "We put our circuits to test by modelling and simulating architectures, creating theoretical scenarios to put them to test, expanding our knowledge of each part’s behavior, etc.",
+                            learn: "During this stage we assayed the length of the created options, and evaluated their respective effectiveness and complexity by using the results from the test stage. Finally, we chose a specific architecture to continue our work.",
+                            title: "Cycle I"
                         },
                         {
                             id: 'nav-iteration-cir-2',
-                            design: "design2",
-                            build: "build2",
-                            test: "test2",
-                            learn: "learn2",
-                            title: "Second iteration"
+                            design: "With our architecture design in mind we started looking for specific parts to implement this architecture.",
+                            build: "We built and simulated our genetic circuit using math and graphic modelling.",
+                            test: "The main test to overcome during this stage was professional feedback from two of the most influential researchers regarding recombinases and counter circuits: PhD. Pakpoom Subsoontorn and PhD. Jérôme Bonnet.",
+                            learn: " While impressed by our proposal, they suggested a change from tyrosine to serine recombinases. For this to happen extensive modification was needed…",
+                            title: "Cycle II"
                         },
 
                         {
                             id: 'nav-iteration-cir-3',
-                            design: "design3",
-                            build: "build3",
-                            test: "test3",
-                            learn: "learn3",
-                            title: "Third iteration"
+                            design: "Once again we went to our notebooks in order to design a new circuit that behaved in the same manner that we had proposed, while including the specific requirements serine recombinases entailed: directionality factors.",
+                            build: "We built several circuits with recombinases and RDFs in different locations.",
+                            test: " We reached out to the same experts in order to receive feedback regarding our new proposal.",
+                            learn: "The architecture was approved, but a new issue was discovered. As many counter circuits, ours only worked with a very specific pulse of arabinose which involved induction of the circuit and after an appropriate amount of time, removal of the inducer media in order to avoid overcount.",
+                            title: "Cycle III"
                         },
 
                         {
                             id: 'nav-iteration-cir-4',
-                            design: "design3",
-                            build: "build3",
-                            test: "test3",
-                            learn: "learn3",
-                            title: "Third iteration"
+                            design: "During this stage we tackled the overcount issue by researching different regulatory approaches and coming up with a few options of our own.",
+                            build: "We built two main circuit proposals.",
+                            test: "By simulating and consulting experts we managed to gain some insight on the different positive and negative aspects of our two options.",
+                            learn: " Based on the results from the previous step, we chose the best suited architecture, focusing on efficiency and feasibility criteria. Additionally, the reflection at this stage brought up insight over the whole design process, this led us to create the {conceptual framework}.",
+                            title: "Cycle IV"
                         },
 
                         {
                             id: 'nav-iteration-cir-5',
-                            design: "design3",
-                            build: "build3",
-                            test: "test3",
-                            learn: "learn3",
-                            title: "Third iteration"
-                        },
-
-                        {
-                            id: 'nav-iteration-cir-6',
-                            design: "design3",
-                            build: "build3",
-                            test: "test3",
-                            learn: "learn3",
-                            title: "Third iteration"
+                            design: "For our final design stage we built the circuits again, but now specifically designing them for their expression in E. coli, taking notice of RBS strength, fluorescence reporters and so on and so forth. Also, an assembly plan was designed in order to be flexible and efficient for our proposed characterization: plate reading and flow cytometry ({Wet-Lab}).",
+                            build: "When the pieces arrived at our lab we would’ve assembled them according to plan ({Wet-Lab}), using the biobrick system and HindIII restriction enzyme.",
+                            test: " Once assembled we would’ve carried out the different fluorescence characterization assays according to {Wet-Lab} ",
+                            learn: "If followed, the characterization should have allowed us to obtain information regarding our counter and overcount prevention system’s efficacy and robustness, along with experimental data from which constants and rates could be obtained and applied to mathematical modelling.",
+                            title: "Cycle V"
                         }
                     ],
                     "model": [{
@@ -613,55 +605,64 @@
                     ],
                     "framework": [{
                             id: 'nav-iteration-framework-1',
-                            design: "design framework",
-                            build: "build",
-                            test: "test",
-                            learn: "learn",
-                            title: "First iteration"
+                            design: "In order to compare and validate our circuits architecture, we proposed the design of a software tool that would help us expand our view.",
+                            build: "The result was a genetic algorithm for the generation and evaluation of circuits towards the maximization of number of states achieved and reduction of the sequence length.",
+                            test: "The genetic algorithm was run a number of iterations to evaluate the output circuits and how the evolutionary process was being carried out.",
+                            learn: "We realized that, since the algorithm´s output was the circuit in its initial architecture, the different states (with the corresponding architectures) were being lost. Although the algorithm did model the state changes to evaluate the circuits, it was essential to have the possibility of easily reviewing all of the states. Also, we realized we wanted a more broad generation of circuits, rather than guiding it with the evaluation criteria, since the criteria was proposed to help validate our circuit but wasn´t applicable across users.",
+                            title: "Cycle I"
                         },
                         {
                             id: 'nav-iteration-framework-2',
-                            design: "design2",
-                            build: "build2",
-                            test: "test2",
-                            learn: "learn2",
-                            title: "Second iteration"
+                            design: "Based on what we learned with the genetic algorithm, we decided to set the requirements for our approach.",
+                            build: "We made a proposal for a software tool that would cover such requirements.",
+                            test: "We presented our proposal to our stakeholders, to further adjust it based on our users needs.",
+                            learn: "After the interviews, we realized most experts were not familiarized with the relationship between biology and sequential logic, therefore we decided to make a guide on how to tackle sequentially dependent biological tasks. This guide would also help us to rationally define a software framework to create our software tool.",
+                            title: "Cycle II"
                         },
 
                         {
                             id: 'nav-iteration-framework-3',
-                            design: "design3",
-                            build: "build3",
-                            test: "test3",
+                            design: "After validating the lack and need for a conceptual framework sequential biological systems,  we set it´s structure and requirements.",
+                            build: "We documented the conceptualizations and ideas we had defined through extensive discussion and research, and further expanded on them following our requirements and structure to set an efficient and modular approach to tackle sequentially dependent biological tasks.",
+                            test: "We presented our framework to others in order to evaluate how it helped comprehend sequential biological systems. At the same time we put it to test by designing a software framework based on it.",
                             learn: "learn3",
-                            title: "Third iteration"
+                            title: "Cycle III"
                         },
 
                         {
                             id: 'nav-iteration-framework-4',
-                            design: "design3",
-                            build: "build3",
-                            test: "test3",
-                            learn: "learn3",
-                            title: "Third iteration"
+                            design: "For our software framework, we proposed a structure that could be easily implemented as an actual software tool.",
+                            build: "We set a workflow for the design of a tool to generate circuits and evaluate their behaviour as state machines by reiterating simulations.",
+                            test: "We considered multiple cases to test the workflow´s adaptability for different biological scenarios. We also validated the framework by applying it as a guide for our software.",
+                            learn: "We adjusted the scope of each framework´s stage, as well as the organization of parts.",
+                            title: "Cycle IV"
                         },
 
                         {
                             id: 'nav-iteration-framework-5',
-                            design: "design3",
-                            build: "build3",
-                            test: "test3",
-                            learn: "learn3",
-                            title: "Third iteration"
+                            design: "Once the relations and behavior of the different parts in the conceptual framework were validated, we decided to focus on the design and implementation of a software capable of computing the simulation and validation of the given genetic circuits.",
+                            build: "We developed a Python script capable of generating random genetic circuits from a base list of parts (recombinases with its corresponding recognition sites, terminator and promoter) and validating which parts were expressed. A simple formatted color print to console was used to visualize the resulting circuits.",
+                            test: "First we had to manually check the generated circuits as well as the results of the expressed parts. But a big focus of this step was also analyzing the scalability of the software as we require it to process huge amounts of circuits efficiently.",
+                            learn: "After this first iteration the main conclusions were: Generating a random circuit each time isn't efficient enough, obtaining the permutations (part’s order and orientation) of a base circuit is a better approach. This will also allow us to quantify what percentage of the possible circuits we have processed. The system needs to contemplate the cases in which different parts are expressed by different promoters or even multiple at the same time, making this data available after the validation in order to be used to analyze the circuit 's behavior. Due to the great amount of data generated by the system, it needs to be integrated with an efficient database system.",
+                            title: "Cycle V"
                         },
 
                         {
                             id: 'nav-iteration-framework-6',
+                            design: "The decision was taken to package the software as a python library in order to allow users to easily integrate it according to their desired workflow. This also encouraged the separation of the system’s tasks into more decoupled modules such as the generator, validator, database controller, etc.",
+                            build: "A code refactoring was performed in order to use the Python data classes and multiple optimized array manipulation, allowing us to process the data stream in a more efficient way. MongoDB was used as the database system due to it’s native capabilities of storing and filtering json documents. Now the generation of circuits depends on the given parts groups, this allows for the recombinase to be directly related to its recognition sites while the complete circuit could contain multiple recombinases of the same type without interference.",
+                            test: "We validated multiple use cases with simple circuits of 5 parts up to 8, 11 and then confirming the generalization of the developed process. Utilizing a graphical interface for MongoDB the creation and update of the circuits and parts was validated, while checking that the system was not overriding already processed circuits.",
+                            learn: "This interaction brought information about the characteristics of the generated circuits, as for example that about 10% of the ones with one promoter and one recombinase can mutate into a new or already explored sequence when it’s parts are expressed. This points to the need to define the metrics in which to analyze the obtained data as a whole.  Once the database grew in size, the need for a dedicated graphical interface was made clear.This allows for a visual analysis of the circuits and their relationships as directed graphs, including multiple base filters.",
+                            title: "Cycle VI"
+                        },
+
+                        {
+                            id: 'nav-iteration-framework-7',
                             design: "design3",
                             build: "build3",
                             test: "test3",
                             learn: "learn3",
-                            title: "Third iteration"
+                            title: "Cycle VII"
                         }
                     ],
                 }
