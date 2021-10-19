@@ -100,7 +100,8 @@
     .engineering_success_div .tab-pane {}
 
     .engineering_success_div .es-container {
-        min-height: 600px;
+        max-height: 600px!important;
+        height: 80vh;
     }
 
     .engineering_success_div .nav-pills {
@@ -320,7 +321,68 @@
 
         <!-- MODEL -->
         <div v-if="current_slide_index.index==1" class="container">
-            <engineering_fs v-bind:items="items['model']"></engineering_fs>
+
+            <nav>
+                <div class="nav nav-pills  justify-content-center py-4 " id="nav-tab" role="tablist">
+
+                    <button class="btn btn-lg btn-outline-primary active mx-2" id="nav-ode-tab" data-bs-toggle="tab"
+                        data-bs-target="#pills-ode" type="button" role="tab" aria-controls="pills-ode"
+                        aria-selected="true" style=" border-radius: 50px;">ODE Model</button>
+
+                    <button class="btn btn-lg btn-outline-primary mx-2 " id="nav-gil-tab" data-bs-toggle="tab"
+                        data-bs-target="#pills-gil" type="button" role="tab" aria-controls="pills-gil"
+                        aria-selected="false" style=" border-radius: 50px;">Gillespie Algorithm</button>
+
+                    <button class="btn btn-lg btn-outline-primary mx-2 " id="nav-max-tab" data-bs-toggle="tab"
+                        data-bs-target="#pills-max" type="button" role="tab" aria-controls="pills-max"
+                        aria-selected="false" style=" border-radius: 50px;">Maximum Population</button>
+
+                    <button class="btn btn-lg btn-outline-primary mx-2 " id="nav-prom-tab" data-bs-toggle="tab"
+                        data-bs-target="#pills-prom" type="button" role="tab" aria-controls="pills-prom"
+                        aria-selected="false" style=" border-radius: 50px;">Promoter Strength</button>
+
+                    <button class="btn btn-lg btn-outline-primary mx-2 " id="nav-met-tab" data-bs-toggle="tab"
+                        data-bs-target="#pills-met" type="button" role="tab" aria-controls="pills-met"
+                        aria-selected="false" style=" border-radius: 50px;">Metabolic Burden</button>
+                </div>
+
+
+            </nav>
+
+            <div class="tab-content" id="pills-tabContent">
+
+                <div class="tab-pane fade show active" id="pills-ode" role="tabpanel" aria-labelledby="pills-ode-tab">
+                    <engineering_fs v-bind:items="items['model_ode']"></engineering_fs>
+                </div>
+
+
+                <div class="tab-pane fade show " id="pills-gil" role="tabpanel" aria-labelledby="pills-gil-tab">
+                    <engineering_fs v-bind:items="items['model_gil']"></engineering_fs>
+
+                </div>
+
+
+                <div class="tab-pane fade show " id="pills-max" role="tabpanel" aria-labelledby="pills-max-tab">
+                    <engineering_fs v-bind:items="items['model_max']"></engineering_fs>
+
+                </div>
+
+
+                <div class="tab-pane fade show " id="pills-prom" role="tabpanel" aria-labelledby="pills-prom-tab">
+                    <engineering_fs v-bind:items="items['model_prom']"></engineering_fs>
+
+                </div>
+
+
+                <div class="tab-pane fade show " id="pills-met" role="tabpanel" aria-labelledby="pills-met-tab">
+                    <engineering_fs v-bind:items="items['model_met']"></engineering_fs>
+
+                </div>
+
+            </div>
+
+
+
         </div>
 
         <!-- Framework & Software -->
@@ -665,6 +727,90 @@
                             title: "Cycle VII"
                         }
                     ],
+
+                    "model_ode": [{
+                            id: 'nav-iteration-model-ode-1',
+                            design: "The first approach we adopted was an ODE model, because from what we saw it was basically what all people do first. We started searching for models with tyrosine recombinases in iGEM wikis. We based our ODE model on the UT Tokyo iGEM team from 2016.",
+                            build: "We modeled the differential equations in Matlab using the solver ode15s",
+                            test: "We plot the results however we were not getting useful information from the equations.",
+                            learn: "We realized that as our system is unique, we can not use other people´s model and use it as it is, we have to modify and play with the equations given in order to adapt it to follow the steps our genetic circuit does.",
+                            title: "Cycle I"
+                        },
+                        {
+                            id: 'nav-iteration-model-ode-2',
+                            design: "We tried to modify the equations that we found from the last iteration.",
+                            build: "We programmed the equations in Matlab and solved the system.",
+                            test: "We held a meeting with experts in recombination PhD´s Pakpoom Subsoontorn and Jerome Bonnet, and they told us that we were using the wrong type of recombinases, so that changed the whole scenario.",
+                            learn: "We had to switch to using serine recombinases.",
+                            title: "Cycle II"
+                        },
+
+                        {
+                            id: 'nav-iteration-model-ode-3',
+                            design: "We found several papers on serine recombination, but again the equations were not what we were expecting, so we had to adapt them to our system. We came up with the idea of using heaviside functions to delay the expression of certain reactants we needed in order to emulate our system. Also, the equations were made and fitted to an in vitro process, and we needed an in vivo process, so we adapted the integrases and their respective RDF to follow the central dogma of molecular biology.",
+                            build: "We programmed and solved the system using Matlab.",
+                            test: "We contacted the principal author of the papers we based on, PhD Alexandra Pokhilko to validate our implementation.",
+                            learn: "Finally the data obtained was reasonable and provided great insight to our project and served as an excellent input for the lab.",
+                            title: "Cycle III"
+                        }
+                    ],
+                    "model_gil": [{
+                            id: 'nav-iteration-model-gil-1',
+                            design: "We literally had no idea how to start with this model, at the beginning this approach seemed very intimidating because of its technical complexity. We decided to apply the gillespie algorithm, a famous stochastic method to randomize ODE´s.",
+                            build: "We tried to apply the gillespie algorithm to our equations without really understanding it, and we programmed it in Matlab.",
+                            test: "The results were not very reasonable contrasting them against the deterministic or ODE model.",
+                            learn: "We needed help to not only understand the algorithm, but also to apply it to our very own unique equations.",
+                            title: "Cycle I"
+                        },
+                        {
+                            id: 'nav-iteration-model-gil-2',
+                            design: "We asked for help from PhD Juan Calvo, a mathematician from the University of Costa Rica, to help us understand the algorithm.",
+                            build: "We were making some serious mistakes from our last implementation, so we corrected them.",
+                            test: "The outputs of the algorithm are in good agreement with the results from the deterministic model.",
+                            learn: "Stochastic modeling is helpful to see extreme cases and to model how the system would respond to unusual conditions or with very few molecules.",
+                            title: "Cycle II"
+                        }
+
+                    ],
+                    "model_max": [{
+                            id: 'nav-iteration-model-max-1',
+                            design: "We developed this model in order to be tightly related to the Markov model probabilities outputs.",
+                            build: "We programmed the model in Matlab.",
+                            test: "We held a meeting with professor Alexander Ramírez from Costa Rica Institute of Technology, and he told us that he thinks the model is very useful, but we made the assumption that bacteria were at all time in exponential phase, and that was a mistake because in cases in where bacteria can not grow forever for factors such as competition for resources(for example in the lab), bacteria follows the lag, exponential, stationary and finally the death phase in these cases.",
+                            learn: "We had to adapt the model to follow the rules of the bacterial growth curve.",
+                            title: "Cycle I"
+                        }
+
+                    ],
+                    "model_prom": [{
+                            id: 'nav-iteration-model-prom-1',
+                            design: "We were incapable of finding promoter strength as a constant or parameter for the Pnrd promoter, so we decided to create a method to calculate it. We wrote down the general equations for a fluorescent protein(FP) following the central dogma of molecular biology, and based on that we solved the pair of differential equations. Now we came up with an expression of FP dependent on time and three unknown constants. So we looked up a graph or plot with the reported fluorescence of promoters and applied reverse engineering to determine the promoter strength that should have generated that data.",
+                            build: "We developed the method with all of its steps in a very detailed document with mathematical derivations and then we programmed the algorithm in Matlab.",
+                            test: "We proved the method with a lot of different combinations of 3-points of data, and to our surprise the promoter strength was relatively constants or with little deviation in all of them. We emailed Dr. Jake Beal in order to have his opinion on our method.",
+                            learn: "Dr. Beal suggested being careful with units, because we were mixing biological units with arbitrary units of data. Also, he told us to try to prove our method with Anderson promoters that already have established values in biological units.",
+                            title: "Cycle I"
+                        },
+                        {
+                            id: 'nav-iteration-model-prom-2',
+                            design: "We found a set of data that was exactly what we were needing, 3 points time, fluorescent for each of the Anderson promoters. The data was reported by the iGEM Tacoma Rainmakers team 2019.",
+                            build: "We didn't make any changes to the method itself so we leave it as it was.",
+                            test: "We applied our method to these promoters to calculate their strength. We contacted Dr. Beal to have his opinion, and told us that it would be nice with we could compare our obtained results with the ones reported in the iGEM  Interlab studies, that are an attempt to standardize measurements in synthetic biology in order to results be reproducible and data to be useful amongst all laboratories in the world.",
+                            learn: "The results we obtained from our method matched the relative strength reported by the iGEM Tacoma team, so we concluded that our method is promising.",
+                            title: "Cycle II"
+                        }
+
+                    ],
+                    "model_met": [{
+                            id: 'nav-iteration-model-met-1',
+                            design: "We were not very sure how to start this model, so we started searching for literature.",
+                            build: "We were not capable of doing such a model on our own, however, we found out that the iGEM team from UT Austin of 2019 had already done something like this, so we built upon their work.",
+                            test: "We didn't understand the model clearly, so we emailed Dr. Jeffrey Barrick from UT Austin for help.",
+                            learn: "He kindly explained to us their model and shared to us a software tool to implement the algorithm. Also we found out the metabolic burden value for some of our pieces that they have already reported.",
+                            title: "Cycle I"
+                        }
+
+                    ]
+
                 }
 
             }
