@@ -1,4 +1,3 @@
-
 <!-- https://2021.igem.org/Template:TEC_COSTA_RICA/navbar -->
 
 {{TEC_COSTA_RICA/Bootstrap}}
@@ -7,8 +6,10 @@
 <link rel="stylesheet" type="text/css"
   href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapCSS&action=raw&ctype=text/css" />
 <script
-  src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript"></script>
-  </html>
+  src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
+</script>
+
+</html>
 
 
 <html>
@@ -38,17 +39,20 @@
     }
 
     .navbar-nav>li {
-      margin-left: 20px;
-      margin-right: 35px;
+      margin-left: 5px;
+      margin-right: 5px;
     }
 
     .navbar {
       background-color: #000000;
     }
+    .navbar-brand img{
+      max-height: 20vmin;
+    }
   </style>
 
 
-  <nav id="TeamNavBar" class="navbar navbar-expand-md fixed-top navbar-custom navbar-dark "
+  <!-- <nav id="TeamNavBar" class="navbar navbar-expand-md fixed-top navbar-custom navbar-dark "
     style="margin-bottom:500px;">
 
 
@@ -68,7 +72,6 @@
 
 
       <div class=" navbar-expand" id="navbarSupportedContent">
-        <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
           <ul class="navbar-nav ">
 
           <li class="nav-item">
@@ -96,32 +99,6 @@
           </li>
 
 
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
-
-
-
-
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li> -->
-
-
         </ul>
       </div>
 
@@ -132,22 +109,90 @@
 
 
 
-  </nav>
+  </nav> -->
+
+  <body>
+
+
+    <nav id="TeamNavBar" class="navbar navbar-expand-xl fixed-top navbar-custom navbar-dark "
+    style="margin-bottom:500px;">
+    <!-- <nav id="TeamNavBar" class="navbar navbar-expand-lg navbar-dark "> -->
+      <div class="container-fluid align-middle">
+
+
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <a class="navbar-brand mx-5" href="#">
+          <img class="d-inline-block align-top"
+            src="https://placehold.co/100x60?text=logo" alt="CronoBacter Logo"
+            >
+        </a>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
 
 
 
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+            <li class="nav-item ">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/Contribution">Contribution</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Project
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Engagement</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Team</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Safety</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Judging Form</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
 
 
 
+  </body>
 
 
 
 
   <style>
     #content {
-      margin: px;
+      margin: 0px;
       height: 100%;
       padding: 0px;
       width: 100%;
@@ -156,12 +201,12 @@
     #top_title {
       display: none;
     }
-/*
+
+    /*
     #bodyContent {
       padding-top: var(--team-navbar-height);
     }
 */
-
   </style>
   <script>
     //let root = document.documentElement;
