@@ -32,8 +32,10 @@
 
                     <div class="position-relative es-container" >
                         
-                        <div class="d-flex justify-content-center">
-                            <div class="engineering_success_box engineering_success_box-first ">
+                        <div class="d-flex justify-content-center  row-eq-height position-relative ">
+
+
+                            <div class="engineering_success_box engineering_success_box-first text-start ">
                                 <div class="circular_spacer circular_spacer_1"></div>
                                 <!-- <h4>
                                     {{item.design}}
@@ -50,10 +52,14 @@
                             </div>
                         </div>
 
+                        <div
+                        class="engineering_success_center_top text-center position-relative ">
+                            <img src="//placehold.co/200x200?text=snippet" alt="" style="  border-radius: 50%;" >
+                        
+                        </div>
 
-
-                    <div class="d-flex justify-content-center">
-                        <div class="engineering_success_box  ">
+                    <div class="d-flex justify-content-center row-eq-height ">
+                        <div class="engineering_success_box  text-start">
                             <div class="circular_spacer circular_spacer_3"></div>
                             <!-- <h4>
                                 {{item.learn}}
@@ -61,7 +67,7 @@
                             <p>{{item.learn}}</p>
                         </div>
 
-                        <div class="engineering_success_box engineering_success_box-last text-end">
+                        <div class="engineering_success_box engineering_success_box-last text-end position-relative">
                             <div class="circular_spacer circular_spacer_4"></div>
                             <!-- <h4>
                                 {{item.test}}
@@ -73,15 +79,7 @@
 
 
 
-                        <div
-                        class="position-absolute top-50 start-50  translate-middle  engineering_success_center_top">
-                            <img src="//placehold.co/200x200?text=snippet" alt="" style="width:200px;  border-radius: 50%;" >
-                            <!-- <svg class="bd-placeholder-img" width="200px" height="200px"
-                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
-                                <circle cx="50%" cy="50%" r="50%" />
-                            </svg>-->
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -110,7 +108,16 @@
     .engineering_success_div .tab-pane {}
 
     .engineering_success_div .es-container {
-         min-height: 400px !important;
+        min-height: 400px !important;
+    }
+
+    .es_container {
+        z-index: -1 !important;
+        position: relative;
+    }
+    .es_container .d-flex{
+        z-index: -1;
+        position: relative;
     }
 
     .engineering_success_div .nav-pills {
@@ -136,11 +143,12 @@
 
     .engineering_success_box p {
         font-size: 1rem;
-        margin: 50px
+        margin: 50px 20px 70px 20px;
     }
-    .circular_spacer{
+
+    .circular_spacer {
         width: 50%;
-        height:100%;
+        height: 100%;
         background-color: #ce1b1b79;
     }
 
@@ -168,9 +176,9 @@
         float: left;
     }
 
-   
+
     .engineering_success_box-first {
-        border-style:  none dashed dashed none;
+        border-style: none dashed dashed none;
     }
 
 
@@ -178,10 +186,11 @@
         border-style: dashed none none dashed;
     }
 
-    
+
 
     .engineering_success_center_top {
-        z-index: 999;
+        z-index: 1 !important;
+        margin: -100px;
     }
 </style>
 
