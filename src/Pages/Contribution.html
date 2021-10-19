@@ -1,0 +1,1228 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapMinCSS&action=raw&ctype=text/css" />
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
+
+</head>
+
+
+
+
+<!-- COMPONENTE CAROUSEL -->
+<style>
+    .carousel .carousel-caption {
+        padding-top: 2rem;
+        height: 100%;
+    }
+
+    .carousel .carousel-caption h3 {
+        font-size: 50px;
+        color: white !important;
+
+    }
+
+    .carousel .carousel-caption p {
+        /*font-size: 12px;*/
+    }
+
+    .page_content_sections .page_content_section {
+        display: none;
+        padding: 10%;
+        padding-top: 20px;
+    }
+
+    .page_content_sections .page_content_section_active {
+        display: block;
+    }
+</style>
+
+<script type="text/x-template" id="main_carousel">
+    <div>
+        <div>
+            <div :id="'carouselComponent'+id" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"  ref="maincarousel"  >
+
+
+                <ol class="carousel-indicators">
+                    <li v-for="(slide, index) in slides_content" :data-bs-target="'#carouselComponent'+id"  v-bind:data-bs-slide-to="index" v-bind:class="{ active: index==0 }"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+
+
+                    <div class="carousel-item" v-for="(slide, index) in slides_content"  v-bind:class="{ active: index==0 }">
+                        <svg class="bd-placeholder-img" width="100%" height="250px" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#1A1A1A" />
+                        </svg>
+
+                        <div class="carousel-caption text-start">
+                            <h3 class="slide_tittle">
+                                {{slide.title}}
+
+                            </h3>
+                            <p class="slide_text w-75">
+                                {{slide.content}}
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+
+            <button class="carousel-control-prev" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+    </div>       
+</script>
+
+
+<script>
+    Vue.component("main-carousel", {
+        data: {},
+        props: {
+            current_slide: {
+                type: Object,
+                default: "casa"
+            },
+            slides_content: {
+                type: Array,
+                default: []
+            },
+            id: {
+                type: Number,
+                default: 0
+            }
+        },
+
+        template: "#main_carousel",
+        methods: {
+            updateCurrentSlide: function (event) {
+                this.current_slide.index = event.to;
+            },
+
+        },
+        mounted() {
+            this.$refs.maincarousel.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+        }
+    });
+</script>
+<!-- COMPONENTE CAROUSEL -->
+
+
+
+
+<!-- CONTENIDO PRINCIPAL -->
+
+<body>
+    <div id="app">
+
+
+        <div class="position-relative overflow-hidden p-3 p-md-5  text-start  main-title">
+            <img class="main-title-bg" src="https://picsum.photos/id/1042/1200/400" alt="">
+            <h1>Contribution</h1>
+            <h5 class="">As a team, we have contributed in several areas to improve as well as expand future iGEMers’
+                project
+                development experience.</h5>
+        </div>
+
+
+        <main-carousel v-bind:current_slide="current_slide_index" v-bind:slides_content="slides_content" :id="1">
+        </main-carousel>
+
+        <!-- SUICIDE -->
+        <div v-if="current_slide_index.index==0" class="container">
+
+            <!-- <div class="container  mx-auto p-3 ">
+                    <h5>
+                        Et quam soluta optio vero est assumenda ullam voluptatem. Assumenda unde accusantium et quia cumque
+                        reprehenderit similique. Minus vel sapiente incidunt. Ab distinctio illum est architecto aut.
+    
+                        Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi provident
+                        consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut molestias doloribus nobis
+                        tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet voluptatem placeat.
+                    </h5>
+                </div>
+    
+                <div class="container  mx-auto p-3 ">
+                    <h1>Lorem ipsum</h1>
+                </div> -->
+
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            01
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Counter</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            02
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Initiation Module </h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente
+                            amet voluptatem placeat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            03
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Overcount</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            04
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Amplify </h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente
+                            amet voluptatem placeat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            05
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Killswitch</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 justify-content-md-center">
+                    <img src="https://placehold.co/600x600?text=bacteria" class="img-square align-middle px-5" all="">
+                </div>
+            </div>
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            06
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Lab work</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <img src="https://placehold.co/600x600?text=labwork" class="img-square align-middle px-5" all="">
+                </div>
+            </div>
+
+            <!-- <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        01
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Bolivia-iGEM Bolivia team</h2>
+                    <h3>“a compromise with environment and society”</h3>
+
+                    <p>When reached with the proposal of collaborating on the creation of a guide for future iGEMer
+                        teams we were thrilled. We have had many obstacles and have learned so much from each and
+                        every experience, both the triumphs and the failures. Because of this we are always looking
+                        forward to having the opportunity of sharing our journey and hopefully making a positive
+                        impact in others’. Another great factor was that we were able to support the initiative of a
+                        new latin team, making the sharing of experiences a lot more intimate given the shared
+                        culture and history. Hablar del producto terminado. </p>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        01
+                    </h1>
+                </div>
+                <div class="col-sm-7">
+                    <h2>Bolivia-iGEM Bolivia team</h2>
+                    <h3>“a compromise with environment and society”</h3>
+
+                    <p>When reached with the proposal of collaborating on the creation of a guide for future iGEMer
+                        teams we were thrilled. We have had many obstacles and have learned so much from each and
+                        every experience, both the triumphs and the failures. Because of this we are always looking
+                        forward to having the opportunity of sharing our journey and hopefully making a positive
+                        impact in others’. Another great factor was that we were able to support the initiative of a
+                        new latin team, making the sharing of experiences a lot more intimate given the shared
+                        culture and history. Hablar del producto terminado. </p>
+                </div>
+                <div class="col-sm-4  ">
+                    <img src="https://picsum.photos/id/1032/600/600" class="img-square align-middle" all="">
+
+                </div>
+            </div> -->
+
+            <!-- DOBLE COLUMNA -->
+            <!-- <div class="container wiki-card mx-auto p-3">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h2>Bolivia-iGEM Bolivia team</h2>
+                                <h3>“a compromise with environment and society”</h3>
+        
+                                <p class="wiki-card-2columns">When reached with the proposal of collaborating on the creation of
+                                    a guide for future iGEMer
+                                    teams we were thrilled. We have had many obstacles and have learned so much from each and
+                                    every experience, both the triumphs and the failures. Because of this we are always looking
+                                    forward to having the opportunity of sharing our journey and hopefully making a positive
+                                    impact in others’. Another great factor was that we were able to support the initiative of a
+                                    new latin team, making the sharing of experiences a lot more intimate given the shared
+                                    culture and history. Hablar del producto terminado. </p>
+                            </div>
+                        </div>
+                    </div> -->
+
+            <!-- <div class="container  mx-auto p-3"">
+                    <img src=" https://picsum.photos/id/1043/1300/400" alt="" style="width:100%">
+            </div> -->
+
+        </div>
+
+
+        <!-- FRAMEWORK -->
+        <div v-if="current_slide_index.index==1" class="container">
+
+            <div class="container wiki-card mx-auto p-3 row ">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        01
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Conceptual Framework</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        In order to make this knowledge more available, we have organized our research and findings and
+                        included them in our conceptual framework. The conceptual framework itself encompassess even
+                        more, it’s where we propose a guide for conceptualizing, modeling and representing biological
+                        elements, such as genes and proteins along with their interactions among themselves and the
+                        environment. The development process for this guideline was complex and time consuming,
+                        requiring discussion, research and decision making, because of which we documented the
+                        troubleshooting process that it entailed.
+
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="container  mx-auto p-3 text-center">
+                <img src="https://placehold.co/1200x600?text=Conceptual" alt="" style="width:100% center" class="w-75">
+            </div>
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        02
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Software Framework</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        To make the conceptual framework’s application more tangible, we developed the specification for
+                        a software framework, which organises the workflow of the previously conceptualized parts in
+                        order to build, assess and manipulate genetic circuits. which in a similar manner conceptualizes
+                        genes and proteins but now organizing their workflow in order to generate genetic circuits from
+                        the devised parts.
+
+                        This makes software development more accessible for researchers and other iGEM teams,while
+                        maintaining flexibility in the implementation and optimization. This can be used by iGEMers and
+                        scientists to develop their own software proposals.
+
+                    </p>
+                </div>
+            </div>
+            <div class="container  mx-auto p-3 text-center">
+                <img src="https://placehold.co/1200x600?text=Software" alt="" style="width:100%;max-height:600px;"
+                    class="w-75">
+            </div>
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        03
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Software Implementation</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        Our software proposal is an already implemented and user-ready version of our conceptual and
+                        software frameworks, through which users can not only develop but also troubleshoot, improve,
+                        validate and compare biological circuits targeted for sequentially dependent tasks.
+                    </p>
+                </div>
+            </div>
+            <div class="container  mx-auto p-3 text-center">
+                <img src="https://placehold.co/1200x600?text=Implementation" alt=""
+                    style="width:100%; max-height:600px;" class="w-75">
+            </div>
+        </div>
+
+
+
+        <!-- MATH MODEL -->
+        <div v-if="current_slide_index.index==2" class="container">
+
+            <!-- <div class="container  mx-auto p-3 ">
+                    <h5>
+                        Et quam soluta optio vero est assumenda ullam voluptatem. Assumenda unde accusantium et quia cumque
+                        reprehenderit similique. Minus vel sapiente incidunt. Ab distinctio illum est architecto aut.
+    
+                        Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi provident
+                        consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut molestias doloribus nobis
+                        tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet voluptatem placeat.
+                    </h5>
+                </div>
+    
+                <div class="container  mx-auto p-3 ">
+                    <h1>Lorem ipsum</h1>
+                </div> -->
+
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            01
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>In vivo mathematical model</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            02
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Gillespie Algorithm</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente
+                            amet voluptatem placeat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            03
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Bacterial Population Model</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            04
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Decision Trees </h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente
+                            amet voluptatem placeat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 row">
+                    <div class="col-sm-2 text-end">
+                        <h1>
+                            05
+                        </h1>
+                    </div>
+                    <div class="col-sm-10">
+                        <h2>Markov Model</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- <div class="col-sm-6 justify-content-md-center">
+                    <img src="https://placehold.co/600x600?text=bacteria" class="img-square align-middle px-5" all="">
+                </div> -->
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Human Practices -->
+
+        <div v-if="current_slide_index.index==3" class="container">
+
+            <!-- <div class="container  mx-auto p-3 ">
+                    <h5>
+                        Et quam soluta optio vero est assumenda ullam voluptatem. Assumenda unde accusantium et quia cumque
+                        reprehenderit similique. Minus vel sapiente incidunt. Ab distinctio illum est architecto aut.
+    
+                        Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi provident
+                        consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut molestias doloribus nobis
+                        tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet voluptatem placeat.
+                    </h5>
+                </div>
+    
+                <div class="container  mx-auto p-3 ">
+                    <h1>Lorem ipsum</h1>
+                </div> -->
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        01
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Potential Users Feedback</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi provident
+                        consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut molestias doloribus nobis
+                        tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet voluptatem placeat.
+                    </p>
+                </div>
+            </div>
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        02
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Biosafety & Ethical considerations</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi provident
+                        consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut molestias doloribus nobis
+                        tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet voluptatem placeat.
+                    </p>
+                </div>
+            </div>
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        03
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Biocontainment</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi provident
+                        consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut molestias doloribus nobis
+                        tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet voluptatem placeat.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Public Engagement -->
+
+        <div v-if="current_slide_index.index==4" class="container">
+
+            <div class="container wiki-card mx-auto p-3 row ">
+                <h2>Synbio Clubs</h2>
+                <h3>An inspirational tool for new potential iGEMers </h3>
+
+                <p>In Costa Rica only 4 teams have participated in iGEM, including ourselves. As the most recent team in
+                    our country and based on our experience as one of the teams with the most participants so far, we
+                    know how difficult it can be to recruit participants, not because of unwillingness, but because of
+                    lack of promotion and information. Hence, we consider it vital not only to tell our experience as a
+                    team, but also to spread the word and motivate others about the possibility to participate, making
+                    it a point to evidence that they do not have to be experts in synbio to be able to develop projects
+                    of high value.
+                    With synbio clubs we encourage the search for interdisciplinarity, creativity and interest in having
+                    a positive and responsible impact not only in science, but also in society and the environment that
+                    provides us the problems and elements with which we are going to work to generate a range of
+                    possible solutions.
+
+                </p>
+            </div>
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 justify-content-md-center">
+                    <img src="https://placehold.co/600x600?text=logo1" class="img-square align-middle px-5" all="">
+                </div>
+
+                <div class="col-sm-6 justify-content-md-center">
+                    <img src="https://placehold.co/600x600?text=logo2" class="img-square align-middle px-5" all="">
+                </div>
+            </div>
+
+
+            <div class="container wiki-card mx-auto p-3 row ">
+                <h2>Shipping Policies in Costa Rica</h2>
+                <h3>An inspirational tool for new potential iGEMers </h3>
+
+                <p>Following After iGEM’s initiative, we assumed the task of consulting, registering and analyzing the
+                    different procedures and their limitations of our country for the entry of certain reagents,
+                    equipment,
+                    genetic parts and microorganisms necessary to work in the synbio world. It is relevant to establish
+                    a
+                    guide for other future teams and stakeholders and, in addition, to establish possible routes to
+                    simplify
+                    and cover permissions to accelerate scientific development, which in our case as a developing
+                    country of
+                    Latin America, we have to make visible the potential we already possess.</p>
+            </div>
+
+
+            <div class="container wiki-card mx-auto p-3 row ">
+                <h2>Participation in various events</h2>
+            </div>
+
+
+            <!-- <div class="container wiki-card mx-auto p-3 row">
+            <div class="col-sm-6 justify-content-md-center">
+                <img src="https://placehold.co/600x600?text=logo1" class="img-square align-middle px-5" all="">
+            </div>
+
+            <div class="col-sm-6 justify-content-md-center">
+                <img src="https://placehold.co/600x600?text=logo2" class="img-square align-middle px-5" all="">
+            </div>
+        </div> -->
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 justify-content-md-center">
+                    <img src="https://placehold.co/600x600?text=Medsci+Week" class="img-square align-middle px-5"
+                        all="">
+                </div>
+
+                <div class="col-sm-6 row">
+                    <div class="col-sm-10">
+                        <h2>Medsci Week</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 justify-content-md-center">
+                    <img src="https://placehold.co/600x600?text=Jornadas" class="img-square align-middle px-5" all="">
+                </div>
+
+                <div class="col-sm-6 row">
+                    <div class="col-sm-10">
+                        <h2>Jornadas de Bioinformática Clínica (Conference on Clinical Bioinformatics)</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container wiki-card mx-auto p-3 row">
+                <div class="col-sm-6 justify-content-md-center">
+                    <img src="https://placehold.co/600x600?text=Mathematics" class="img-square align-middle px-5"
+                        all="">
+                </div>
+
+                <div class="col-sm-6 row">
+                    <div class="col-sm-10">
+                        <h2>Talk for the Mathematics School of the University of Costa Rica</h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Education & Communication -->
+        <div v-if="current_slide_index.index==5"class="container">
+
+            <div class="container wiki-card mx-auto p-3 row">
+
+
+                <div class="col-sm-6 row">
+                    <div class="col-sm-10">
+                        <h2>Equal access to labs </h2>
+                        <p>
+                            Magnam cumque a repudiandae nisi blanditiis. Autem est officiis harum a officiis modi
+                            provident consequatur. Occaecati unde dolorem corrupti autem voluptate. Esse aut
+                            molestias
+                            doloribus nobis tenetur facilis. Quis et unde voluptates. Nesciunt sapiente amet
+                            voluptatem
+                            placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 justify-content-md-center">
+                    <img src="https://placehold.co/600x600?text=labs" class="img-square align-middle px-5" all="">
+                </div>
+
+
+            </div>
+            <div class="container wiki-card mx-auto p-3 row ">
+                <h2>Virtual labs & Interactives</h2>
+                <!-- <h3>An inspirational tool for new potential iGEMers </h3> -->
+
+                <p>We believe all students deserve the opportunity to learn about these spaces, tools and protocols with
+                    ease, and this is the reason behind the development of our virtual labs and interactives, which
+                    portray scientific knowledge and experiences in a comprehensible, dynamic and graphic way.
+                    These also include less renowned topics regarding synthetic biology in many cases referencing iGEM
+                    in order to interest more people in the competition and spread the word even further. Finally, to be
+                    able to be a content developer for Labxchange was the cherry on top of the cake, since it fulfilled
+                    our diffusion and democratization goals to an extent we could’ve never imagined. </p>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+        <!-- Implementation -->
+        <div v-if="current_slide_index.index==6"class="container">
+            <div class="container wiki-card mx-auto p-3 row ">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        01
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Impact</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>New applications were suggested as well, having the distinct element of being an integral
+                        representation of our possible users and their various backgrounds.
+                        The integration of our human practices in our implementation itself opened doors for the
+                        scientific
+                        community, specially the scientists we interviewed, to explore a previously unknown way
+                        thinking.
+                        We believe our short introduction to sequential logic will be the key for harnessing sequential
+                        logic’s potential as implied by our follow-up meetings with our users.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container wiki-card mx-auto p-3 row ">
+
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        02
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Improving on past projects</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>As part of our implementation we also analyzed different iGEM 2020 team projects in order to
+                        improve
+                        them by applying our circuit and framework on a case by case basis. Based on our systems and the
+                        areas of application that we chose to demonstrate the utility of our technologies, we looked on
+                        over
+                        eight iGEM 2020 projects: iGEM Hong Kong-City U, iGEM Nottingham, iGEM BIT-China, iGEM
+                        DeNovocastrians, iGEM NAU-China, iGEM UNI-Lausanne, iGEM UM Macau and iGEM Hannover.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Excellence in Another Area -->
+        <div v-if="current_slide_index.index==7"class="container">
+
+
+            <div class="container wiki-card mx-auto p-3 row ">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        01
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>User Driven Mindset</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        Establishing this mindset from the beginning of the project and having it as its core has made
+                        our solution really meet the needs of our users and extend the positive impact on the scientific
+                        community.
+
+                        We invite other iGEM teams to follow this line of work in their own projects and highlight the
+                        key role of involving designers early in the project to succeed in this area.
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="container wiki-card mx-auto p-3 row ">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        02
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Storytelling</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        Due to the characteristics of our project, we knew that its effective communication would not be
+                        easy, so we have created a narrative through our project, which has facilitated the
+                        communication and interaction of the team both internally and with users.
+
+                        Our documentation serves as good reference for other teams to build on this area and develop
+                        their own stories.
+
+                    </p>
+                </div>
+            </div>
+            <div class="container wiki-card mx-auto p-3 row ">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        03
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Communication</h2>
+                    <!-- <h3>involvement of social sciences</h3> -->
+                    <p>As an interdisciplinary team, we know scientific communication is complicated for both people who
+                        are not in STEM, or in a different field, but also for scientists to develop.
+
+                        Therefore, the two previous points unite on the integral communication of the project.
+
+                        For this, design has been applied in every sense with a functional interest in mind: our desire
+                        is for our content to not be just pretty, but to precisely be able to communicate what we mean
+                        and who we are in an efficient and easy to understand manner.
+                        This is applied throughout the entire project, from the wiki and its content, to the management
+                        of the brand in social networks and the video-presentations used throughout the competition.
+
+                        For this endeavour we used other iGEM teams’ wikis and content as reference and inspiration, and
+                        in turn, we hope ours can serve the same purpose.
+
+
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="container wiki-card mx-auto p-3 row ">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        04
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Holistic Approach</h2>
+                    <h3>involvement of social sciences
+                    </h3>
+
+                    <p>
+                        As scientists we are required to think about the ethical consequences of our developments; as a
+                        team we decided to go even further taking advantage of our team member’s involvement in the
+                        social sciences to bring them into the competition.
+                        Making use of social sciences’ research principles and perspective a huge impact can be made in
+                        understanding and involving public opinion, as we establish in our engineered organism
+                        perception investigation and infographics in our effort to making it accessible for other teams
+                        to follow our example without being experts.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container wiki-card mx-auto p-3 row ">
+                <div class="col-sm-1 text-end">
+                    <h1>
+                        05
+                    </h1>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Intellectual Property & Regulation</h2>
+                    <!-- <h3>“a compromise with environment and society”</h3> -->
+
+                    <p>
+                        In our country, Costa Rica, we have the great responsibility to preserve the biological
+                        resources we have, and this complicates the bureaucracy to carry out research processes related
+                        to the synthetic biology area.
+
+                        This motivated us to investigate the current biotechnological legal frameworks in our country,
+                        the bodies responsible for ensuring compliance, the necessary permissions and requirements,
+                        among other aspects based on the previous research carried out for the same purpose in Mexico by
+                        the UANL team and Ohio state's team in 2020.
+
+                        This can serve as future reference for other teams who wish to do this research, and for Costa
+                        Rican scientists to refer to when needed.
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        </main-carousel>
+
+    </div>
+
+</body>
+<!-- CONTENIDO PRINCIPAL -->
+
+<style>
+
+</style>
+
+<style>
+    #globalWrapper {
+        font-size: 100% !important;
+    }
+
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: var(--bs-body-font-family) !important;
+        overflow: visible !important
+    }
+
+    #HQ_page p {
+        font-family: var(--bs-body-font-family) !important;
+        font-size: var(--bs-body-font-size) !important;
+    }
+
+
+
+    /*
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+     font-family:"Arial",Gadget,sans-serif;
+     border-bottom:none;
+     font-weight:bold
+    }
+
+    #HQ_page p {
+        font-family:"Arial",Helvetica,sans-serif;
+        font-size:13px;
+        text-align:justify
+       }
+       
+    /*body {
+        font-family: var(--bs-body-font-family) !important;
+    }*/
+
+    .double-text {
+        background-color: #1A1A1A;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        -webkit-text-stroke-color: rgb(255, 255, 255);
+        font-size: 90px;
+        font-family: 'Open Sans';
+        font-weight: 800 !important;
+
+        text-shadow:
+            6px 8px 0px rgb(255, 255, 255);
+        opacity: 1;
+        text-transform: uppercase;
+        letter-spacing: -1.03px;
+    }
+
+
+    .main-title h1 {
+        /*font-family: 'Open Sans'; */
+        font-weight: 800 !important;
+        font-size: 55px;
+        -webkit-text-fill-color: #ffffff00;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: #ffffff;
+    }
+
+
+    .main-title h5 {
+        /*font-family: 'Open Sans'; */
+        font-size: 15px;
+        color: #ffffff;
+        width: 40%
+    }
+
+    .main-title-bg {
+        opacity: 0.9;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -99;
+    }
+
+    .wiki-card {}
+
+    .wiki-card .img-round {
+        border-radius: 50%;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .wiki-card .img-square {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .wiki-card h1 {
+        /*margin-right: 10vw;*/
+        color: #E2474B;
+        font-size: calc(2rem + 1.5vw);
+        /*font-size: 56px;*/
+        font-weight: bold;
+        letter-spacing: -0.8px;
+    }
+
+    .wiki-card h2 {
+        color: #27262D;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    .wiki-card h3 {
+        color: #626262;
+        font-size: 18px;
+        letter-spacing: -0.2px;
+        line-height: 19px;
+    }
+
+    .wiki-card p {
+        color: #27262D;
+        /*line-height: 24px;*/
+    }
+
+    .wiki-card p.wiki-card-2columns {
+        columns: 2;
+    }
+</style>
+
+
+
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                isActive: true,
+                message: 'hello app',
+                current_slide_index: {
+                    index: 0
+                },
+                current_slide_index2: {
+                    index: 0
+                },
+                slides_content: [{
+                        title: "Suicide Circuit",
+                        content: "Our suicide circuit itself, along with its proposed implementation and characterization, is a huge step forward in the direction of safe engineered organism release, behaving as a new and evolving biocontainment strategy. The modules themselves are an excellent tool for other genetic circuits."
+                    },
+                    {
+                        title: "Framework",
+                        content: "Through our framework, we explored a sequential logic based design of genetic circuits, a fairly unexplored field, to enable future iGEM teams and researchers to follow this approach by allowing the analysis of complex and time-dependent biological problems and further providing possible solutions to them. "
+                    },
+                    {
+                        title: "Math Model",
+                        content: "In the process of developing the mathematical models for our project, we faced several issues, issues that we were able to solve and we hope to put our learned knowledge, results and tools at disposal of other iGEM teams. "
+                    },
+                    {
+                        title: "Integrated Human Practices",
+                        content: "     "
+                    },
+                    {
+                        title: "Public Engagement",
+                        content: "     "
+                    },
+                    {
+                        title: "Education & Communication",
+                        content: "     "
+                    },
+                    {
+                        title: "Implementation",
+                        content: "We went beyond the implementation of our framework and circuit and did a risk assessment analysis for our project. This documentation can be used as future reference while uniting the relevance of policy, bioethics and biosafety."
+                    },
+                    {
+                        title: "Excellence in Another Area",
+                        content: "As a team we identify the need and importance of users. For this reason we decided to use “design thinking” and a user-driven mindset, as core in the development of the different areas of our project."
+                    }
+                ],
+
+            }
+        },
+        methods: {},
+        mounted() {}
+    })
+</script>
+
+
+</html>

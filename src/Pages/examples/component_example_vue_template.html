@@ -1,0 +1,252 @@
+<html>
+
+
+<link rel="stylesheet" type="text/css"
+    href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapMinCSS&action=raw&ctype=text/css" />
+
+<!-- Load Vue followed by BootstrapVue -->
+<script
+    src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript"></script>
+
+<script
+    src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript"></script>
+
+
+<body>
+    <div id="app">
+        {{message}}
+        <blog-post v-bind:items="items" v-bind:lorem="lorem" v-bind:message="message"></blog-post>
+        <blog-post v-bind:items="items" v-bind:lorem="lorem" v-bind:message="message"></blog-post>
+        <blog-post v-bind:items="items" v-bind:lorem="lorem" v-bind:message="message"></blog-post>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/x-template"  id="engineering_success">
+    <div>
+        <h1>ejemplo engineering success</h1>
+        <div class="container engineering_success_div">
+            <div class="tab-content" id="nav-tabContent">
+                <div v-for="(item, index) in items" class="tab-pane fade show" v-bind:id="item.id" role="tabpanel"
+                    v-bind:class="{ active: index==0 }" aria-labelledby="nav-home-tab">
+                    <!-- <div v-for="item in items" class="tab-pane fade show active" v-bind:id="item.ID"id="nav-home" role="tabpanel"  aria-labelledby="nav-home-tab"> -->
+
+                    <div class="position-relative es-container" >
+                        <div class="position-absolute top-0 start-0 engineering_success_box ">
+                            <div class="circular_spacer_1"></div>
+                            <h4>
+                                {{item.design}}
+                            </h4>
+                            <p>{{lorem.substring(1, 350)}}</p>
+                        </div>
+
+                        <div class="position-absolute top-0 end-0 engineering_success_box text-end">
+                            <div class="circular_spacer_2"></div>
+                            <h4>
+                                {{item.build}}
+                            </h4>
+                            <p>{{lorem.substring(1, 350)}}</p>
+                        </div>
+
+                        <div class="position-absolute bottom-0 start-0 engineering_success_box  ">
+                            <div class="circular_spacer_3"></div>
+                            <h4>
+                                {{item.learn}}
+                            </h4>
+                            <p>{{lorem.substring(1, 350)}}</p>
+                        </div>
+
+                        <div class="position-absolute bottom-0 end-0 engineering_success_box text-end">
+                            <div class="circular_spacer_4"></div>
+                            <h4>
+                                {{item.test}}
+                            </h4>
+                            <p>{{lorem.substring(1, 350)}}</p>
+                        </div>
+
+                        <div
+                            class="position-absolute top-50 start-50  translate-middle  engineering_success_center_top ">
+                            <svg class="bd-placeholder-img" width="200px" height="200px"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <!-- <rect width="100%" height="100%" fill="#1A1A1A" /> -->
+                                <circle cx="50%" cy="50%" r="50%" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="nav nav-pills  justify-content-center" id="nav-tab" role="tablist">
+                    <button v-for="(item, index) in items" class="btn btn-lg btn-outline-primary"
+                        v-bind:class="{ active: index==0 }" id="nav-home-tab" data-bs-toggle="tab"
+                        v-bind:data-bs-target="'#'+item.id" type="button" role="tab" v-bind:aria-controls="item.id"
+                        v-bind:aria-selected="index==0">{{item.title}}</button>
+                </div>
+            </nav>
+        </div>
+    </div>
+</script>
+<script>
+    Vue.component("blog-post", {
+        props: ['items', 'message', 'lorem'],
+        template:"#engineering_success"
+    });
+
+</script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                isActive: true,
+                message: 'hello app',
+                lorem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                items: [
+                    {
+                        id: 'nav-iteration-1',
+                        design: "design",
+                        build: "build",
+                        test: "test",
+                        learn: "learn",
+                        title: "First iteration"
+                    },
+                    {
+                        id: 'nav-iteration-2',
+                        design: "design2",
+                        build: "build2",
+                        test: "test2",
+                        learn: "learn2",
+                        title: "Second iteration"
+                    },
+
+                    {
+                        id: 'nav-iteration-3',
+                        design: "design3",
+                        build: "build3",
+                        test: "test3",
+                        learn: "learn3",
+                        title: "Third iteration"
+                    }
+                ]
+            }
+        },
+        methods: {
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+<style>
+    .engineering_success_div {}
+
+    .engineering_success_div .tab-content {}
+
+    .engineering_success_div .tab-pane {}
+
+    .engineering_success_div .es-container {
+        min-height: 500px;
+    }
+
+    .engineering_success_div .nav-pills {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .engineering_success_div .btn {
+        margin: 10px;
+        border-radius: 50px;
+    }
+
+    .engineering_success_box {
+        padding: 10px;
+        width: 50%;
+        height: 50%;
+    }
+
+    .engineering_success_box h4 {
+        font-size: 2rem;
+    }
+
+    .engineering_success_box p {
+        font-size: 1rem;
+    }
+
+
+    .circular_spacer_1 {
+        clip-path: circle(50% at 100% 100%);
+        shape-outside: circle(50% at 100% 100%);
+        width: 50%;
+        height: 100%;
+        float: right;
+    }
+
+    .circular_spacer_2 {
+        clip-path: circle(50% at 0% 100%);
+        shape-outside: circle(50% at 0% 100%);
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    .circular_spacer_3 {
+        clip-path: circle(50% at 100% 0%);
+        shape-outside: circle(50% at 100% 0%);
+        width: 50%;
+        height: 100%;
+        float: right;
+    }
+
+    .circular_spacer_4 {
+        clip-path: circle(50% at 0% 0%);
+        shape-outside: circle(50% at 0% 0%);
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    .engineering_success_box.top-0.start-0 {
+        border-style: none dashed dashed none;
+        shape-outside: circle(50% at 0 0);
+    }
+
+
+
+    .engineering_success_box.top-0.end-0 {}
+
+    .engineering_success_box.bottom-0.start-0 {}
+
+    .engineering_success_box.bottom-0.end-0 {
+        border-style: dashed none none dashed;
+    }
+
+    .engineering_success_center_top {
+        z-index: 999;
+    }
+</style>
+
+
+</html>
