@@ -141,17 +141,17 @@
             <h5 class="">Interdisciplinarity has the ambition and objective of integrating knowledge to give a new
                 epistemological look at knowledge.</h5>
 
-                    <div class="nav nav-pills  justify-content-start mt-4 mb-2 " id="nav-tab-main" role="tablist">
-                        <button class="btn btn-light btn-lg  active mx-2 wiki-tab-btn" id="nav-design-tab" data-bs-toggle="tab"
-                            data-bs-target="#pills-design" type="button" role="tab" aria-controls="pills-design"
-                            aria-selected="true">Design</button>
-                        <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-social-tab" data-bs-toggle="tab"
-                            data-bs-target="#pills-social" type="button" role="tab" aria-controls="pills-social"
-                            aria-selected="false">Social Sciences</button>
-                        <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-other-tab" data-bs-toggle="tab"
-                            data-bs-target="#pills-other" type="button" role="tab" aria-controls="pills-other"
-                            aria-selected="false">Other</button>
-                    </div>
+            <div class="nav nav-pills  justify-content-start mt-4 mb-2 " id="nav-tab-main" role="tablist">
+                <button class="btn btn-light btn-lg  active mx-2 wiki-tab-btn" id="nav-design-tab" data-bs-toggle="tab"
+                    data-bs-target="#pills-design" type="button" role="tab" aria-controls="pills-design"
+                    aria-selected="true">Design</button>
+                <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-social-tab" data-bs-toggle="tab"
+                    data-bs-target="#pills-social" type="button" role="tab" aria-controls="pills-social"
+                    aria-selected="false">Social Sciences</button>
+                <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-other-tab" data-bs-toggle="tab"
+                    data-bs-target="#pills-other" type="button" role="tab" aria-controls="pills-other"
+                    aria-selected="false">Other</button>
+            </div>
         </div>
 
         <!-- DEMO TABS -->
@@ -187,29 +187,31 @@
 
                     <div v-if="current_slide_index['design'].index==0" class="container mx-auto">
 
-                        <div class="container wiki-card mx-auto p-3 row">
-                            <div class="col-sm-6 row">
-                                <div class="col-sm-2 text-end">
-                                    <h1>
-                                        01
-                                    </h1>
-                                </div>
-                                <div class="col-sm-10">
-                                    <h2>title </h2>
-                                    <p>
-                                        content
-                                    </p>
-                                </div>
-                            </div>
 
-                            <div class="col-sm-6 justify-content-md-center">
-                                <img class="img-square align-middle " src="https://placehold.co/600x600?text=snippet"
-                                    all="">
-                            </div>
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="wiki-card-2columns">
+                                content
+                            </p>
                         </div>
 
 
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <h2>Our proccess </h2>
+                            <h3>subtitle </h3>
 
+                            <p class="wiki-card-2columns">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 ">
+                            <h2>Design Thinking</h2>
+                            <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                class="w-75">
+                        </div>
 
                     </div>
 
@@ -279,14 +281,14 @@
                     </div>
 
 
-                    <div v-if="current_slide_index['other'].index==1" class="container">
+                    <!-- <div v-if="current_slide_index['other'].index==1" class="container">
 
 
                     </div>
 
                     <div v-if="current_slide_index['other'].index==2" class="container">
 
-                    </div>
+                    </div> -->
 
 
 
@@ -457,10 +459,10 @@
         columns: 2;
     }
 
-    
-    .wiki-tab-btn{
-        background-color: #ffffff20!important;
-        border-color: #ffffff00!important;
+
+    .wiki-tab-btn {
+        background-color: #ffffff20 !important;
+        border-color: #ffffff00 !important;
         border-radius: 0px;
         margin: 0px;
         padding: .2rem .5rem;
@@ -469,19 +471,19 @@
         font-family: 'Open Sans';
 
     }
-    .wiki-tab-btn.active{
-        border-bottom: 10px solid rgb(255, 0, 0)!important;
+
+    .wiki-tab-btn.active {
+        border-bottom: 10px solid rgb(255, 0, 0) !important;
         color: #ffffff;
     }
-    .wiki-tab-btn:hover{
+
+    .wiki-tab-btn:hover {
         color: #ffffff;
     }
-    
+
     /*button:focus{
         background-color:olive!important;
     }*/
-    
-
 </style>
 
 
@@ -504,41 +506,37 @@
                     }
                 },
                 slides_content: {
-                    "design": [
-                      {
-                        "title": " User Driven Mindset",
-                        "content": "An iterative design process in which designers focus on the users and their needs in each phase of the design process."
-                      },
-                      {
-                        "title": "Communication",
-                        "content": "Our means of understanding each other. It is our tool to get what we need and what we want, as well as what we are."
-                      },
-                      {
-                        "title": "Design & Development",
-                        "content": "It seeks to ensure that the person who comes to the site has a good browsing experience, and can understand and interact correctly with the resources they need."
-                      }
+                    "design": [{
+                            "title": " User Driven Mindset",
+                            "content": "An iterative design process in which designers focus on the users and their needs in each phase of the design process."
+                        },
+                        {
+                            "title": "Communication",
+                            "content": "Our means of understanding each other. It is our tool to get what we need and what we want, as well as what we are."
+                        },
+                        {
+                            "title": "Design & Development",
+                            "content": "It seeks to ensure that the person who comes to the site has a good browsing experience, and can understand and interact correctly with the resources they need."
+                        }
                     ],
-                    "social": [
-                      {
-                        "title": " Overlook",
-                        "content": "Why is interdisciplinarity vital?"
-                      },
-                      {
-                        "title": "Intersection: Human Practices",
-                        "content": "We made sure that the DBTL cycle was applied to all the areas of our project, and modeling was no exception. Here we describe how the mathematical models were built upon interaction with professionals, and based on their feedback we progressively improved our models."
-                      },
-                      {
-                        "title": "Educational Material",
-                        "content": "In order to make the social sciences perspective for synthetic biologists and other people from STEM, we developed easy to understand and apply educational content focused in different segments. "
-                      }
+                    "social": [{
+                            "title": " Overlook",
+                            "content": "Why is interdisciplinarity vital?"
+                        },
+                        {
+                            "title": "Intersection: Human Practices",
+                            "content": "We made sure that the DBTL cycle was applied to all the areas of our project, and modeling was no exception. Here we describe how the mathematical models were built upon interaction with professionals, and based on their feedback we progressively improved our models."
+                        },
+                        {
+                            "title": "Educational Material",
+                            "content": "In order to make the social sciences perspective for synthetic biologists and other people from STEM, we developed easy to understand and apply educational content focused in different segments. "
+                        }
                     ],
-                    "other": [
-                      {
+                    "other": [{
                         "title": " Intellectual Property & Regulation",
                         "content": "Our design process, not jus graphic but communication and development, was built on three pillars."
-                      }
-                    ]
-                  },
+                    }]
+                },
             }
         },
         methods: {},
