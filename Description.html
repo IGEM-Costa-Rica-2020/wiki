@@ -141,35 +141,21 @@
             <h5 class="">Interdisciplinarity has the ambition and objective of integrating knowledge to give a new
                 epistemological look at knowledge.</h5>
 
-                    <div class="nav nav-pills  justify-content-start mt-4 mb-2 " id="nav-tab-main" role="tablist">
-                        <button class="btn btn-light btn-lg  active mx-2 wiki-tab-btn" id="nav-design-tab" data-bs-toggle="tab"
-                            data-bs-target="#pills-circuit" type="button" role="tab" aria-controls="pills-circuit"
-                            aria-selected="true">Circuit</button>
-                        <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-social-tab" data-bs-toggle="tab"
-                            data-bs-target="#pills-framework" type="button" role="tab" aria-controls="pills-framework"
-                            aria-selected="false">Framework</button>
-                        <!-- <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-other-tab" data-bs-toggle="tab"
+            <div class="nav nav-pills  justify-content-start mt-4 mb-2 " id="nav-tab-main" role="tablist">
+                <button class="btn btn-light btn-lg  active mx-2 wiki-tab-btn" id="nav-design-tab" data-bs-toggle="tab"
+                    data-bs-target="#pills-circuit" type="button" role="tab" aria-controls="pills-circuit"
+                    aria-selected="true">Circuit</button>
+                <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-social-tab" data-bs-toggle="tab"
+                    data-bs-target="#pills-framework" type="button" role="tab" aria-controls="pills-framework"
+                    aria-selected="false">Framework</button>
+                <!-- <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-other-tab" data-bs-toggle="tab"
                             data-bs-target="#pills-other" type="button" role="tab" aria-controls="pills-other"
                             aria-selected="false">Other</button> -->
-                    </div>
+            </div>
         </div>
 
         <!-- DEMO TABS -->
         <div class="">
-            <!-- <nav>
-                <div class="nav nav-pills  justify-content-center py-4 " id="nav-tab-main" role="tablist">
-                    <button class="btn btn-lg btn-outline-primary active mx-2" id="nav-design-tab" data-bs-toggle="tab"
-                        data-bs-target="#pills-circuit" type="button" role="tab" aria-controls="pills-circuit"
-                        aria-selected="true">Design</button>
-                    <button class="btn btn-lg btn-outline-primary mx-2 " id="nav-social-tab" data-bs-toggle="tab"
-                        data-bs-target="#pills-framework" type="button" role="tab" aria-controls="pills-framework"
-                        aria-selected="false">Social Sciences</button>
-                    <button class="btn btn-lg btn-outline-primary mx-2" id="nav-other-tab" data-bs-toggle="tab"
-                        data-bs-target="#pills-other" type="button" role="tab" aria-controls="pills-other"
-                        aria-selected="false">Other</button>
-                </div>
-            </nav> -->
-
 
             <div class="tab-content" id="pills-tabContent">
 
@@ -185,21 +171,18 @@
                     </main-carousel>
 
 
-                    <div v-if="current_slide_index['circuit'].index==0" class="container mx-auto">
+                    <!-- Introduction -->
 
-                        <div class="container wiki-card mx-auto p-3 row">
-                            <div class="col-sm-6 row">
-                                <div class="col-sm-2 text-end">
-                                    <h1>
-                                        01
-                                    </h1>
-                                </div>
-                                <div class="col-sm-10">
-                                    <h2>title </h2>
-                                    <p>
-                                        content
-                                    </p>
-                                </div>
+                    <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <!-- <h2>title </h2> -->
+                                <!-- <h3>subtitle </h3>" -->
+                                <p>
+                                    For the design of said circuit we defined three essential needs:
+
+                                </p>
                             </div>
 
                             <div class="col-sm-6 justify-content-md-center">
@@ -209,67 +192,406 @@
                         </div>
 
 
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <!-- <h2>title </h2> -->
+                            <!-- <h3>subtitle </h3> -->
+
+                            <p class="wiki-card-2columns">
+                                We tackled our first design requirement by exhaustive brainstorming and research. Our main idea involved a counter system, hence, multiple mechanisms to perform this count were discussed, ................
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+                            <h1>
+                                title
+                            </h1>
+                            <div class="text-center">
+                                <img src="https//placehold.co/1200x1200?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+
+
 
 
                     </div>
 
 
+
+
+                    <!-- Function -->
                     <div v-if="current_slide_index['circuit'].index==1" class="container">
+
+                        <div class="container wiki-card mx-auto p-3" >
+                            <div class="row">
+                                <div class="col-sm-1 text-end">
+                                    <h1>
+                                        01
+                                    </h1>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h2>Repress-Initialize</h2>
+                                    <h3>subtitle</h3>
+            
+                                    <p>
+                                        
+                                    </p>
+                                </div>
+                                <div class="col-sm-4  ">
+                                    <img src="https://placehold.co/300x300?text=snippet" class="img-round align-middle" all="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3">
+                            <div class="row">
+                                <div class="col-sm-4  ">
+                                    <img src="https://placehold.co/300x300?text=snippet" class="img-round align-middle" all="">
+                                </div>
+                                <div class="col-sm-1 text-end">
+                                    <h1>
+                                        02
+                                    </h1>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h2>Count</h2>
+                                    <h3>subtitle</h3>
+            
+                                    <p>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3" >
+                            <div class="row">
+                                <div class="col-sm-1 text-end">
+                                    <h1>
+                                        03
+                                    </h1>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h2>Expand Count</h2>
+                                    <h3>subtitle</h3>
+            
+                                    <p>
+                                        
+                                    </p>
+                                </div>
+                                <div class="col-sm-4  ">
+                                    <img src="https://placehold.co/300x300?text=snippet" class="img-round align-middle" all="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3">
+                            <div class="row">
+                                <div class="col-sm-4  ">
+                                    <img src="https://placehold.co/300x300?text=snippet" class="img-round align-middle" all="">
+                                </div>
+                                <div class="col-sm-1 text-end">
+                                    <h1>
+                                        04
+                                    </h1>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h2>Kill Switch</h2>
+                                    <h3>subtitle</h3>
+            
+                                    <p>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
 
 
                     </div>
 
                     <div v-if="current_slide_index['circuit'].index==2" class="container">
 
+                        <div class="container  mx-auto p-3 ">
+                            <p>In the following image you can see the design of our whole device and, by clicking on the boxes below, you can access our insight on each of the different parts and modules. 
+                            </p>
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+
+                        <nav>
+                            <div class="nav nav-pills  justify-content-center py-4 " id="nav-tab" role="tablist">
+
+                                <button class="btn btn-lg btn-outline-primary active mx-2 my-2" id="nav-promoters-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-promoters" type="button" role="tab"
+                                    aria-controls="pills-promoters" aria-selected="true"
+                                    style=" border-radius: 50px;">promoters </button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-recombinases-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-recombinases" type="button" role="tab"
+                                    aria-controls="pills-recombinases" aria-selected="false"
+                                    style=" border-radius: 50px;">recombinases</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-crispr-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-crispr" type="button" role="tab"
+                                    aria-controls="pills-crispr" aria-selected="false"
+                                    style=" border-radius: 50px;">crispr</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-operator-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-operator" type="button" role="tab"
+                                    aria-controls="pills-operator" aria-selected="false"
+                                    style=" border-radius: 50px;">Promoter Strength</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-multilay-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-multilay" type="button" role="tab"
+                                    aria-controls="pills-multilay" aria-selected="false"
+                                    style=" border-radius: 50px;">Multi layered</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-other-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-other" type="button" role="tab"
+                                    aria-controls="pills-other" aria-selected="false"
+                                    style=" border-radius: 50px;">other elements</button>
+                            </div>
+
+                        </nav>
+
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="pills-promoters" role="tabpanel"
+                                aria-labelledby="pills-promoters-tab">
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-recombinases" role="tabpanel"
+                                aria-labelledby="pills-recombinases-tab">
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-crispr" role="tabpanel"
+                                aria-labelledby="pills-crispr-tab">
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-operator" role="tabpanel"
+                                aria-labelledby="pills-operator-tab">
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-other" role="tabpanel"
+                                aria-labelledby="pills-other-tab">
+
+                            </div>
+
+                            <div class="tab-pane fade show " id="pills-multilay" role="tabpanel"
+                                aria-labelledby="pills-multilay-tab">
+
+                            </div>
+
+                        </div>
+
+
+
+
                     </div>
 
 
 
 
+                    <div v-if="current_slide_index['circuit'].index==3" class="container">
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <!-- <h2>goal</h2> -->
+                            <!-- <h3>subtitle </h3> -->
+
+                            <p class="wiki-card-2columns">
+                                The framework is divided into three stages to address all relevant aspects. First,
+                                the framework expands on how a circuit, cell or gene regulatory network can be a
+                                sequential system in the f how to............................................
+                            </p>
+                        </div>
+
+
+
+                    </div>
+
+                    <div v-if="current_slide_index['circuit'].index==4" class="container">
+
+                        <div class="container  mx-auto p-3 ">
+                            <h1>
+                                title
+                            </h1>
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+
+                        <nav>
+                            <div class="nav nav-pills  justify-content-center py-4 " id="nav-tab" role="tablist">
+
+                                <button class="btn btn-lg btn-outline-primary active mx-2 my-2" id="nav-promoters-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-promoters" type="button" role="tab"
+                                    aria-controls="pills-promoters" aria-selected="true"
+                                    style=" border-radius: 50px;">promoters </button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-recombinases-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-recombinases" type="button" role="tab"
+                                    aria-controls="pills-recombinases" aria-selected="false"
+                                    style=" border-radius: 50px;">recombinases</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-crispr-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-crispr" type="button" role="tab"
+                                    aria-controls="pills-crispr" aria-selected="false"
+                                    style=" border-radius: 50px;">crispr</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-operator-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-operator" type="button" role="tab"
+                                    aria-controls="pills-operator" aria-selected="false"
+                                    style=" border-radius: 50px;">Promoter Strength</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-multilay-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-multilay" type="button" role="tab"
+                                    aria-controls="pills-multilay" aria-selected="false"
+                                    style=" border-radius: 50px;">Multi layered</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-other-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-other" type="button" role="tab"
+                                    aria-controls="pills-other" aria-selected="false"
+                                    style=" border-radius: 50px;">other elements</button>
+                            </div>
+
+                        </nav>
+
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="pills-promoters" role="tabpanel"
+                                aria-labelledby="pills-promoters-tab">
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-recombinases" role="tabpanel"
+                                aria-labelledby="pills-recombinases-tab">
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-crispr" role="tabpanel"
+                                aria-labelledby="pills-crispr-tab">
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-operator" role="tabpanel"
+                                aria-labelledby="pills-operator-tab">
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-other" role="tabpanel"
+                                aria-labelledby="pills-other-tab">
+
+                            </div>
+
+                            <div class="tab-pane fade show " id="pills-multilay" role="tabpanel"
+                                aria-labelledby="pills-multilay-tab">
+
+                            </div>
+
+                        </div>
 
 
 
 
-
-
-
-
+                    </div>
                 </div>
-                <!-- pills-circuit -->
 
 
-                <!-- pills-framework -->
-                <div class="tab-pane fade" id="pills-framework" role="tabpanel" aria-labelledby="pills-framework-tab">
 
 
-                    <main-carousel v-bind:current_slide="current_slide_index['framework']"
-                        v-bind:slides_content="slides_content['framework']" :id="1">
-                    </main-carousel>
 
 
-                    <div v-if="current_slide_index['framework'].index==0" class="container">
 
 
-                    </div>
 
 
-                    <div v-if="current_slide_index['framework'].index==1" class="container">
 
-
-                    </div>
-
-                    <div v-if="current_slide_index['framework'].index==2" class="container">
-
-                    </div>
-
-
-                </div>
-                <!-- pills-framework -->
-
-                
             </div>
+            <!-- pills-circuit -->
+
+
+            <!-- pills-framework -->
+            <div class="tab-pane fade" id="pills-framework" role="tabpanel" aria-labelledby="pills-framework-tab">
+
+
+                <main-carousel v-bind:current_slide="current_slide_index['framework']"
+                    v-bind:slides_content="slides_content['framework']" :id="1">
+                </main-carousel>
+
+
+                <!-- Foundational Concept -->
+                <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+
+                </div>
+
+                <!-- Framework´s architecture -->
+                <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+
+                </div>
+
+                <!-- Biological state machines: -->
+                <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+
+                </div>
+
+                <!-- Description -->
+                <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+
+                </div>
+
+                <!-- Execution -->
+                <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+
+                </div>
+
+                <!-- Software Framework -->
+                <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+
+                </div>
+
+                <!-- Conceptual Framework APPLIED TO DEVELOP THE SOFTWARE FRAMEWORK -->
+                <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+                </div>
+
+
+            </div>
+            <!-- pills-framework -->
+
+
         </div>
-        <!-- DEMO TABS -->
+    </div>
+    <!-- DEMO TABS -->
 
 
 
@@ -428,10 +750,10 @@
         columns: 2;
     }
 
-    
-    .wiki-tab-btn{
-        background-color: #ffffff20!important;
-        border-color: #ffffff00!important;
+
+    .wiki-tab-btn {
+        background-color: #ffffff20 !important;
+        border-color: #ffffff00 !important;
         border-radius: 0px;
         margin: 0px;
         padding: .2rem .5rem;
@@ -440,19 +762,19 @@
         font-family: 'Open Sans';
 
     }
-    .wiki-tab-btn.active{
-        border-bottom: 10px solid rgb(255, 0, 0)!important;
+
+    .wiki-tab-btn.active {
+        border-bottom: 10px solid rgb(255, 0, 0) !important;
         color: #ffffff;
     }
-    .wiki-tab-btn:hover{
+
+    .wiki-tab-btn:hover {
         color: #ffffff;
     }
-    
+
     /*button:focus{
         background-color:olive!important;
     }*/
-    
-
 </style>
 
 
@@ -473,18 +795,33 @@
                 },
                 slides_content: {
                     "circuit": [{
-                            title: " design Suicide Circuit",
+                            title: "Introduction",
                             content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
                         },
                         {
-                            title: "Math Model",
-                            content: "We made sure that the DBTL cycle was applied to all the areas of our project, and modeling was no exception. Here we describe how the mathematical models were built upon interaction with professionals, and based on their feedback we progressively improved our models."
+                            title: "Function",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXX"
                         },
                         {
-                            title: "Framework",
+                            title: "Architecture and theoretical basis",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "Characteristics",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "Functional Animation",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "Extras",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "References",
                             content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
                         }
-
                     ],
                     "framework": [{
                             title: " social Suicide Circuit",
@@ -492,7 +829,7 @@
                         },
                         {
                             title: "Math Model",
-                            content: "We made sure that the DBTL cycle was applied to all the areas of our project, and modeling was no exception. Here we describe how the mathematical models were built upon interaction with professionals, and based on their feedback we progressively improved our models."
+                            content: "XXXXXXXXXXXXXXXXXXXXXX"
                         },
                         {
                             title: "Framework",
