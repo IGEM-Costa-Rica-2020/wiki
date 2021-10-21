@@ -1,0 +1,962 @@
+<html>
+
+
+
+<!-- BORRAR -->
+
+<head>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+</head>
+
+<!-- BORRAR -->
+
+
+
+
+<!-- <head>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapMinCSS&action=raw&ctype=text/css" />
+
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <script src="https://2020.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
+
+</head> -->
+
+
+
+
+
+
+<!-- COMPONENTE CAROUSEL -->
+<style>
+    .carousel .carousel-caption {
+        padding-top: 2rem;
+        height: 100%;
+    }
+
+    .carousel .carousel-caption h3 {
+        font-size: 50px;
+        color: white !important;
+
+    }
+
+    .carousel .carousel-caption p {
+        /*font-size: 12px;*/
+    }
+
+    .page_content_sections .page_content_section {
+        display: none;
+        padding: 10%;
+        padding-top: 20px;
+    }
+
+    .page_content_sections .page_content_section_active {
+        display: block;
+    }
+</style>
+
+<script type="text/x-template" id="main_carousel">
+    <div>
+        <div>
+            <div :id="'carouselComponent'+id" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"  ref="maincarousel"  >
+
+
+                <ol class="carousel-indicators">
+                    <li v-for="(slide, index) in slides_content" :data-bs-target="'#carouselComponent'+id"  v-bind:data-bs-slide-to="index" v-bind:class="{ active: index==0 }"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+
+
+                    <div class="carousel-item" v-for="(slide, index) in slides_content"  v-bind:class="{ active: index==0 }">
+                        <svg class="bd-placeholder-img" width="100%" height="250px" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#1A1A1A" />
+                        </svg>
+
+                        <div class="carousel-caption text-start">
+                            <h3 class="slide_tittle">
+                                {{slide.title}}
+
+                            </h3>
+                            <p class="slide_text w-75">
+                                {{slide.content}}
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+
+            <button class="carousel-control-prev" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+    </div>       
+</script>
+
+
+<script>
+    Vue.component("main-carousel", {
+        data: {},
+        props: {
+            current_slide: {
+                type: Object,
+                default: "casa"
+            },
+            slides_content: {
+                type: Array,
+                default: []
+            },
+            id: {
+                type: Number,
+                default: 0
+            }
+        },
+
+        template: "#main_carousel",
+        methods: {
+            updateCurrentSlide: function (event) {
+                this.current_slide.index = event.to;
+            },
+
+        },
+        mounted() {
+            this.$refs.maincarousel.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+        }
+    });
+</script>
+<!-- COMPONENTE CAROUSEL -->
+
+
+
+
+<!-- CONTENIDO PRINCIPAL -->
+
+<body>
+    <div id="app">
+
+
+        <div class="position-relative overflow-hidden p-3 p-md-5  text-start  main-title">
+            <img class="main-title-bg" src="https://picsum.photos/id/1042/1200/400" alt="">
+            <h1>Model</h1>
+            <h5 class="">The main purposes to develop our mathematical model were to gain better understanding of our
+                project, predict if it is likely to work and optimize parameters for the lab. We adopted different
+                approaches to fulfill these requirements.</h5>
+        </div>
+
+
+        <main-carousel v-bind:current_slide="current_slide_index" v-bind:slides_content="slides_content" :id="1">
+        </main-carousel>
+
+        <!-- overview -->
+        <div v-if="current_slide_index.index==0" class="container">
+
+
+            <div class="accordion accordion-flush" id="accordionPanelsStayOpenModel1">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingModel1-1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseModel1-1" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseModel1-1">
+                            Accordion Item #1
+                        </button>
+
+                    </h2>
+                    <div id="panelsStayOpen-collapseModel1-1" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingModel1-1">
+                        <div class="accordion-body">
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="  ">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="contain">
+
+
+                                <p>\[
+                                    \frac{d[LRI_1]}{dt} = k_{+r}[PBI] - k_{-r1}[LRI_1] + k_{-syn}[LRI_2] -
+                                    k_{+syn}[LRI_1]
+                                    \]</p>
+
+                                <p>\[
+                                    \frac{d[PBIR_1]}{dt} = k_{+r}[LRIR] - k_{-r2}[PBIR_1] + k_{-synr}[PBIR_2] -
+                                    k_{+synr}[PBIR_1]
+                                    \]</p>
+
+                                <p>\[
+                                    \frac{d[PB_{tot}]}{dt} = k_{-r1}[LRI_1] - k_{+r}[PBI] + k_{+r}[LRIR] -
+                                    k_{-r2}[PBIR_1]
+                                    \]</p>
+
+                                <p>\[
+                                    [IR] = \frac{[I][R]}{K_{ir}}
+                                    \]</p>
+
+                                <p>\[
+                                    [PBI] = \frac{[I]^4[PB]}{K_{bI}}
+                                    \]</p>
+
+                                <p>\[
+                                    [LRI_2] = \frac{[I]^4[LR]}{K_{bI}}
+                                    \]</p>
+
+                                <p>\[
+                                    [LRIR] = \frac{[IR]^4[LR]}{K_{bI}}
+                                    \]</p>
+
+                                <p>\[
+                                    [PBIR_2] = \frac{[IR]^4[PB]}{K_{bI}}
+                                    \]</p>
+
+
+
+
+
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+                            <div class="container">
+
+
+
+                                <p>\[
+                                    \frac{d[mRNA_{Recombinase}]}{dt} = k_{tscr}Pulse(t) - k_{rna}[mRNA_{Recombinase}]
+                                    \]</p>
+
+                                <p>\[
+                                    \frac{d[Recombinase]}{dt} = k_{int}[mRNA_{Recombinase}] - k_{dil}[Recombinase]
+                                    \]</p>
+
+                                <p>\[
+                                    \frac{d[mRNA_{RDF}]}{dt} = k_{tscr}Pulse(t) - k_{rna}[mRNA_{RDF}]
+                                    \]</p>
+
+                                <p>\[
+                                    \frac{d[RDF]}{dt} = k_{rdf\_tsl}[mRNA_{RDF}] - k_{dil}[RDF]
+                                    \]</p>
+
+                                <p>\[
+                                    Pulse(t) = 0.5(tanh(\frac{t-ara_{on}}{k_t}) - tanh(\frac{t-ara_{off}}{k_t}))
+                                    \]</p>
+
+                            </div>
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingModel1-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseModel1-2" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseModel1-2">
+                            Accordion Item #2
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseModel1-2" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingModel1-2">
+                        <div class="accordion-body">
+
+
+
+
+                            <p class="">
+                                <ul>
+                                    <li>sadsa</li>
+                                    <li>sadsad</li>
+                                    <li>asdasd</li>
+                                </ul>
+                            </p>
+
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                                <h5>adasda</h5>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                                <h5>adasda</h5>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                                <h5>adasda</h5>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                                <h5>adasda</h5>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                                <h5>adasda</h5>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingModel1-3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseModel1-3" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseModel1-3">
+                            Accordion Item #3
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseModel1-3" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingModel1-3">
+                        <div class="accordion-body">
+
+
+
+
+                            <div class="container ">
+                                <table class="tg mx-auto">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-0pky"><span style="font-weight:bold">Parameter</span></th>
+                                            <th class="tg-0pky"><span style="font-weight:bold">Meaning</span></th>
+                                            <th class="tg-0pky"><span style="font-weight:bold">Value</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-0pky">\(k_{int}\)</td>
+                                            <td class="tg-0pky">Recombinase translation rate</td>
+                                            <td class="tg-0pky">\(3 \mu M h^{-1}\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-0pky">\(k_{dil}\)</td>
+                                            <td class="tg-0pky">Recombinase/RDF dilution/degradation rate</td>
+                                            <td class="tg-0pky">\(2h^{-1}\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-0pky">\(k_{tscr}\)</td>
+                                            <td class="tg-0pky">Recombinase mRNA transcription rate</td>
+                                            <td class="tg-0pky">\(120h^{-1}\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-0pky">\(k_{rna}\)</td>
+                                            <td class="tg-0pky">Recombinase mRNA degradation rate</td>
+                                            <td class="tg-0pky">\(4h^{-1}\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-0pky">\(k_{rdf\_{tsl}}\)</td>
+                                            <td class="tg-0pky">RDF translation rate</td>
+                                            <td class="tg-0pky">\(0.3h^{-1}\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-0pky">\(k_{t}\)</td>
+                                            <td class="tg-0pky">Characteristic time of inducer dilution due to cell
+                                                division
+                                            </td>
+                                            <td class="tg-0pky">\(0.3 h\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-0pky">\(ara_{on}\)</td>
+                                            <td class="tg-0pky">Time at which pulse of inducer is turn on</td>
+                                            <td class="tg-0pky">\(0 h\)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-0pky">\(ara_{off}\)</td>
+                                            <td class="tg-0pky">Time at which pulse of inducer is turn off</td>
+                                            <td class="tg-0pky">\(0.2 h\)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h5 class="text-center">asds</h5>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingModel1-4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseModel1-4" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseModel1-4">
+                            Accordion Item 4
+
+
+                        </button>
+
+
+                    </h2>
+                    <div id="panelsStayOpen-collapseModel1-4" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingModel1-4">
+                        <div class="accordion-body">
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h2>title </h2>
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+
+                                <h5 class="text-center">asdas</h5>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingModel1-5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseModel1-5" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseModel1-5">
+                            Accordion Item 5
+
+
+                        </button>
+
+
+                    </h2>
+                    <div id="panelsStayOpen-collapseModel1-5" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingModel1-5">
+                        <div class="accordion-body">
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <!-- Scope -->
+        <div v-if="current_slide_index.index==1" class="container">
+
+
+
+
+            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                <p class="">
+                    content
+                </p>
+            </div>
+            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                <div class="text-center">
+                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
+                </div>
+
+                <h5 class="text-center">asdas</h5>
+            </div>
+            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                <div class="text-center">
+                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
+                </div>
+
+                <h5 class="text-center">asdas</h5>
+            </div>
+
+            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                <p class="">
+                    content
+                </p>
+            </div>
+
+
+            <div class="text-center">
+
+                <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Descargar Archivos pegar
+                    link</button>
+
+
+            </div>
+        </div>
+
+        <!-- interviews -->
+        <div v-if="current_slide_index.index==2" class="container">
+
+
+            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                <p class="">
+                    content
+                </p>
+            </div>
+
+            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                <div class="text-center">
+                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
+                </div>
+
+                <h5 class="text-center">asdas</h5>
+            </div>
+
+            <div>
+
+                <p>\[
+                    \begin{pmatrix}
+                    0.01 &amp; 0.99 &amp; 0 &amp; 0 \\
+                    0 &amp; 0.1 &amp; 0.9 &amp; 0 \\
+                    0 &amp; 0 &amp; 0.19 &amp; 0.81 \\
+                    0 &amp; 0 &amp; 0 &amp; 1 \\
+                    \end{pmatrix}
+                    \]</p>
+                
+                
+            </div>
+
+
+            <div class="container mx-auto">
+
+
+                <p>\[
+                    \begin{pmatrix}
+                    0.01 &amp; 0.99 &amp; 0 &amp; 0 \\
+                    0 &amp; 0.1 &amp; 0.9 &amp; 0 \\
+                    0 &amp; 0 &amp; 0.19 &amp; 0.81 \\
+                    0 &amp; 0 &amp; 0 &amp; 1 \\
+                    \end{pmatrix}
+                    \]</p>
+                
+                
+                
+                
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+        <!-- results -->
+        <div v-if="current_slide_index.index==3" class="container">
+
+
+
+
+        </div>
+
+
+        <!-- publick engagement -->
+        <!-- <div v-if="current_slide_index.index==0" class="container">
+
+            
+        </div> -->
+
+
+        <!-- decision tree -->
+        <div v-if="current_slide_index.index==4" class="container">
+
+
+
+
+
+
+        </div>
+
+
+
+        <!-- Metabolic-->
+        <div v-if="current_slide_index.index==5" class="container">
+
+
+        </div>
+
+
+    </div>
+
+</body>
+<!-- CONTENIDO PRINCIPAL -->
+
+<style>
+
+</style>
+
+<style>
+    #globalWrapper {
+        font-size: 100% !important;
+    }
+
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: var(--bs-body-font-family) !important;
+        overflow: visible !important
+    }
+
+    #HQ_page p {
+        font-family: var(--bs-body-font-family) !important;
+        font-size: var(--bs-body-font-size) !important;
+    }
+
+
+
+    /*
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+     font-family:"Arial",Gadget,sans-serif;
+     border-bottom:none;
+     font-weight:bold
+    }
+
+    #HQ_page p {
+        font-family:"Arial",Helvetica,sans-serif;
+        font-size:13px;
+        text-align:justify
+       }
+       
+    /*body {
+        font-family: var(--bs-body-font-family) !important;
+    }*/
+
+    .double-text {
+        background-color: #1A1A1A;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        -webkit-text-stroke-color: rgb(255, 255, 255);
+        font-size: 90px;
+        font-family: 'Open Sans';
+        font-weight: 800 !important;
+
+        text-shadow:
+            6px 8px 0px rgb(255, 255, 255);
+        opacity: 1;
+        text-transform: uppercase;
+        letter-spacing: -1.03px;
+    }
+
+
+    .main-title h1 {
+        /*font-family: 'Open Sans'; */
+        font-weight: 800 !important;
+        font-size: 55px;
+        -webkit-text-fill-color: #ffffff00;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: #ffffff;
+    }
+
+
+    .main-title h5 {
+        /*font-family: 'Open Sans'; */
+        font-size: 15px;
+        color: #ffffff;
+        width: 40%
+    }
+
+    .main-title-bg {
+        opacity: 0.9;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -99;
+    }
+
+    .wiki-card {}
+
+    .wiki-card .img-round {
+        border-radius: 50%;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .wiki-card .img-square {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .wiki-card h1 {
+        /*margin-right: 10vw;*/
+        color: #E2474B;
+        font-size: calc(2rem + 1.5vw);
+        /*font-size: 56px;*/
+        font-weight: bold;
+        letter-spacing: -0.8px;
+    }
+
+    .wiki-card h2 {
+        color: #27262D;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    .wiki-card h3 {
+        color: #626262;
+        font-size: 18px;
+        letter-spacing: -0.2px;
+        line-height: 19px;
+    }
+
+    .wiki-card p {
+        color: #27262D;
+        /*line-height: 24px;*/
+    }
+
+    .wiki-card p.wiki-card-2columns {
+        columns: 2;
+    }
+</style>
+
+
+
+
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-0pky {
+        border-color: inherit;
+        text-align: left;
+        vertical-align: top
+    }
+</style>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                isActive: true,
+                message: 'hello app',
+                current_slide_index: {
+                    index: 0
+                },
+                current_slide_index2: {
+                    index: 0
+                },
+                slides_content:
+
+                    [{
+                            title: "ODE's",
+                            content: "We adapted a serine recombination model to our system in order to study and predict kinetics behaviour of species involved in the process and how that would affect our system. We also used it as a tool to optimize parameters for the lab."
+                        },
+                        {
+                            title: "Gillespie Algorithm",
+                            content: "Randomness plays an important role in biology, especially in microscopic events which are determined by random clashes of molecules that produce a chemical reaction. By applying the gillespie algorithm, we adapted our differential equations to randomize our process."
+                        },
+                        {
+                            title: "Markov Model",
+                            content: "We would like to know how likely it is that our genetic counter works, for that we adopted a Markov model approach in order to have an idea in terms of probabilities."
+                        },
+                        {
+                            title: "Maximum Population",
+                            content: "Motivated by the possible applications of our circuit, we developed this model and tool in order to gain insight into how a whole population of bacteria with a specific purpose would behave once it is released with our genetic counter inside them."
+                        },
+                        {
+                            title: "Decision Tree",
+                            content: "Here we present an original idea developed by our own, which marries the concept of sequential logic and construction of genetic circuits. We hope this work can serve as a basis to find hidden patterns on decision trees."
+                        },
+                        {
+                            title: "Metabolic Burden",
+                            content: "In this section we assess the impact on how metabolic burden would affect the functionality of our genetic counter, building upon the work of Austin UTexas iGEM team 2019."
+                        }
+                    ],
+
+            }
+        },
+        methods: {},
+        mounted() {}
+    })
+</script>
+
+
+</html>
