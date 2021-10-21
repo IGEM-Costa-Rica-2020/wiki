@@ -1,0 +1,2311 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapMinCSS&action=raw&ctype=text/css" />
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
+
+</head>
+
+
+<!-- COMPONENTE CAROUSEL -->
+<style>
+    .carousel .carousel-caption {
+        padding-top: 2rem;
+        height: 100%;
+    }
+
+    .carousel .carousel-caption h3 {
+        font-size: 50px;
+        color: white !important;
+
+    }
+
+    .carousel .carousel-caption p {
+        /*font-size: 12px;*/
+    }
+
+    .page_content_sections .page_content_section {
+        display: none;
+        padding: 10%;
+        padding-top: 20px;
+    }
+
+    .page_content_sections .page_content_section_active {
+        display: block;
+    }
+</style>
+
+<script type="text/x-template" id="main_carousel">
+    <div>
+        <div>
+            <div :id="'carouselComponent'+id" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"  ref="maincarousel"  >
+
+
+                <ol class="carousel-indicators">
+                    <li v-for="(slide, index) in slides_content" :data-bs-target="'#carouselComponent'+id"  v-bind:data-bs-slide-to="index" v-bind:class="{ active: index==0 }"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+
+
+                    <div class="carousel-item" v-for="(slide, index) in slides_content"  v-bind:class="{ active: index==0 }">
+                        <svg class="bd-placeholder-img" width="100%" height="250px" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#1A1A1A" />
+                        </svg>
+
+                        <div class="carousel-caption text-start">
+                            <h3 class="slide_tittle">
+                                {{slide.title}}
+
+                            </h3>
+                            <p class="slide_text w-75">
+                                {{slide.content}}
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+
+            <button class="carousel-control-prev" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+    </div>       
+</script>
+
+
+<script>
+    Vue.component("main-carousel", {
+        data: {},
+        props: {
+            current_slide: {
+                type: Object,
+                default: "casa"
+            },
+            slides_content: {
+                type: Array,
+                default: []
+            },
+            id: {
+                type: Number,
+                default: 0
+            }
+        },
+
+        template: "#main_carousel",
+        methods: {
+            updateCurrentSlide: function (event) {
+                this.current_slide.index = event.to;
+            },
+
+        },
+        mounted() {
+            this.$refs.maincarousel.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+        }
+    });
+</script>
+<!-- COMPONENTE CAROUSEL -->
+
+
+
+
+<!-- CONTENIDO PRINCIPAL -->
+
+<body>
+    <div id="app">
+
+        <div class="position-relative overflow-hidden pt-5 px-5 text-start  main-title">
+            <img class="main-title-bg" src="https://picsum.photos/id/1042/1200/400" alt="">
+            <h1>Description</h1>
+            <h5 class="">This circuit encapsulates the <b>first part </b> of our work. It’s focused on the fulfillment of specific requirements through an <b>in-depth architectural design</b> along with a <b>thorough assessment</b> of the circuit’s behavior and characteristics. </h5>
+
+            <div class="nav nav-pills  justify-content-start mt-4 mb-2 " id="nav-tab-main" role="tablist">
+                <button class="btn btn-light btn-lg  active mx-2 wiki-tab-btn" id="nav-circuit-tab" data-bs-toggle="tab"
+                    data-bs-target="#pills-circuit" type="button" role="tab" aria-controls="pills-circuit"
+                    aria-selected="true">Circuit</button>
+                <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-framework-tab" data-bs-toggle="tab"
+                    data-bs-target="#pills-framework" type="button" role="tab" aria-controls="pills-framework"
+                    aria-selected="false">Framework</button>
+                <!-- <button class="btn btn-light btn-lg  mx-2 wiki-tab-btn" id="nav-other-tab" data-bs-toggle="tab"
+                            data-bs-target="#pills-other" type="button" role="tab" aria-controls="pills-other"
+                            aria-selected="false">Other</button> -->
+            </div>
+        </div>
+
+        <!-- DEMO TABS -->
+        <div class="">
+
+            <div class="tab-content" id="pills-tabContent">
+
+
+
+                <!-- pills-circuit -->
+                <div class="tab-pane fade show active" id="pills-circuit" role="tabpanel"
+                    aria-labelledby="pills-circuit-tab">
+
+
+                    <main-carousel v-bind:current_slide="current_slide_index['circuit']"
+                        v-bind:slides_content="slides_content['circuit']" :id="0">
+                    </main-carousel>
+
+
+                    <!-- Introduction -->
+
+                    <div v-if="current_slide_index['circuit'].index==0" class="container">
+
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <!-- <h2>title </h2> -->
+                                <!-- <h3>subtitle </h3> -->
+                                <p>
+                                    For the design of said circuit we defined three essential needs:
+
+                                    1. A way to <b>determine the lifetime</b> of our engineered bacteria
+
+                                    2. A mechanism to <b>prevent</b> the life span from running out during laboratory manipulation
+
+                                    3. A multilayered <b>killswitch</b> to ensure a safe death
+
+                                </p>
+                            </div>
+
+                            <div class="col-sm-6 justify-content-md-center">
+                                <img class="img-square align-middle " src="https://placehold.co/600x600?text=snippet"
+                                    all="">
+                            </div>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <!-- <h2>title </h2> -->
+                            <!-- <h3>subtitle </h3> -->
+
+                            <p class="wiki-card-2columns">
+                                We tackled our first design requirement by exhaustive brainstorming and research. Our main idea involved a <b>counter system</b>, hence, multiple mechanisms to perform this count were discussed, from binary linear systems dependent on inducible promoters to our final implementation, a <b>sequential logic based recombinase device</b>. Some of the counter systems we assessed and used as inspiration are in the {comparison} section.
+
+                                In spite of the value of the previously mentioned proposals, none of the counters fit our more specific needs which were focused on the complexity, count limit and length of the device. Since we envisioned our circuit being used as an <b>auxiliary</b> to other applications, it was essential that the available count was as high as possible without the length growing exponentially. This left out counters such as the ones proposed by Groningen Team (2011) and Paris Liliane Bettencourt Team (2010), since they behave linearly and “in situations where the same signal is being recorded over multiple occurrences (for example, a series of cell division events), reliably rewritable elements are needed to realize geometric increases in data storage capacity (for example, combinatorial counters capable of recording 2N events given N storage elements)” (ref). Whereas Team: UT-Tokyo’s (2016) approach was not only lengthy but also complex and imposing a high metabolic burden, which were undesired qualities as well. Other proposals, even with 2n capability, displayed undesirable qualities such as the need for very specific regulatory systems such as the delay system presented by Zhao et al. (2019). Also, many of the counters were based on the theoretical assumption that there are n protein-induced promoters or n serine recombinases which don't have crosstalk issues being available, stating the limit at the number of orthogonal characterized recombinases (Yang et al., 2014). While good for stating our counter’s basis, such as the viability of placing several recombinases next to each other and having them behave correctly, we wanted to go even further. This led us to propose our own counter system, which went through several changes and iterations as explained in {engineering success} until we came up with a suitable approach as validated by <b>PhD. Pakpoom Subsoontorn and PhD. Jérôme Bonnet</b>.
+
+                                It’s important to note that our counter is a <b>practical representation</b> and <b>proof of concept</b> for the sequential-logic based development of genetic circuits that we propose in the {conceptual framework}. 
+
+                                The final genetic suicide circuit design consists of different modules, whose functions are explained next.
+
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+                            <h1>
+                                title
+                            </h1>
+                            <div class="text-center">
+                                <img src="https//placehold.co/1200x1200?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!-- Function -->
+                    <div v-if="current_slide_index['circuit'].index==1" class="container">
+
+                        <div class="container wiki-card mx-auto p-3">
+                            <div class="row">
+                                <div class="col-sm-1 text-end">
+                                    <h1>
+                                        01
+                                    </h1>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h2>Repress-Initialize</h2>
+
+                                    <p>
+                                        The first device was designed to maintain the other three <b>inactivated</b> until the user is ready to trigger the countdown with the intent of permitting the manipulation, cultivation, etc. of the engineered organism without the circuit counter being activated. Otherwise, if the circuit wasn’t under strict control, the growing times and uses of these microorganisms would be limited. The proposed mechanism consists of regulating the transcription of the main promoter via repression triggered by an inducible promoter.
+                                    </p>
+                                </div>
+                                <div class="col-sm-4  ">
+                                    <img src="https://placehold.co/300x300?text=snippet" class="img-round align-middle"
+                                        all="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3">
+                            <div class="row">
+                                <div class="col-sm-4  ">
+                                    <img src="https://placehold.co/300x300?text=snippet" class="img-round align-middle"
+                                        all="">
+                                </div>
+                                <div class="col-sm-1 text-end">
+                                    <h1>
+                                        02
+                                    </h1>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h2>Count</h2>
+
+                                    <p>
+                                        Autonomous genetic counter whose purpose is to keep track of the number of <b>times</b> a cell goes through cell division (from the moment the counter is activated by the first device). The counter is based on a cell-cycle coupled promoter, recombinases and unidirectional terminators, as detailed in the {architecture section}. This device is able to count up to <b>2n</b> where n is the number of recombinases.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3">
+                            <div class="row">
+                                <div class="col-sm-1 text-end">
+                                    <h1>
+                                        03
+                                    </h1>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h2>Expand Count</h2>
+
+                                    <p>
+                                        The third device’s purpose is to enable a <b>higher count</b>, hence it’s also regulated by the second device’s promoter and it’s based on a self-excising DNA segment that <b>resets</b> the counter state of the previous device. This system is CRISPR Cas-9 reliant and amplifies the count by x times where x is the number of repeats of self-excising segments. 
+                                    </p>
+                                </div>
+                                <div class="col-sm-4  ">
+                                    <img src="https://placehold.co/300x300?text=snippet" class="img-round align-middle"
+                                        all="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3">
+                            <div class="row">
+                                <div class="col-sm-4  ">
+                                    <img src="https://placehold.co/300x300?text=snippet" class="img-round align-middle"
+                                        all="">
+                                </div>
+                                <div class="col-sm-1 text-end">
+                                    <h1>
+                                        04
+                                    </h1>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h2>Kill Switch</h2>
+
+                                    <p>
+                                        Multi-layered containment system designed with the objective of <b>killing the host</b> cells leaving no trace and whose initiation depends on previous devices. Several toxins are involved in this device, including RelE and NucA1, along with self-targeting single guides to ensure its safety.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                    <div v-if="current_slide_index['circuit'].index==2" class="container">
+
+                        <div class="container  mx-auto p-3 ">
+                            <p>In the following image you can see the design of our whole device and, by clicking on the
+                                boxes below, you can access our insight on each of the different parts and modules.
+                            </p>
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+
+                        <nav>
+                            <div class="nav nav-pills  justify-content-center py-4 " id="nav-tab" role="tablist">
+
+                                <button class="btn btn-lg btn-outline-primary active mx-2 my-2" id="nav-promoters-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-promoters" type="button" role="tab"
+                                    aria-controls="pills-promoters" aria-selected="true"
+                                    style=" border-radius: 50px;">promoters </button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-recombinases-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-recombinases" type="button" role="tab"
+                                    aria-controls="pills-recombinases" aria-selected="false"
+                                    style=" border-radius: 50px;">recombinases</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-terminator-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-terminator" type="button" role="tab"
+                                    aria-controls="pills-terminator" aria-selected="false"
+                                    style=" border-radius: 50px;">terminator</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-crispr-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-crispr" type="button" role="tab"
+                                    aria-controls="pills-crispr" aria-selected="false"
+                                    style=" border-radius: 50px;">crispr</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-operator-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-operator" type="button" role="tab"
+                                    aria-controls="pills-operator" aria-selected="false"
+                                    style=" border-radius: 50px;">Operator</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-multilay-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-multilay" type="button" role="tab"
+                                    aria-controls="pills-multilay" aria-selected="false"
+                                    style=" border-radius: 50px;">Multi layered</button>
+
+                                <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-other-tab"
+                                    data-bs-toggle="tab" data-bs-target="#pills-other" type="button" role="tab"
+                                    aria-controls="pills-other" aria-selected="false"
+                                    style=" border-radius: 50px;">other elements</button>
+                            </div>
+
+                        </nav>
+
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="pills-promoters" role="tabpanel"
+                                aria-labelledby="pills-promoters-tab">
+
+
+                                <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                    <div class="col-sm-6">
+                                        <h2>title </h2>
+                                        <h3>subtitle </h3>
+                                        <p>
+                                            content
+                                        </p>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <h2>title </h2>
+                                        <h3>subtitle </h3>
+                                        <p>
+                                            content
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                    <div class="col-sm-6">
+                                        <h2>title </h2>
+                                        <h3>subtitle </h3>
+                                        <p>
+                                            content
+                                        </p>
+                                    </div>
+
+                                    <div class="col-sm-6 justify-content-md-center">
+                                        <img class="img-square align-middle "
+                                            src="https://placehold.co/600x600?text=snippet" all="">
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-recombinases" role="tabpanel"
+                                aria-labelledby="pills-recombinases-tab">
+
+
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h2>title </h2>
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+                                <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                    <div class="text-center">
+                                        <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                            class="w-75">
+                                    </div>
+                                </div>
+
+                                <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                    <div class="col-sm-6">
+                                        <h2>title </h2>
+                                        <h3>subtitle </h3>
+                                        <p>
+                                            content
+                                        </p>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <h2>title </h2>
+                                        <h3>subtitle </h3>
+                                        <p>
+                                            content
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+                            <div class="tab-pane fade show " id="pills-terminator" role="tabpanel"
+                                aria-labelledby="pills-terminator-tab">
+
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h2>title </h2>
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+                                <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                    <div class="col-sm-6">
+                                        <h2>title </h2>
+                                        <h3>subtitle </h3>
+                                        <p>
+                                            content
+                                        </p>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <h2>title </h2>
+                                        <h3>subtitle </h3>
+                                        <p>
+                                            content
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-crispr" role="tabpanel"
+                                aria-labelledby="pills-crispr-tab">
+
+
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h2>title </h2>
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h2>cas9 </h2>
+                                    <h3>subtitle </h3>
+                                    <p class="">
+                                        content
+                                    </p>
+
+                                    <h2>sg </h2>
+                                    <h3>subtitle </h3>
+                                    <p class="">
+                                        content
+                                    </p>
+
+                                    <h2>ligase </h2>
+                                    <h3>subtitle </h3>
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="tab-pane fade show " id="pills-operator" role="tabpanel"
+                                aria-labelledby="pills-operator-tab">
+
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h2>title </h2>
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="tab-pane fade show " id="pills-multilay" role="tabpanel"
+                                aria-labelledby="pills-multilay-tab">
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h2>title </h2>
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+                            <div class="tab-pane fade show " id="pills-other" role="tabpanel"
+                                aria-labelledby="pills-other-tab">
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h2>pasmid </h2>
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+
+                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                    <h2>degradation </h2>
+                                    <h3>subtitle </h3>
+
+                                    <p class="">
+                                        content
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                    <!-- caracteristicas -->
+                    <div v-if="current_slide_index['circuit'].index==3" class="container">
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+                                <p>
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="col-sm-6 justify-content-md-center">
+                                <img class="img-square align-middle " src="https://placehold.co/600x600?text=snippet"
+                                    all="">
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+                                <p>
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="col-sm-6 justify-content-md-center">
+                                <img class="img-square align-middle " src="https://placehold.co/600x600?text=snippet"
+                                    all="">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- functional animation -->
+                    <div v-if="current_slide_index['circuit'].index==4" class="container">
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <!-- <h2>title </h2> -->
+                            <!-- <h3>subtitle </h3> -->
+
+                            <p class="">
+                                fadsfdsfasdfasdf
+                            </p>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <!-- <h2>title </h2> -->
+                            <!-- <h3>subtitle </h3> -->
+
+                            <p class="wiki-card-2columns">
+                                <ul>
+                                    <li>Example 1</li>
+                                    <li>Example 2</li>
+                                    <li>Example 3</li>
+                                </ul>
+                            </p>
+                        </div>
+
+
+
+
+                        <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Repress
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+
+
+
+                                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                            <div class="text-center">
+                                                <img src="//placehold.co/300x300?text=snippet" alt=""
+                                                    style="width:100% center" class="w-50">
+                                            </div>
+                                        </div>
+
+
+
+                                        <div
+                                            class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                            <h2>title </h2>
+                                            <h3>subtitle </h3>
+
+                                            <p class="">
+                                                content
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        counter
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+
+                                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                            <div class="text-center">
+                                                <img src="//placehold.co/300x300?text=snippet" alt=""
+                                                    style="width:100% center" class="w-50">
+                                            </div>
+                                        </div>
+
+
+
+                                        <div
+                                            class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                            <h2>title </h2>
+                                            <h3>subtitle </h3>
+
+                                            <p class="">
+                                                content
+                                            </p>
+                                        </div>
+
+
+
+                                        <div class="container wiki-card  mx-auto p-3 row wikicard-6-2">
+                                            <div class="col-sm-6 row wiki-card-6 ">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        A
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2>title </h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 row wiki-card-6">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        B
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2> title</h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container wiki-card  mx-auto p-3 row wikicard-6-2">
+                                            <div class="col-sm-6 row wiki-card-6 ">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        A
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2>title </h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 row wiki-card-6">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        B
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2> title</h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="container wiki-card  mx-auto p-3 row wikicard-6-2">
+                                            <div class="col-sm-6 row wiki-card-6 ">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        A
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2>title </h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 row wiki-card-6">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        B
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2> title</h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="container wiki-card  mx-auto p-3 row wikicard-6-2">
+                                            <div class="col-sm-6 row wiki-card-6 ">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        A
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2>title </h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 row wiki-card-6">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        B
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2> title</h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="container wiki-card  mx-auto p-3 row wikicard-6-2">
+                                            <div class="col-sm-6 row wiki-card-6 ">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        A
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2>title </h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 row wiki-card-6">
+                                                <div class="col-sm-2 text-end">
+                                                    <h1>
+                                                        B
+                                                    </h1>
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h2> title</h2>
+                                                    <p>
+                                                        content
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        expend
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+
+                                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                            <div class="text-center">
+                                                <img src="//placehold.co/300x300?text=snippet" alt=""
+                                                    style="width:100% center" class="w-50">
+                                            </div>
+                                        </div>
+
+
+
+                                        <div
+                                            class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                            <h2>title </h2>
+                                            <h3>subtitle </h3>
+
+                                            <p class="">
+                                                content
+                                            </p>
+                                        </div>
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingForth">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseForth" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseForth">
+                                        killswitch
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseForth" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingForth">
+                                    <div class="accordion-body">
+
+
+
+
+
+
+                                        <div
+                                            class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                            <h2>title </h2>
+                                            <h3>subtitle </h3>
+
+                                            <p class="">
+                                                content
+                                            </p>
+                                        </div>
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- EXTRAS -->
+                    <div v-if="current_slide_index['circuit'].index==5" class="container">
+
+
+
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x300?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <!-- <h2>title </h2> -->
+                                <!-- <h3>subtitle </h3> -->
+                                <p>
+                                    content
+                                </p>
+                            </div>
+
+
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+                                <p>
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="col-sm-6 justify-content-md-center">
+                                <img class="img-square align-middle " src="https://placehold.co/600x600?text=snippet"
+                                    all="">
+                            </div>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <!-- <h2>title </h2> -->
+                                <h3>subtitle </h3>
+                                <p>
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="col-sm-6 justify-content-md-center">
+                                <img class="img-square align-middle " src="https://placehold.co/600x600?text=snippet"
+                                    all="">
+                            </div>
+                        </div>
+
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+
+                    <!-- COMPARISON -->
+                    <div v-if="current_slide_index['circuit'].index==6" class="container">
+                        ssss2
+
+                    </div>
+
+                    <!-- References -->
+                    <div v-if="current_slide_index['circuit'].index==7" class="container">
+
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+
+
+                                Selecting a problem:
+
+                                - What is the issue you want to tackle? <br>
+
+                                - What are its origins and root-causes? Are they social? Is it a symptom
+                                or the actual disease? Is there any structural issue behind this?<br>
+
+                                - Is there anyone else tackling it? How?<br>
+
+                                - Should synthetic biology solve this issue? Will it really solve this issue completely?
+                                If
+                                it solves it partially, what aspects aren’t you tackling?<br>
+                                Why? Is this ok?
+
+                                - Should this problem be addressed from other perspectives as well?<br>
+
+                                - Whose interests are being taken into account? Why?<br>
+                            </p>
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <!-- pills-circuit -->
+
+
+                <!-- pills-framework -->
+                <div class="tab-pane fade" id="pills-framework" role="tabpanel" aria-labelledby="pills-framework-tab">
+
+
+                    <main-carousel v-bind:current_slide="current_slide_index['framework']"
+                        v-bind:slides_content="slides_content['framework']" :id="1">
+                    </main-carousel>
+
+
+                    <!-- intro  -->
+                    <div v-if="current_slide_index['framework'].index==0" class="container">
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Description -->
+                    <div v-if="current_slide_index['framework'].index==1" class="container">
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <!-- <h2>title </h2> -->
+                            <!-- <h3>subtitle </h3> -->
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 01 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 02 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 03 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Foundational Concept -->
+                    <div v-if="current_slide_index['framework'].index==2" class="container">
+
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x400?text=snippet" alt="" style="width:100% center"
+                                    class="w-50">
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x400?text=snippet" alt="" style="width:100% center"
+                                    class="w-50">
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x400?text=snippet" alt="" style="width:100% center"
+                                    class="w-50">
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                    <!-- Framework´s architecture -->
+                    <div v-if="current_slide_index['framework'].index==3" class="container">
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x400?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- Biological state machines: -->
+                    <div v-if="current_slide_index['framework'].index==4" class="container">
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=ANIMACION" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=ANIMACION" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>characteristics </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 01 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 02 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 03 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 04 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 05 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 06 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 07 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row ">
+                            <div class="col-sm-1 text-end">
+                                <h1> 08 </h1>
+                            </div>
+                            <div class="col-sm-9">
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
+
+                                <p>
+                                    content
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Description -->
+                    <div v-if="current_slide_index['framework'].index==5" class="container">
+
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>Structural </h2>
+                            <p class="">
+                                content
+                            </p>
+
+                            <h3>Parts </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h3>Circuit </h3>
+
+                            <p class="">
+                                content
+                            </p>
+
+
+                        </div>
+
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h3>Enviroment> </h3>
+
+                            <p class="">
+                                content
+                            </p>
+
+
+                        </div>
+
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>Behavioral </h2>
+                            <!-- <h3>subtitle </h3> -->
+
+                            <p class="">
+                                content
+                            </p>
+
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+
+                        </div>
+                        <div class="container w-75">
+
+                            <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                <div class="col-sm-6">
+                                    <h2>align </h2>
+                                    <h3>subtitle </h3>
+                                    <p>
+                                        content
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 justify-content-md-center">
+                                    <img class="img-square align-middle "
+                                        src="https://placehold.co/600x600?text=snippet" all="">
+                                </div>
+                            </div>
+
+                            <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                <div class="col-sm-6">
+                                    <h2>posi </h2>
+                                    <h3>subtitle </h3>
+                                    <p>
+                                        content
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 justify-content-md-center">
+                                    <img class="img-square align-middle "
+                                        src="https://placehold.co/600x600?text=snippet" all="">
+                                </div>
+                            </div>
+
+                            <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                <div class="col-sm-6">
+                                    <h2>coex </h2>
+                                    <h3>subtitle </h3>
+                                    <p>
+                                        content
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 justify-content-md-center">
+                                    <img class="img-square align-middle "
+                                        src="https://placehold.co/600x600?text=snippet" all="">
+                                </div>
+                            </div>
+
+                            <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                <div class="col-sm-6">
+                                    <h2>code </h2>
+                                    <h3>subtitle </h3>
+                                    <p>
+                                        content
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 justify-content-md-center">
+                                    <img class="img-square align-middle "
+                                        src="https://placehold.co/600x600?text=snippet" all="">
+                                </div>
+                            </div>
+
+                            <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                                <div class="col-sm-6">
+                                    <h2>recognition </h2>
+                                    <h3>subtitle </h3>
+                                    <p>
+                                        content
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-6 justify-content-md-center">
+                                    <img class="img-square align-middle "
+                                        src="https://placehold.co/600x600?text=snippet" all="">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <h2>functions </h2>
+                                <h3>subtitle </h3>
+                                <p>
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="col-sm-6 justify-content-md-center">
+                                <img class="img-square align-middle " src="https://placehold.co/600x600?text=snippet"
+                                    all="">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Execution -->
+                    <div v-if="current_slide_index['framework'].index==6" class="container">
+
+                        <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne2">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne2" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne2">
+                                        Aplication
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne2" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne2">
+                                    <div class="accordion-body">
+
+
+                                        <div
+                                            class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                            <h2>title </h2>
+                                            <h3>subtitle </h3>
+
+                                            <p class="">
+                                                content
+                                            </p>
+
+
+                                            <p class="wiki-card-2columns">
+                                                <ul>
+                                                    <li>Example 1</li>
+                                                    <li>Example 2</li>
+                                                    <li>Example 3</li>
+                                                </ul>
+
+                                            </p>
+                                        </div>
+
+
+                                        <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                            <div class="text-center">
+                                                <img src="//placehold.co/1200x600?text=ANIMACION" alt=""
+                                                    style="width:100% center" class="w-75">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo2" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo2">
+                                        Integration
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo2" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingTwo2">
+                                    <div class="accordion-body">
+
+                                        <div
+                                            class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                            <h2>title </h2>
+                                            <h3>subtitle </h3>
+
+                                            <p class="">
+                                                content
+                                            </p>
+                                        </div>
+
+                                        <div class="container  mx-auto p-3 wikicard-12-img">
+                                            <div class="text-center">
+                                                <img src="//placehold.co/1200x400?text=snippet" alt=""
+                                                    style="width:100% center" class="w-75">
+                                            </div>
+                                        </div>
+
+                                        <div class="container  mx-auto p-3 wikicard-12-img">
+                                            <div class="text-center">
+                                                <img src="//placehold.co/1200x400?text=snippet" alt=""
+                                                    style="width:100% center" class="w-75">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="container  mx-auto p-3 wikicard-12-img">
+                                            <div class="text-center">
+                                                <img src="//placehold.co/1200x400?text=snippet" alt=""
+                                                    style="width:100% center" class="w-75">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="container  mx-auto p-3 wikicard-12-img">
+                                            <div class="text-center">
+                                                <img src="//placehold.co/1200x400?text=snippet" alt=""
+                                                    style="width:100% center" class="w-75">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                    <!-- Software Framework -->
+                    <div v-if="current_slide_index['framework'].index==7" class="container">
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <h3>subtitle </h3>
+
+                            <p class="">
+                                content
+                            </p>
+                        </div>
+
+                        <div class="container  mx-auto p-3 wikicard-12-img">
+                            <div class="text-center">
+                                <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                    class="w-75">
+                            </div>
+                        </div>
+
+
+                        <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample3">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne3">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne3" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne3">
+                                        Accordion Item #1
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne3" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne3">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by
+                                        default, until the collapse plugin adds the appropriate classes that we use to
+                                        style each element. These classes control the overall appearance, as well as the
+                                        showing and hiding via CSS transitions. You can modify any of this with custom
+                                        CSS or overriding our default variables. It's also worth noting that just about
+                                        any HTML can go within the <code>.accordion-body</code>, though the transition
+                                        does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo3" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo3">
+                                        Accordion Item #2
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo3" class="accordion-collapse collapse  show "
+                                    aria-labelledby="panelsStayOpen-headingTwo3">
+                                    <div class="accordion-body">
+                                        <strong>This is the second item's accordion body.</strong> It is hidden by
+                                        default, until the collapse plugin adds the appropriate classes that we use to
+                                        style each element. These classes control the overall appearance, as well as the
+                                        showing and hiding via CSS transitions. You can modify any of this with custom
+                                        CSS or overriding our default variables. It's also worth noting that just about
+                                        any HTML can go within the <code>.accordion-body</code>, though the transition
+                                        does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree3" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree3">
+                                        Accordion Item #3
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree3" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingThree3">
+                                    <div class="accordion-body">
+                                        <strong>This is the third item's accordion body.</strong> It is hidden by
+                                        default, until the collapse plugin adds the appropriate classes that we use to
+                                        style each element. These classes control the overall appearance, as well as the
+                                        showing and hiding via CSS transitions. You can modify any of this with custom
+                                        CSS or overriding our default variables. It's also worth noting that just about
+                                        any HTML can go within the <code>.accordion-body</code>, though the transition
+                                        does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingForth3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseForth3" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseForth3">
+                                        Accordion Item #3
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseForth3" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingForth3">
+                                    <div class="accordion-body">
+                                        <strong>This is the third item's accordion body.</strong> It is hidden by
+                                        default, until the collapse plugin adds the appropriate classes that we use to
+                                        style each element. These classes control the overall appearance, as well as the
+                                        showing and hiding via CSS transitions. You can modify any of this with custom
+                                        CSS or overriding our default variables. It's also worth noting that just about
+                                        any HTML can go within the <code>.accordion-body</code>, though the transition
+                                        does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                    <!-- Conceptual Framework APPLIED TO DEVELOP THE SOFTWARE FRAMEWORK -->
+                    <div v-if="current_slide_index['framework'].index==8" class="container">
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <!-- <h3>subtitle </h3> -->
+
+                            <!-- <p class="wiki-card-2columns">
+                                content
+                                </p> -->
+                        </div>
+
+                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
+                            <div class="col-sm-6">
+                                <h3>subtitle </h3>
+                                <p>
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h3>subtitle </h3>
+                                <p>
+                                    content
+                                </p>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                            <h2>title </h2>
+                            <!-- <h3>subtitle </h3> -->
+
+                            <p class="wiki-card-2columns">
+                                content
+                            </p>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+                </div>
+                <!-- pills-framework -->
+
+
+            </div>
+        </div>
+        <!-- DEMO TABS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+<!-- CONTENIDO PRINCIPAL -->
+
+<style>
+
+</style>
+
+<style>
+    #globalWrapper {
+        font-size: 100% !important;
+    }
+
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: var(--bs-body-font-family) !important;
+        overflow: visible !important
+    }
+
+    #HQ_page p {
+        font-family: var(--bs-body-font-family) !important;
+        font-size: var(--bs-body-font-size) !important;
+    }
+
+
+
+    /*
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+     font-family:"Arial",Gadget,sans-serif;
+     border-bottom:none;
+     font-weight:bold
+    }
+
+    #HQ_page p {
+        font-family:"Arial",Helvetica,sans-serif;
+        font-size:13px;
+        text-align:justify
+       }
+       
+    /*body {
+        font-family: var(--bs-body-font-family) !important;
+    }*/
+
+    .double-text {
+        background-color: #1A1A1A;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        -webkit-text-stroke-color: rgb(255, 255, 255);
+        font-size: 90px;
+        font-family: 'Open Sans';
+        font-weight: 800 !important;
+
+        text-shadow:
+            6px 8px 0px rgb(255, 255, 255);
+        opacity: 1;
+        text-transform: uppercase;
+        letter-spacing: -1.03px;
+    }
+
+
+    .main-title h1 {
+        /*font-family: 'Open Sans'; */
+        font-weight: 800 !important;
+        font-size: 55px;
+        -webkit-text-fill-color: #ffffff00;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: #ffffff;
+    }
+
+
+    .main-title h5 {
+        /*font-family: 'Open Sans'; */
+        font-size: 15px;
+        color: #ffffff;
+        width: 40%
+    }
+
+    .main-title-bg {
+        opacity: 0.9;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -99;
+    }
+
+    .wiki-card {}
+
+    .wiki-card .img-round {
+        border-radius: 50%;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .wiki-card .img-square {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .wiki-card h1 {
+        /*margin-right: 10vw;*/
+        color: #E2474B;
+        font-size: calc(2rem + 1.5vw);
+        /*font-size: 56px;*/
+        font-weight: bold;
+        letter-spacing: -0.8px;
+    }
+
+    .wiki-card h2 {
+        color: #27262D;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    .wiki-card h3 {
+        color: #626262;
+        font-size: 18px;
+        letter-spacing: -0.2px;
+        line-height: 19px;
+    }
+
+    .wiki-card p {
+        color: #27262D;
+        /*line-height: 24px;*/
+    }
+
+    .wiki-card p.wiki-card-2columns {
+        columns: 2;
+    }
+
+
+    .wiki-tab-btn {
+        background-color: #ffffff20 !important;
+        border-color: #ffffff00 !important;
+        border-radius: 0px;
+        margin: 0px;
+        padding: .2rem .5rem;
+        color: #ffffff;
+        font-size: 20px;
+        font-family: 'Open Sans';
+
+    }
+
+    .wiki-tab-btn.active {
+        border-bottom: 10px solid rgb(255, 0, 0) !important;
+        color: #ffffff;
+    }
+
+    .wiki-tab-btn:hover {
+        color: #ffffff;
+    }
+
+    /*button:focus{
+        background-color:olive!important;
+    }*/
+</style>
+
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                isActive: true,
+                message: 'hello app',
+                current_slide_index: {
+                    "circuit": {
+                        index: 0
+                    },
+                    "framework": {
+                        index: 0
+                    }
+                },
+                slides_content: {
+                    "circuit": [{
+                            title: "Introduction",
+                            content: "Our project began with an objective in mind: expanding the boundaries of engineered organisms, specifically targeting their <b>release</b>. The design and implementation of a genetic suicide circuit is the beginning of this journey."
+                        },
+                        {
+                            title: "Function",
+                            content: "Our circuit’s <b>behavior</b> is directly related to four <b>separate modules</b>. Each of these exhibits a specific function in order to fulfill a determined purpose. Here we propose a coordinated behavior; nonetheless they can also be used separately. "
+                        },
+                        {
+                            title: "Architecture and theoretical basis",
+                            content: "As for any well designed genetic circuit we took great care and consideration for the selection of the different parts and proteins included in our circuit. In this case, architecture is of high relevance, since it’s the key to allow the behavior and function we described earlier. This is even truer for our counter circuit, which we conceptualized as a <b>state machine</b> and, as such, defines each state by specific DNA configurations and requires a specific input to change state. In the following image you can see the design of our whole device and, by clicking on the boxes below, you can access our insight on each of the different parts and modules. "
+                        },
+                        {
+                            title: "Characteristics",
+                            content: "To showcase some of the best qualities of our circuit, we handpicked some of its characteristics of interest, most of them brought forward by our user interviews."
+                        },
+                        {
+                            title: "Functional Animation",
+                            content: "To better understand the behavior of our circuit we have developed an interactive animation in which each module can be activated and explored as their different steps unfold."
+                        },
+                        {
+                            title: "Extras",
+                            content: "This section contains additional modules along with variations for the ones presented within our main circuit. Their intention is to improve functionality and expand the utilization possibilities."
+                        },
+                        {
+                            title: "Comparison",
+                            content: "To further demonstrate the novelty and capacity of our counter circuit we present a comparison with previously developed counters, highlighting their characteristics of interest."
+                        },
+                        {
+                            title: "References",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        }
+                    ],
+                    "framework": [{
+                            title: " intro",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "descr",
+                            content: "XXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "found",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "arqu",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "biol",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "descrip",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "excecu",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "sw framework",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        },
+                        {
+                            title: "aplied",
+                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                        }
+                    ]
+                },
+            }
+        },
+        methods: {},
+        mounted() {}
+    })
+</script>
+
+
+</html>
