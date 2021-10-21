@@ -1,0 +1,162 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapMinCSS&action=raw&ctype=text/css" />
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
+
+</head>
+
+
+
+<body class="h-100 text-center text-white bg-dark">
+    <div id="app" class="w-100 h-100 ">
+
+
+        <div class="position-relative w-75 h-75 p-3 mx-auto align-middle" style="background-color: #1f5029;">
+
+            <div class="position-absolute top-50 start-25 translate-middle-y " style="">
+                <div class="slide-button-group ">
+                    <button type="button" class="btn btn-primary slide-button">1</button>
+                    <button type="button" class="btn btn-primary slide-button ">2</button>
+                    <button type="button" class="btn btn-primary slide-button">3</button>
+                    <button type="button" class="btn btn-primary slide-button">4</button>
+                </div>
+
+            </div>
+
+            <div class="position-absolute top-50 start-50 translate-middle" style="background-color: #47c05f;">
+                <div>
+                    <h1 v-for="n in [1, 2, 3, 4]"> {{n}}</h1>
+                </div>
+            </div>
+
+
+            <div class="position-absolute bottom-0 start-50 translate-middle-x" style="background-color: #47c05f;":@click="slide_down()">
+                <div>
+                    <h1>boton abajo</h1>
+                </div>
+            </div>
+
+            <div class="position-absolute top-50 end-0 translate-middle-y " style="background-color: #47c05f;" :@click="slide_left()">
+                <div>
+                    <h1 class="" >boton lado</h1>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+</body>
+
+
+<style>
+    .slide-button-group {}
+
+    .slide-button-group button {
+        margin: 10px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+    }
+
+    .slide-button {
+        border-radius: 50%;
+    }
+
+    .slide-button-right {
+    }
+
+
+    .center_text {
+        border: 5px solid #FFFF00;
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                isActive: true,
+                message: 'hello app',
+                current_slide_index: {
+                    index: 0
+                },
+                current_slide_index2: {
+                    index: 0
+                },
+                slides_content:
+
+                    [{
+                            title: "Collaboration Initiatives",
+                            content: "In this section we present collaborations in which we not only took part, but proposed or helped organize in some way."
+                        },
+                        {
+                            title: "Meetups & Events",
+                            content: "Here you can find the meetups or public events we attended and learn about the way they impacted our work"
+                        },
+                        {
+                            title: "Interviews",
+                            content: "Interviews are a great way to engage between teams, specifically when creating shared content such as the initiatives presented next."
+                        },
+                        {
+                            title: "Public Engagement",
+                            content: "If one wishes to really have impact, engaging with the public is a key feature for any and every project; to do it collectively is even better"
+
+                        }
+                    ],
+            }
+        },
+        methods: {
+            slide_left: function(){
+                console.log("slide_left");
+            },
+            slide_down: function(){
+                console.log("slide_down");
+            },
+
+
+        },
+        mounted() {}
+    })
+</script>
+
+</html>
