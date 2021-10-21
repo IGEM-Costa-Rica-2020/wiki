@@ -394,8 +394,7 @@
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>Promoter 1:  </h2>
-                                        <h3>pBAD {BBa_I0500} </h3>
+                                        <h2>Promoter 1: pBAD {BBa_I0500} </h2>
                                         <p>
                                             This promoter is induced by <b>arabinose</b> and it’s one of the most characterized for heterologous protein expression (Széliová et al., 2016), and commonly used in iGEM and synthetic biology itself (http://parts.igem.org/PBAD_Promoter_Family http://parts.igem.org/Part:BBa_I0500). Many of the other counter systems discussed in this project were developed and characterized with this promoter as its regulatory element (Roquet et al., 2016; Bonnet et al., 2012; Zhao et al., 2019; Yang et al., 2014). 
                                         </p>
@@ -404,8 +403,7 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>Promoter 2: </h2>
-                                        <h3>pnrd {BBa_K2070012}   </h3>
+                                        <h2>Promoter 2: pnrd {BBa_K2070012} </h2>
                                         <p>
                                             This promoter is <b>cell cycle dependent</b> according to (Sun 1992), since it is a highly regulated promoter region which contains several DnaA boxes, indicating that activity is partly affected by initiation of DNA replication (Messer 2002). The nrd operon itself in E. coli expresses a ribonucleotide reductase, an enzyme that reduces ribonucleotides into deoxyribonucleotides and is involved in bacterial cell cycle in E. coli (Sun 1994).  This part has been used previously by Stanford Brown in 2012 (http://2012.igem.org/Team:Stanford-Brown); they proved that the promoter turned on once every cell cycle. A variation of this promoter was also used by UT-Tokyo 2016 (link) to build a regulatory system in which gene expression changes after each cell division which is very similar to our own purpose. The use of this promoter ensures that our system will be activated only once every cell cycle. 
                                         </p>
@@ -513,28 +511,32 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>CRISPR+ligase </h2>
+                                    <h2>title </h2>
+                                    <h3>subtitle </h3>
 
                                     <p class="">
-                                        The CRISPR-Cas9 system, a gene editing system, depends on two main elements, a small RNA fragment that contains the guide sequence that binds to the target DNA sequence and the Cas9 enzyme joined to the guide RNA sequence. When the guide is transcribed, it binds to the Cas9 in order to recognize the target DNA sequence which is then cut by the enzyme, creating a double strand  break. This break can be used to delete, insert or replace DNA if used coupled with the cell’s own repair machinery (MedlinePlus, s.f.). In our case E. coli doesn’t have a non-homologous end joining (NHEJ) repair system, so a double stranded break can only be fixed by homologous recombination. Since we don’t want the insertion of a template to be required, we searched for a different alternative, and found that a T4 ligase can fix the break creating indels that <b>knockout</b> the gene and prevent the cell from committing suicide because of the broken DNA (Su et al., 2016). This is according to Su et al. (2019), who report using a ligase for repairing a DSB made by Cas9 in LacZ gene in E. coli, leading to the survival of cells. In turn Su et al. (2016) report using a different strategy: which involved the design of sg to avoid HR and the use of conserved prokaryotic NHEJ proteins from Mycobacterium tuberculosis H37Rv instead for repairing complete gene deletions, proving that this is in fact possible even though in their case it had only 36% efficiency. We believe that by joining the best of each strategy, the ligase and the sg design, and having a much smaller deletion target (which in turn is closer to DNA deletion consistency at 200bp) we can have a much better efficiency in both deletion and repair.
+                                        content
                                     </p>
                                 </div>
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                     <h2>cas9 </h2>
+                                    <h3>subtitle </h3>
                                     <p class="">
-                                         http://parts.igem.org/Part:BBa_K1774001:Experience
+                                        content
                                     </p>
 
                                     <h2>sg </h2>
+                                    <h3>subtitle </h3>
                                     <p class="">
-                                        Our single guides are to be designed to fulfill several requirements for an increased specificity and efficiency and decreased off-target effects as proposed by Liu et al. (2020). 
+                                        content
                                     </p>
 
                                     <h2>ligase </h2>
+                                    <h3>subtitle </h3>
                                     <p class="">
-                                        {BBa_K3917004},  created by basing off of Su et al. (2019).
+                                        content
                                     </p>
                                 </div>
 
@@ -547,10 +549,11 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Operator sites </h2>
+                                    <h2>title </h2>
+                                    <h3>subtitle </h3>
 
                                     <p class="">
-                                        “A common method of <b>repressing gene expression</b> in prokaryotes involves the binding of a protein to a DNA sequence (a.k.a. operator) near or overlapping its promoter” (Politz et al., 2013). These operators, in our design, were purposely ambiguous, since their identity can vary depending on available technology. The common requirement they must fulfill is binding to specific DNA sequences. A readily available mechanism to do this is taking advantage of already existing repressors such as LacI from the Lac operon or the phage encoded lambda repressor (cI) (Lewis, 2011). The deactivated version of the cas9 protein is also an alternative, but its location would have to be rethought, since it would need to be active and functional for all three cases (Xu & Qi, 2019). Finally, other synthetically designed DNA-binding proteins can be used, TALEs being one of the most used of these categories (Politz et al., 2013). 
+                                        content
                                     </p>
                                 </div>
 
@@ -562,38 +565,30 @@
                                 aria-labelledby="pills-multilay-tab">
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Multi-layered containment system </h2>
+                                    <h2>title </h2>
+                                    <h3>subtitle </h3>
 
                                     <p class="">
-                                        A multi-layered safeguard system is a series of barriers that can decrease the escape frequency of synthetically modified microorganisms (Gallagher et al., 2015). In this device, the main objective is to develop a biocontainment, condition independent, kill switch.
+                                        content
                                     </p>
                                 </div>
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h3>RelE: modified {BBa_K2449029}, removing the double terminator. </h3>
+                                    <h3>subtitle </h3>
 
                                     <p class="">
-                                        The toxin RelE, a mRNA interferase, causes <b>translation inhibition</b> by cutting mRNAs positioned on site A of the ribosome. It cleaves the stop codons of the mRNA between the 2nd and 3rd nucleotide (https://www.uniprot.org/uniprot/P0C077), which blocks processes such as its binding to release factors, release of formed polypeptides and availability of ribosomes to be used again (SJTU-BioX-Shanghai, 2009). This ultimately hinders the correct translation and promotes a decrease in cell growth. However, since mRNA interferases play a role in bacterial persistence to antibiotics (https://www.uniprot.org/uniprot/P0C077), it is necessary to additionally apply other death mechanisms together. 
+                                        content
                                     </p>
                                 </div>
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h3>Nuclease A1: modified {BBa_K3027000}, removing its terminator. </h3>
+                                    <h3>subtitle </h3>
 
                                     <p class="">
-                                        The nuclease A1 is in charge of the <b>genomic DNA elimination</b>, without being associated with cell lysis (GO_Paris-Saclay, 2009), which is important because the genetic material can remain contained during the DNA escision. When the cell is left without DNA, some remnants, like ribosomes and housekeeping proteins, could still get transferred when interacting with other microorganisms and provide them new functions including and beyond our specific modification. DNA-less cells are still equivalent to cells with DNA (GO_Paris-Saclay, 2009) with the minimal genome to maintain metabolic homeostasis, reproduce, and evolve (Gil et al., 2004). 
+                                        content
                                     </p>
                                 </div>
-                                
-                                
-                                <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h3>CRISPR: GMK target </h3>
-
-                                    <p class="">
-                                        Already described mechanism of action (see CRISPR+ligase). In this module, it includes is a sgRNA to target the nucleoside monophosphate kinases <b>Gmk</b>, a multimeric enzyme showed to be determinant in the reduction of the nucleotide pool and decrement of growth and/or respiration rate when it is knocked out, due to the specificity established  with the phosphate acceptor substrate (EcoCyc, 2012). We also aim to use another set of sgRNA to generate breaks to our <b>synthetic construct</b>, leaving no possibilities for synthetic genomic remnants to be freed. Single guides are to be designed as specified previously, targeting the Gmk gene, the synthetic circuit’s main promoter and its recombinases. 
-                                    </p>
-                                </div>                          
 
 
 
@@ -606,19 +601,21 @@
                                 aria-labelledby="pills-other-tab">
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Plasmid </h2>
+                                    <h2>pasmid </h2>
+                                    <h3>subtitle </h3>
 
                                     <p class="">
-                                        Heterologous expression in E. coli may be achieved through several vectors such as plasmids or bacterial chromosomes, as well as by the insertion of DNA directly into the bacterial artificial chromosome. The ideal implementation for our proposal is <b>chromosomal insertion</b>, in order to prevent the existence of cells with a <b>mixed expression</b> within them (Zhao et al, 2019), otherwise understood as several counters in a different state. It’s also a way to allow the stable expression of foreign DNA without the need for antibiotic selection, the increased protein expression and the decrease of metabolic burden (Englaender et al., 2017). The likelihood of uptake of the synthetic DNA by other organisms is also decreased by this strategy. Nonetheless if it’s to be implemented in a plasmid, this should be <b>low-copy</b> in order to reduce the noise caused from the plasmid’s divergent expression, and the selection mechanism should be via auxotrophy to allow for more diverse implementations.
+                                        content
                                     </p>
                                 </div>
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Degradation tags and RBS optimization </h2>
+                                    <h2>degradation </h2>
+                                    <h3>subtitle </h3>
 
                                     <p class="">
-                                        For our system to be as efficient as possible all of the recombinase’s expressions must be fine-tuned. One of the most common ways to do this is via RBS selection, which would allow the <b>balancing out</b> of the recombinases and their expression rate by regulating their translation (Jin et al., 2017). Also, this way the ratio of 2:1  needed for correct RDF:recombinase expression can be achieved. Another relevant point for our system is that recombinases are to execute their work and then be degraded as quickly as possible to not interfere with other recombinases. This is particularly true for RDFs, since they’re being generated several generations previous to their participation. Hence, we researched ways to fast-teack the degradation of proteins, particularly the application of degradation tags, which are a mechanism for <b>targeted proteolysis</b> mediated by the addition of a degradation tag to the coding sequence (McGinness et al., 2006) . These have been used in counter systems to improve their efficiency such as that (SYSU China Team, 2015) , and can similarly be applied to our circuit.
+                                        content
                                     </p>
                                 </div>
 
@@ -640,11 +637,10 @@
                     <div v-if="current_slide_index['circuit'].index==3" class="container">
                         <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                             <div class="col-sm-6">
-                                <h2>Modularity </h2>
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
                                 <p>
-                                    Each of these modules can be <b>applied separately</b> to other proposals, and modified accordingly, and even <b>exchanged</b> for others. For example,  the final module can be changed to execute a specific function instead of inducing the cell’s death. Even the toxins from the multilayered containment system can be changed if a different death approach is desired, like having specific conditions (like pH) unfold.
-
-                                    Regarding our crucial module, the counter, it can have its recombinase number diminished or increased easily, redesigning it by following the <b>architectural generality</b> of the circuit: a single promoter at the beginning, then the first recombination site of all the recombinases, then as many basic modules as required, (RBS+ recombinase+ unidirectional terminator+ second recombination site+ RDF). *The final recombinase’s RDF must only be included if the reset is to be part of the sequential process.
+                                    content
                                 </p>
                             </div>
 
@@ -656,27 +652,13 @@
 
                         <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                             <div class="col-sm-6">
-                                <h2>Evolutionary Stability </h2>
-                                <h3>Evolutionary stability of recombinase based memory circuits </h3>
+                                <h2>title </h2>
+                                <h3>subtitle </h3>
                                 <p>
-                                    According to Fernandez-Rodriguez et al. (2015) one of the design principles for long-term stability is the <b>avoidance of constitutive expression</b>, which we have applied in our circuit. They also mention that “Placing the circuit in the <b>genome</b> could also improve stability, as this is a common approach to improve the robustness of strains in metabolic engineering” (Fernandez-Rodriguez et al., 2015). Another consideration that must be made is the <b>prevention of leaky expression</b>, since it can generate a drift into a different state and even disable the ability to hold a state. In our circuit the expression of all recombinases is regulated by the same promoter, so this issue is not expected to be relevant to its performance. Canton et al., (2008) note that the evolutionary stability is also dependent on the <b>state</b> in which the circuit is carried; the authors note that a circuit in the OFF state can easily be carried over many generations, whereas in the ON state it quickly breaks. This specific quality can be problematic for our circuit, since one way or another it’s always turned on because of the dependence on the cell-cycle promoter. Nonetheless, since different activities are carried out in each specific state and there is no constant expression of regulatory proteins, this might not be relevant to the circuit’s stability, since “the burden is a function of regulator expression, the evolutionary stability depends on the state in which the circuit is carried” (Fernandez-Rodriguez et al., 2015).
-
-                                    This was seconded by Sleight et al. (2010), who state that “Evolutionary stability is a problem in genetic circuits if there is no selective pressure to maintain function of the circuit. The current belief is that this loss-of-function occurs because any cell in the population that acquires a mutation in the genetic circuit often has a growth advantage and can outcompete the cells in the population with all functional plasmids”; hence, if there is no <b>significant metabolic burden</b>, there is no advantage.  Finally, we weren’t able to carry out an evolutionary stability experiment of our own; however, extrapolating the results obtained by Fernandez-Rodriguez et al. (2015) shows great promise for our circuit. They report a stability of over 400 hours for their memory switch, and credit its breaking to continuous invertase expression and the host’s evolution towards reducing its expression. More importantly, Fernandez-Rodriguez et al. (2015) indicate that during the 400 hour period, 6 cycles of their circuit, “there was no loss of performance, reduction in dynamic range, or increase in population variability”. The main risk to our circuits stability are transposable insertion elements and even homologous recombination, which can be avoided by using <b>diverse parts</b> in the construction of the circuit and using strains where insertion elements have been deleted from the genome; nevertheless, both these strategies involve challenges on themselves, particularly the need for more robust strains for many applications, as stated by Fernandez-Rodriguez et al. (2015). Finally, although evolutionary stability must be considered when designing a circuit, the main focus should be on the specific end application. The required robustness of a circuit will be directly related to the <b>duration of its application</b>. “For example, circuits do not need to be robust for months if designed for a one week fermentation”(Fernandez-Rodriguez et al., 2015).
-
-                                    The time for the loss of function of a genetic circuit can also be predicted by applying the <b>function</b> developed by Arkin & Fletcher (2006) through a simulation study. 
+                                    content
                                 </p>
                             </div>
-                        <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
-                            <div class="col-sm-6">
-                                <h3>Evolutionary stability of kill switches </h3>
-                                <p>
-                                    According to Stirling et al. (2017),  “any kill switch with leaky, low-level expression of a toxin in permissive conditions may be quickly disabled in rapidly growing microbes.” In our circuit this is highly unlikely, since the expression of the toxins is regulated by the same promoter that controls the expression of recombinases, and between them stand several terminators. Furthermore, the toxins from our kill-switch are to be expressed only once, and induced by the change of state from the previous module (counter circuit), hence <b>avoiding the complexities of an environmentally induced kill switch</b>. The necessity for induction is another decisive factor in the stability of the circuit, since, <b>uninduced there is no selective pressure for it to be dismantled</b>. This was proven by Pasotti et al. (2011), who evaluated the stability of an inducible killswitch, finding it to be stable for a maximum of 100 generations and strain dependent.  
 
-                                    Further optimization for the final application can be done by applying tools such as “Predicting the Genetic Stability of Engineered DNA Sequences with the EFM Calculator” and making the necessary alterations regarding the sequence such as altering codon usage in the different CDSs or swapping out promoters/rbs of equal strength (Jack et al., 2015).
-
-                                    For further characterization and application examples, check out our Proposed Implementation page.
-                                </p>
-                            </div>
                             <div class="col-sm-6 justify-content-md-center">
                                 <img class="img-square align-middle " src="https://placehold.co/600x600?text=snippet"
                                     all="">
