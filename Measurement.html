@@ -16,6 +16,10 @@
 
     <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
 
+
+
+    <script src="https://2020.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 </head>
 
 
@@ -140,8 +144,11 @@
 
         <div class="position-relative overflow-hidden p-3 p-md-5  text-start  main-title">
             <img class="main-title-bg" src="https://picsum.photos/id/1042/1200/400" alt="">
-            <h1>Collaboration</h1>
-            <h5 class="">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h5>
+            <h1>Measurement</h1>
+            <h5 class="">Our main motivation to attempt to do this model was because we couldn´t find in literature the
+                promoter strength of Pnrd, which plays an essential role in our modeling. However, data about its
+                fluorescence is available, so we figured out a way in which we can translate this fluorescence into real
+                promoter strength, which will be applicable to all promoters</h5>
         </div>
 
 
@@ -151,43 +158,465 @@
         <!-- collaborations -->
         <div v-if="current_slide_index.index==0" class="container">
 
-            <div class="accordion accordion-flush" id="accordionPanelsShipping">
+            <div class="accordion accordion-flush " id="accordionPanelsShipping">
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingShipping2">
+
+                <div class="accordion-item ">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingMeasurement1">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseShipping2" aria-expanded="true"
-                            aria-controls="panelsStayOpen-collapseShipping2">
-                            Accordion Item #2
+                            data-bs-target="#panelsStayOpen-collapseMeasurement1" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseMeasurement1">
+                            Accordion Item #1
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseShipping2" class="accordion-collapse collapse"
-                        aria-labelledby="panelsStayOpen-headingShipping2">
+                    <div id="panelsStayOpen-collapseMeasurement1" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingMeasurement1">
                         <div class="accordion-body">
 
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                <h2>title </h2>
-
                                 <p class="">
-                                    <ul>
-                                        <li>BULLET1</li>
-                                        <li>BULLET1</li>
-                                        <li>BULLET1</li>
-                                        <li>BULLET1</li>
-                                    </ul>
+                                    content
                                 </p>
                             </div>
+
+                            <div class="container text-center">
+
+                                <p>\[
+                                    \frac{d[mRNA]}{dt} = K - \gamma_1 [mRNA]
+                                    \]</p>
+
+                                <p>\[
+                                    \frac{d[FP]}{dt} = \alpha [mRNA] - \gamma_2 [FP]
+                                    \]</p>
+                            </div>
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+                            <p>\[
+                                FP(t) = \frac{-\alpha c_1}{(\gamma_2 - \gamma_1)\gamma_1}e^{- \gamma_1t} + c_2e^{-
+                                \gamma_2t} + \frac{\alpha K}{\gamma_1 \gamma_2}
+                                \]</p>
+
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+                            <p>\[
+                                FP_{max} (t) = \frac{\alpha K}{\gamma_1 \gamma_2}
+                                \]</p>
+
+
+
+
                         </div>
                     </div>
                 </div>
 
 
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingMeasurement2">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseMeasurement2" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseMeasurement2">
+                            Accordion Item #2
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseMeasurement2" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingMeasurement2">
+                        <div class="accordion-body">
+
+
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    content
+                                </p>
+
+                            </div>
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h3>subtitle </h3>
+
+                                <p class="wiki-card-2columns">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                            </div>
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+                                <p class="wiki-card-2columns">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container text-center">
+
+
+                                <table class="tg  mx-auto ">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Time(minutes)</span></th>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Fluorescence</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-c3ow">0</td>
+                                            <td class="tg-c3ow">25000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">18</td>
+                                            <td class="tg-c3ow">26500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">45</td>
+                                            <td class="tg-c3ow">27500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">63</td>
+                                            <td class="tg-c3ow">28500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">81</td>
+                                            <td class="tg-c3ow">31000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                                <h5>sadasdasd</h5>
+
+
+
+
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+                            <div class="container text-center">
+
+
+                                <table class="tg  mx-auto ">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Combination</span></th>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Value(protein/s)</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-c3ow">1</td>
+                                            <td class="tg-c3ow">0.0022</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">2</td>
+                                            <td class="tg-c3ow">0.0022</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">3</td>
+                                            <td class="tg-c3ow">0.0024</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">4</td>
+                                            <td class="tg-c3ow">0.0023</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">5</td>
+                                            <td class="tg-c3ow">0.0025</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">6</td>
+                                            <td class="tg-baqh">0.0026</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">7</td>
+                                            <td class="tg-baqh">0.0023</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">8</td>
+                                            <td class="tg-baqh">0.0025</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">9</td>
+                                            <td class="tg-baqh">0.0026</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">10</td>
+                                            <td class="tg-baqh">0.0027</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">Mean</td>
+                                            <td class="tg-baqh">0.002424</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">Standard Deviation</td>
+                                            <td class="tg-baqh">0.000181</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h4>asdasdasd</h4>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h3>subtitle </h3>
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+
+                            <div class="container text-center">
+
+
+
+
+                                <table class="tg mx-auto">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Promoter</span></th>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Promoter
+                                                    Strength(protein/s)</span></th>
+                                            <th class="tg-baqh"><span style="font-weight:bold">Relative Strength</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23100\)</td>
+                                            <td class="tg-c3ow">0.0263</td>
+                                            <td class="tg-baqh">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23102\)</td>
+                                            <td class="tg-c3ow">0.0163</td>
+                                            <td class="tg-baqh">0.62</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23101\)</td>
+                                            <td class="tg-c3ow">0.0166</td>
+                                            <td class="tg-baqh">0.63</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23106\)</td>
+                                            <td class="tg-c3ow">0.0128</td>
+                                            <td class="tg-baqh">0.49</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23105\)</td>
+                                            <td class="tg-c3ow">0.0104</td>
+                                            <td class="tg-baqh">0.40</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">\(J23112\)</td>
+                                            <td class="tg-baqh">0.0073</td>
+                                            <td class="tg-baqh">0.28</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h4>asdsadsadsas</h4>
+                            </div>
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+                            <div class="container text-center">
+
+
+
+
+                                <table class="tg mx-auto">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Promoter</span></th>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Anderson Lab</span></th>
+                                            <th class="tg-baqh"><span style="font-weight:bold">Relative Strength
+                                                    Predicted</span></th>
+                                            <th class="tg-0lax"><span style="font-weight:bold">%Error</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-c3ow">1</td>
+                                            <td class="tg-c3ow">1</td>
+                                            <td class="tg-baqh">1</td>
+                                            <td class="tg-baqh">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">2</td>
+                                            <td class="tg-c3ow">0.86</td>
+                                            <td class="tg-baqh">0.62</td>
+                                            <td class="tg-baqh">27.9</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">3</td>
+                                            <td class="tg-c3ow">0.70</td>
+                                            <td class="tg-baqh">0.63</td>
+                                            <td class="tg-baqh">10</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">4</td>
+                                            <td class="tg-c3ow">0.47</td>
+                                            <td class="tg-baqh">0.49</td>
+                                            <td class="tg-baqh">4.3</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">5</td>
+                                            <td class="tg-c3ow">0.24</td>
+                                            <td class="tg-baqh">0.40</td>
+                                            <td class="tg-baqh">66.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">6</td>
+                                            <td class="tg-baqh">0.00</td>
+                                            <td class="tg-baqh">0.28</td>
+                                            <td class="tg-baqh">100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h4>asasdasd</h4>
+                            </div>
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h3>subtitle </h3>
+
+                                <p class="">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h3>subtitle </h3>
+
+                                <p class="">
+                                    <ul>
+                                        <li>dasdasdasd</li>
+                                        <li>dasdasdasd</li>
+                                        <li>dasdasdasd</li>
+
+
+                                    </ul>
+                                </p>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingMeasurement3">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseMeasurement3" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseMeasurement3">
+                            Accordion Item #3
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseMeasurement3" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingMeasurement3">
+                        <div class="accordion-body">
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="wiki-card-2columns">
+                                    content
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+
+                                <button type="button" class="btn btn-primary btn-lg mx-auto">Descargar Archivos pegar
+                                    link</button>
+
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
 
-
         </div>
+
+
+
 
 
 
@@ -213,8 +642,8 @@
         </div>
 
 
-         <!-- publick engagement -->
-         <!-- <div v-if="current_slide_index.index==0" class="container">
+        <!-- publick engagement -->
+        <!-- <div v-if="current_slide_index.index==0" class="container">
 
             
         </div> -->
@@ -388,22 +817,10 @@
                 slides_content:
 
                     [{
-                            title: "Collaboration Initiatives",
-                            content: "In this section we present collaborations in which we not only took part, but proposed or helped organize in some way."
-                        },
-                        {
-                            title: "Meetups & Events",
-                            content: "Here you can find the meetups or public events we attended and learn about the way they impacted our work"
-                        },
-                        {
-                            title: "Interviews",
-                            content: "Interviews are a great way to engage between teams, specifically when creating shared content such as the initiatives presented next."
-                        },
-                        {
-                            title: "Public Engagement",
-                            content: "If one wishes to really have impact, engaging with the public is a key feature for any and every project; to do it collectively is even better"
-
+                            title: "Promoter Strenght",
+                            content: ""
                         }
+
                     ],
 
             }
@@ -413,5 +830,170 @@
     })
 </script>
 
+
+
+<!-- TABLAS -->
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-0pky {
+        border-color: inherit;
+        text-align: left;
+        vertical-align: top
+    }
+</style>
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+</style>
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+</style>
+
+
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-0lax {
+        text-align: left;
+        vertical-align: top
+    }
+</style>
 
 </html>
