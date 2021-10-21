@@ -511,32 +511,28 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>title </h2>
-                                    <h3>subtitle </h3>
+                                    <h2>CRISPR+ligase </h2>
 
                                     <p class="">
-                                        content
+                                        The CRISPR-Cas9 system, a gene editing system, depends on two main elements, a small RNA fragment that contains the guide sequence that binds to the target DNA sequence and the Cas9 enzyme joined to the guide RNA sequence. When the guide is transcribed, it binds to the Cas9 in order to recognize the target DNA sequence which is then cut by the enzyme, creating a double strand  break. This break can be used to delete, insert or replace DNA if used coupled with the cell’s own repair machinery (MedlinePlus, s.f.). In our case E. coli doesn’t have a non-homologous end joining (NHEJ) repair system, so a double stranded break can only be fixed by homologous recombination. Since we don’t want the insertion of a template to be required, we searched for a different alternative, and found that a T4 ligase can fix the break creating indels that <b>knockout</b> the gene and prevent the cell from committing suicide because of the broken DNA (Su et al., 2016). This is according to Su et al. (2019), who report using a ligase for repairing a DSB made by Cas9 in LacZ gene in E. coli, leading to the survival of cells. In turn Su et al. (2016) report using a different strategy: which involved the design of sg to avoid HR and the use of conserved prokaryotic NHEJ proteins from Mycobacterium tuberculosis H37Rv instead for repairing complete gene deletions, proving that this is in fact possible even though in their case it had only 36% efficiency. We believe that by joining the best of each strategy, the ligase and the sg design, and having a much smaller deletion target (which in turn is closer to DNA deletion consistency at 200bp) we can have a much better efficiency in both deletion and repair.
                                     </p>
                                 </div>
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>cas9 </h2>
-                                    <h3>subtitle </h3>
+                                    <h2>Cas9 </h2>
                                     <p class="">
-                                        content
+                                         http://parts.igem.org/Part:BBa_K1774001:Experience
                                     </p>
 
-                                    <h2>sg </h2>
-                                    <h3>subtitle </h3>
+                                    <h2>Sg </h2>
                                     <p class="">
-                                        content
+                                        Our single guides are to be designed to fulfill several requirements for an increased specificity and efficiency and decreased off-target effects as proposed by Liu et al. (2020). 
                                     </p>
 
-                                    <h2>ligase </h2>
-                                    <h3>subtitle </h3>
+                                    <h2>Ligase </h2>
                                     <p class="">
-                                        content
+                                        {BBa_K3917004},  created by basing off of Su et al. (2019). 
                                     </p>
                                 </div>
 
@@ -549,11 +545,10 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>title </h2>
-                                    <h3>subtitle </h3>
+                                    <h2>Operator sites </h2>
 
                                     <p class="">
-                                        content
+                                        “A common method of <b>repressing gene expression</b> in prokaryotes involves the binding of a protein to a DNA sequence (a.k.a. operator) near or overlapping its promoter” (Politz et al., 2013). These operators, in our design, were purposely ambiguous, since their identity can vary depending on available technology. The common requirement they must fulfill is binding to specific DNA sequences. A readily available mechanism to do this is taking advantage of already existing repressors such as LacI from the Lac operon or the phage encoded lambda repressor (cI) (Lewis, 2011). The deactivated version of the cas9 protein is also an alternative, but its location would have to be rethought, since it would need to be active and functional for all three cases (Xu & Qi, 2019). Finally, other synthetically designed DNA-binding proteins can be used, TALEs being one of the most used of these categories (Politz et al., 2013). 
                                     </p>
                                 </div>
 
@@ -601,21 +596,19 @@
                                 aria-labelledby="pills-other-tab">
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>pasmid </h2>
-                                    <h3>subtitle </h3>
+                                    <h2>Plasmid </h2>
 
                                     <p class="">
-                                        content
+                                        Heterologous expression in E. coli may be achieved through several vectors such as plasmids or bacterial chromosomes, as well as by the insertion of DNA directly into the bacterial artificial chromosome. The ideal implementation for our proposal is <b>chromosomal insertion</b>, in order to prevent the existence of cells with a <b>mixed expression</b> within them (Zhao et al, 2019), otherwise understood as several counters in a different state. It’s also a way to allow the stable expression of foreign DNA without the need for antibiotic selection, the increased protein expression and the decrease of metabolic burden (Englaender et al., 2017). The likelihood of uptake of the synthetic DNA by other organisms is also decreased by this strategy. Nonetheless if it’s to be implemented in a plasmid, this should be <b>low-copy</b> in order to reduce the noise caused from the plasmid’s divergent expression, and the selection mechanism should be via auxotrophy to allow for more diverse implementations.
                                     </p>
                                 </div>
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>degradation </h2>
-                                    <h3>subtitle </h3>
+                                    <h2>Degradation tags and RBS optimization</h2>
 
                                     <p class="">
-                                        content
+                                        For our system to be as efficient as possible all of the recombinase’s expressions must be fine-tuned. One of the most common ways to do this is via RBS selection, which would allow the <b>balancing out</b> of the recombinases and their expression rate by regulating their translation (Jin et al., 2017). Also, this way the ratio of 2:1  needed for correct RDF:recombinase expression can be achieved. Another relevant point for our system is that recombinases are to execute their work and then be degraded as quickly as possible to not interfere with other recombinases. This is particularly true for RDFs, since they’re being generated several generations previous to their participation. Hence, we researched ways to fast-teack the degradation of proteins, particularly the application of degradation tags, which are a mechanism for <b>targeted proteolysis</b> mediated by the addition of a degradation tag to the coding sequence (McGinness et al., 2006) . These have been used in counter systems to improve their efficiency such as that (SYSU China Team, 2015), and can similarly be applied to our circuit.
                                     </p>
                                 </div>
 
@@ -684,7 +677,7 @@
                             <!-- <h3>subtitle </h3> -->
 
                             <p class="">
-                                fadsfdsfasdfasdf
+                                The functioning is based on four main premises based on the architecture: 
                             </p>
                         </div>
 
@@ -695,9 +688,10 @@
 
                             <p class="wiki-card-2columns">
                                 <ul>
-                                    <li>Example 1</li>
-                                    <li>Example 2</li>
-                                    <li>Example 3</li>
+                                    <li>The promoter will work one time per cell cycle.</li>
+                                    <li>The terminator will only work in its forward direction.</li>
+                                    <li>Each recombinase (when expressed) will invert non-reversibly the DNA sequence when such is flanked by PB sites.</li>
+                                    <li>Each recombinase together with the recombination directionality factor (RDF) (when both are expressed) will invert non-reversibly the DNA sequence when such is flanked by LR sites.</li>
                                 </ul>
                             </p>
                         </div>
