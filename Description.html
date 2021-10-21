@@ -425,7 +425,6 @@
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                     <h2>Bxb1 </h2>
-                                    <h3>subtitle </h3>
 
                                     <p class="">
                                         We chose Bxb1 as the first integrase since it displayed the best recombination efficiency</b> to obtain products with no residual substrates remaining as reported by Wang et al.  (2017), showing that the activity of Bxb1 integrase is obviously superior compared with any other integrase. Bxb1 integrase mediated excellent, efficient site-specific recombination in vitro in this study.
@@ -443,17 +442,15 @@
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
                                         <h2>TP901, Int5 and Int7 </h2>
-                                        <h3>subtitle </h3>
                                         <p>
                                             There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other
                                         </p>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>title </h2>
-                                        <h3>subtitle </h3>
+
                                         <p>
-                                            content
+                                            (There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other )
                                         </p>
                                     </div>
                                 </div>
@@ -470,28 +467,27 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>({BBa_B1002}).  </h2>
-                                    <h3>subtitle </h3>
+                                    <h2>Terminator:   </h2>
 
                                     <p class="">
-                                        <b>bidirectional</b> terminators to ensure the separation of the different modules, i.e. 
+                                        Terminators define the <b>end of translation</b>, they can be uni or bidirectional and are relevant to correct protein expression (iGEM, s.f.b). 
                                     </p>
                                 </div>
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>T1 ({BBa_B0010}) </h2>
-                                        <h3>subtitle </h3>
+                                        <h2>Terminator 1: </h2>
+                                        <h3>{BBa_B1002}. </h3>
                                         <p>
-                                            Only functions in its <b>forward</b> direction and can be used to regulate translation of polycistronic elements similarly to Friedland et al. (2009)’s proposal, in which they built a DNA Invertase Cascade (DIC).
+                                            <b>bidirectional</b> terminators to ensure the separation of the different modules, i.e.
                                         </p>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>title </h2>
-                                        <h3>subtitle </h3>
+                                        <h2>Terminator 2: </h2>
+                                        <h3>T1({BBa_B0010}) </h3>
                                         <p>
-                                            content
+                                            Only functions in its <b>forward</b> direction and can be used to regulate translation of polycistronic elements similarly to Friedland et al. (2009)’s proposal, in which they built a DNA Invertase Cascade (DIC).
                                         </p>
                                     </div>
                                 </div>
@@ -601,7 +597,7 @@
                                 aria-labelledby="pills-other-tab">
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>pasmid </h2>
+                                    <h2>Plasmid </h2>
 
                                     <p class="">
                                         Heterologous expression in E. coli may be achieved through several vectors such as plasmids or bacterial chromosomes, as well as by the insertion of DNA directly into the bacterial artificial chromosome. The ideal implementation for our proposal is <b>chromosomal insertion</b>, in order to prevent the existence of cells with a <b>mixed expression</b> within them (Zhao et al, 2019), otherwise understood as several counters in a different state. It’s also a way to allow the stable expression of foreign DNA without the need for antibiotic selection, the increased protein expression and the decrease of metabolic burden (Englaender et al., 2017). The likelihood of uptake of the synthetic DNA by other organisms is also decreased by this strategy. Nonetheless if it’s to be implemented in a plasmid, this should be <b>low-copy</b> in order to reduce the noise caused from the plasmid’s divergent expression, and the selection mechanism should be via auxotrophy to allow for more diverse implementations.
@@ -661,6 +657,7 @@
 
                                     The time for the loss of function of a genetic circuit can also be predicted by applying the <b>function developed by Arkin & Fletcher (2006) through a simulation study. 
                                 </p>
+                            </div>              
                                 <h3>Evolutionary stability of kill switches  </h3>
                                 <p>
                                     According to Stirling et al. (2017),  “any kill switch with leaky, low-level expression of a toxin in permissive conditions may be quickly disabled in rapidly growing microbes.” In our circuit this is highly unlikely, since the expression of the toxins is regulated by the same promoter that controls the expression of recombinases, and between them stand several terminators. Furthermore, the toxins from our kill-switch are to be expressed only once, and induced by the change of state from the previous module (counter circuit), hence <b>avoiding the complexities of an environmentally induced kill switch</b>. The necessity for induction is another decisive factor in the stability of the circuit, since, <b>uninduced there is no selective pressure for it to be dismantled</b>. This was proven by Pasotti et al. (2011), who evaluated the stability of an inducible killswitch, finding it to be stable for a maximum of 100 generations and strain dependent.  
