@@ -181,6 +181,12 @@
                                 <p>
                                     For the design of said circuit we defined three essential needs:
 
+                                    1. A way to <b>determine the lifetime</b> of our engineered bacteria
+
+                                    2. A mechanism to <b>prevent</b> the life span from running out during laboratory manipulation
+
+                                    3. A multilayered <b>killswitch</b> to ensure a safe death
+
                                 </p>
                             </div>
 
@@ -196,9 +202,14 @@
                             <!-- <h3>subtitle </h3> -->
 
                             <p class="wiki-card-2columns">
-                                We tackled our first design requirement by exhaustive brainstorming and research. Our
-                                main idea involved a counter system, hence, multiple mechanisms to perform this count
-                                were discussed, ................
+                                We tackled our first design requirement by exhaustive brainstorming and research. Our main idea involved a <b>counter system</b>, hence, multiple mechanisms to perform this count were discussed, from binary linear systems dependent on inducible promoters to our final implementation, a <b>sequential logic based recombinase device</b>. Some of the counter systems we assessed and used as inspiration are in the {comparison} section.
+
+                                In spite of the value of the previously mentioned proposals, none of the counters fit our more specific needs which were focused on the complexity, count limit and length of the device. Since we envisioned our circuit being used as an <b>auxiliary</b> to other applications, it was essential that the available count was as high as possible without the length growing exponentially. This left out counters such as the ones proposed by Groningen Team (2011) and Paris Liliane Bettencourt Team (2010), since they behave linearly and “in situations where the same signal is being recorded over multiple occurrences (for example, a series of cell division events), reliably rewritable elements are needed to realize geometric increases in data storage capacity (for example, combinatorial counters capable of recording 2N events given N storage elements)” (ref). Whereas Team: UT-Tokyo’s (2016) approach was not only lengthy but also complex and imposing a high metabolic burden, which were undesired qualities as well. Other proposals, even with 2n capability, displayed undesirable qualities such as the need for very specific regulatory systems such as the delay system presented by Zhao et al. (2019). Also, many of the counters were based on the theoretical assumption that there are n protein-induced promoters or n serine recombinases which don't have crosstalk issues being available, stating the limit at the number of orthogonal characterized recombinases (Yang et al., 2014). While good for stating our counter’s basis, such as the viability of placing several recombinases next to each other and having them behave correctly, we wanted to go even further. This led us to propose our own counter system, which went through several changes and iterations as explained in {engineering success} until we came up with a suitable approach as validated by <b>PhD. Pakpoom Subsoontorn and PhD. Jérôme Bonnet</b>.
+
+                                It’s important to note that our counter is a <b>practical representation</b> and <b>proof of concept</b> for the sequential-logic based development of genetic circuits that we propose in the {conceptual framework}. 
+
+                                The final genetic suicide circuit design consists of different modules, whose functions are explained next.
+
                             </p>
                         </div>
 
@@ -229,7 +240,6 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <h2>Repress-Initialize</h2>
-                                    <h3>subtitle</h3>
 
                                     <p>
                                         The first device was designed to maintain the other three <b>inactivated</b> until the user is ready to trigger the countdown with the intent of permitting the manipulation, cultivation, etc. of the engineered organism without the circuit counter being activated. Otherwise, if the circuit wasn’t under strict control, the growing times and uses of these microorganisms would be limited. The proposed mechanism consists of regulating the transcription of the main promoter via repression triggered by an inducible promoter.
@@ -255,7 +265,6 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <h2>Count</h2>
-                                    <h3>subtitle</h3>
 
                                     <p>
                                         Autonomous genetic counter whose purpose is to keep track of the number of <b>times</b> a cell goes through cell division (from the moment the counter is activated by the first device). The counter is based on a cell-cycle coupled promoter, recombinases and unidirectional terminators, as detailed in the {architecture section}. This device is able to count up to <b>2n</b> where n is the number of recombinases.
@@ -273,7 +282,6 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <h2>Expand Count</h2>
-                                    <h3>subtitle</h3>
 
                                     <p>
                                         The third device’s purpose is to enable a <b>higher count</b>, hence it’s also regulated by the second device’s promoter and it’s based on a self-excising DNA segment that <b>resets</b> the counter state of the previous device. This system is CRISPR Cas-9 reliant and amplifies the count by x times where x is the number of repeats of self-excising segments. 
@@ -299,7 +307,6 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <h2>Kill Switch</h2>
-                                    <h3>subtitle</h3>
 
                                     <p>
                                         Multi-layered containment system designed with the objective of <b>killing the host</b> cells leaving no trace and whose initiation depends on previous devices. Several toxins are involved in this device, including RelE and NucA1, along with self-targeting single guides to ensure its safety.
@@ -2224,7 +2231,7 @@
                 slides_content: {
                     "circuit": [{
                             title: "Introduction",
-                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            content: "Our project began with an objective in mind: expanding the boundaries of engineered organisms, specifically targeting their <b>release</b>. The design and implementation of a genetic suicide circuit is the beginning of this journey."
                         },
                         {
                             title: "Function",
@@ -2232,23 +2239,23 @@
                         },
                         {
                             title: "Architecture and theoretical basis",
-                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            content: "As for any well designed genetic circuit we took great care and consideration for the selection of the different parts and proteins included in our circuit. In this case, architecture is of high relevance, since it’s the key to allow the behavior and function we described earlier. This is even truer for our counter circuit, which we conceptualized as a <b>state machine</b> and, as such, defines each state by specific DNA configurations and requires a specific input to change state. In the following image you can see the design of our whole device and, by clicking on the boxes below, you can access our insight on each of the different parts and modules. "
                         },
                         {
                             title: "Characteristics",
-                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            content: "To showcase some of the best qualities of our circuit, we handpicked some of its characteristics of interest, most of them brought forward by our user interviews."
                         },
                         {
                             title: "Functional Animation",
-                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            content: "To better understand the behavior of our circuit we have developed an interactive animation in which each module can be activated and explored as their different steps unfold."
                         },
                         {
                             title: "Extras",
-                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            content: "This section contains additional modules along with variations for the ones presented within our main circuit. Their intention is to improve functionality and expand the utilization possibilities."
                         },
                         {
                             title: "Comparison",
-                            content: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            content: "To further demonstrate the novelty and capacity of our counter circuit we present a comparison with previously developed counters, highlighting their characteristics of interest."
                         },
                         {
                             title: "References",
