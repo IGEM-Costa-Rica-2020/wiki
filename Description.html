@@ -342,22 +342,22 @@
                                 <button class="btn btn-lg btn-outline-primary active mx-2 my-2" id="nav-promoters-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-promoters" type="button" role="tab"
                                     aria-controls="pills-promoters" aria-selected="true"
-                                    style=" border-radius: 50px;">promoters </button>
+                                    style=" border-radius: 50px;">Promoters </button>
 
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-recombinases-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-recombinases" type="button" role="tab"
                                     aria-controls="pills-recombinases" aria-selected="false"
-                                    style=" border-radius: 50px;">recombinases</button>
+                                    style=" border-radius: 50px;">Recombinases</button>
 
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-terminator-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-terminator" type="button" role="tab"
                                     aria-controls="pills-terminator" aria-selected="false"
-                                    style=" border-radius: 50px;">terminator</button>
+                                    style=" border-radius: 50px;">Terminator</button>
 
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-crispr-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-crispr" type="button" role="tab"
                                     aria-controls="pills-crispr" aria-selected="false"
-                                    style=" border-radius: 50px;">crispr</button>
+                                    style=" border-radius: 50px;">Crispr</button>
 
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-operator-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-operator" type="button" role="tab"
@@ -372,7 +372,7 @@
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-other-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-other" type="button" role="tab"
                                     aria-controls="pills-other" aria-selected="false"
-                                    style=" border-radius: 50px;">other elements</button>
+                                    style=" border-radius: 50px;">Other elements</button>
                             </div>
 
                         </nav>
@@ -385,14 +385,16 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>pBAD ({BBa_I0500}) </h2>
+                                        <h2>Promoter 1: pBAD </h2>
+                                        <h3>{BBa_I0500} </h3>
                                         <p>
                                             This promoter is induced by <b>arabinose</b> and it’s one of the most characterized for heterologous protein expression (Széliová et al., 2016), and commonly used in iGEM and synthetic biology itself (http://parts.igem.org/PBAD_Promoter_Family http://parts.igem.org/Part:BBa_I0500). Many of the other counter systems discussed in this project were developed and characterized with this promoter as its regulatory element (Roquet et al., 2016; Bonnet et al., 2012; Zhao et al., 2019; Yang et al., 2014). 
                                         </p>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>pnrd ({BBa_K2070012}) </h2>
+                                        <h2>Promoter 2: pnrd </h2>
+                                        <h3>{BBa_K2070012} </h3>
                                         <p>
                                             This promoter is <b>cell cycle dependent</b> according to (Sun 1992), since it is a highly regulated promoter region which contains several DnaA boxes, indicating that activity is partly affected by initiation of DNA replication (Messer 2002). The nrd operon itself in E. coli expresses a ribonucleotide reductase, an enzyme that reduces ribonucleotides into deoxyribonucleotides and is involved in bacterial cell cycle in E. coli (Sun 1994).  This part has been used previously by Stanford Brown in 2012 (http://2012.igem.org/Team:Stanford-Brown); they proved that the promoter turned on once every cell cycle. A variation of this promoter was also used by UT-Tokyo 2016 (link) to build a regulatory system in which gene expression changes after each cell division which is very similar to our own purpose. The use of this promoter ensures that our system will be activated only once every cell cycle. 
                                         </p>
@@ -401,7 +403,8 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>PO ({BBa_I746361}) </h2>
+                                        <h2>Promoter 3: PO </h2>
+                                        <h3>{BBa_I746361} </h3>
                                         <p>
                                             As reported in the part’s registry entry “This is the PO promoter taken from the P2 phage genome. It is an <b>inducible promoter</b> that is activated by a class of [proteic] <b>activators</b>, including P2 ogr (I746350), PSP3 pag (I746351) and phiR73 delta (I746352). These different activators should cause different levels of activity of the PO promoter.” 
                                         </p>
@@ -424,7 +427,7 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Recombinases: </h2>
+                                    <h2>Recombinases </h2>
 
                                     <p class="">
                                         DNA site-specific recombinases are enzymes that catalyse breaking and rejoining of DNA strands at specific points, thereby bringing about precise genetic <b>rearrangements</b>. Serine integrases are a group of recombinases with unusual properties such as recombination <b>directionality</b> and simple site requirements (Stark, 2017). According to Zhao et al. (2019) when inverting, serine recombinases recognize specific genetic sites, attB and attP (PB state), and invert the sequence between these sites generating the new sites attL and attR (LR state). This inversion is unidirectional, meaning that another component must be present for the inversion to be reversed. This component is the <b>RDF</b> (recombination directionality factor), and, when co-expressed with the recombinase, allows to switch the LR state back to PB (Zhao et al., 2019). Depending on the DNA arrangement, the use of integrases allow the control of the flow of RNA polymerase along the DNA, hence <b>regulating genetic expression</b> (Merrick et al., 2018). The selected recombinases have been tried out together and display orthogonality (Guiziou et al., 2019). They have also been characterized in several other chassises, making our circuit easier to extrapolate (Tomimatsu et al., 2017; Xu & Brown, 2016).  BXB1 and TP901 particularly have been used in similar proposals such as Hsiao et al. (2016) y Roquet et al. (2016). 
@@ -442,17 +445,18 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>Recombinase 1:Bxb1 </h2>
-                                        
+                                        <h2>Recombinase 1:</h2>
+                                        <h3>Bxb1  </h3>
                                         <p>
                                             We chose Bxb1 as the first integrase since it displayed the best recombination efficiency</b> to obtain products with no residual substrates remaining as reported by Wang et al.  (2017), showing that the activity of Bxb1 integrase is obviously superior compared with any other integrase. Bxb1 integrase mediated excellent, efficient site-specific recombination in vitro in this study.
                                         </p>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>Recombinase 2, 3 and 4 represent TP901, Int5 and Int7 respectively. </h2>
+                                        <h2>Recombinase 2, 3 and 4: </h2>
+                                        <h3>represent TP901, Int5 and Int7 respectively  </h3>
                                         <p>
-                                            (There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other )
+                                            There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other
                                         </p>
                                     </div>
                                 </div>
@@ -469,7 +473,7 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Terminator:   </h2>
+                                    <h2>Terminator   </h2>
 
                                     <p class="">
                                         Terminators define the <b>end of translation</b>, they can be uni or bidirectional and are relevant to correct protein expression (iGEM, s.f.b). 
@@ -479,7 +483,7 @@
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
                                         <h2>Terminator 1: </h2>
-                                        <h3>{BBa_B1002}. </h3>
+                                        <h3>{BBa_B1002} </h3>
                                         <p>
                                             <b>bidirectional</b> terminators to ensure the separation of the different modules, i.e.
                                         </p>
@@ -487,7 +491,7 @@
 
                                     <div class="col-sm-6">
                                         <h2>Terminator 2: </h2>
-                                        <h3>T1({BBa_B0010}) </h3>
+                                        <h3>{BBa_B0010} </h3>
                                         <p>
                                             Only functions in its <b>forward</b> direction and can be used to regulate translation of polycistronic elements similarly to Friedland et al. (2009)’s proposal, in which they built a DNA Invertase Cascade (DIC).
                                         </p>
@@ -507,7 +511,7 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>CRISPR+ligase: </h2>
+                                    <h2>CRISPR+ligase </h2>
 
                                     <p class="">
                                         The CRISPR-Cas9 system, a gene editing system, depends on two main elements, a small RNA fragment that contains the guide sequence that binds to the target DNA sequence and the Cas9 enzyme joined to the guide RNA sequence. When the guide is transcribed, it binds to the Cas9 in order to recognize the target DNA sequence which is then cut by the enzyme, creating a double strand  break. This break can be used to delete, insert or replace DNA if used coupled with the cell’s own repair machinery (MedlinePlus, s.f.). In our case E. coli doesn’t have a non-homologous end joining (NHEJ) repair system, so a double stranded break can only be fixed by homologous recombination. Since we don’t want the insertion of a template to be required, we searched for a different alternative, and found that a T4 ligase can fix the break creating indels that <b>knockout</b> the gene and prevent the cell from committing suicide because of the broken DNA (Su et al., 2016). This is according to Su et al. (2019), who report using a ligase for repairing a DSB made by Cas9 in LacZ gene in E. coli, leading to the survival of cells. In turn Su et al. (2016) report using a different strategy: which involved the design of sg to avoid HR and the use of conserved prokaryotic NHEJ proteins from Mycobacterium tuberculosis H37Rv instead for repairing complete gene deletions, proving that this is in fact possible even though in their case it had only 36% efficiency. We believe that by joining the best of each strategy, the ligase and the sg design, and having a much smaller deletion target (which in turn is closer to DNA deletion consistency at 200bp) we can have a much better efficiency in both deletion and repair.
@@ -541,7 +545,7 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Operator sites: </h2>
+                                    <h2>Operator sites </h2>
 
                                     <p class="">
                                         “A common method of <b>repressing gene expression</b> in prokaryotes involves the binding of a protein to a DNA sequence (a.k.a. operator) near or overlapping its promoter” (Politz et al., 2013). These operators, in our design, were purposely ambiguous, since their identity can vary depending on available technology. The common requirement they must fulfill is binding to specific DNA sequences. A readily available mechanism to do this is taking advantage of already existing repressors such as LacI from the Lac operon or the phage encoded lambda repressor (cI) (Lewis, 2011). The deactivated version of the cas9 protein is also an alternative, but its location would have to be rethought, since it would need to be active and functional for all three cases (Xu & Qi, 2019). Finally, other synthetically designed DNA-binding proteins can be used, TALEs being one of the most used of these categories (Politz et al., 2013). 
@@ -556,7 +560,7 @@
                                 aria-labelledby="pills-multilay-tab">
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Multi-layered containment system: </h2>
+                                    <h2>Multi-layered containment system </h2>
 
                                     <p class="">
                                         A multi-layered safeguard system is a series of barriers that can decrease the escape frequency of synthetically modified microorganisms (Gallagher et al., 2015). In this device, the main objective is to develop a biocontainment, condition independent, kill switch.
@@ -1048,11 +1052,10 @@
 
 
                         <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                            <h2>title </h2>
-                            <h3>subtitle </h3>
+                            <h2>Overcount Prevention </h2>
 
                             <p class="">
-                                content
+                                “A potential challenge in designing a robust biological counter is the ability to count at completion of the event. The existing designs of the counters are sensitive to the pulse duration–a brief pulse will be ignored and a lengthy pulse can cause the counter to count ahead” (Noman et al., 2016). Given the concerns over the regulation of the count expressed by Dr. Pakpoom and Dr. Bonnet, further explained in engineering success, we designed a module to prevent overcount. This system works by placing an proteic inducer for an external promoter and an operator site after the main promoter. When active, the external promoter will produce a repressor which will in turn bind to the operator site preventing translation. The central concept to it is <b>affinity</b>, both the proteic inducer and the operator affinity are tunable, the first more than the latter. Once a pulse is received by the main promoter the proteic inducer will be expressed, along with the respective recombinase depending on the circuit’s state. If designed correctly, the affinity of the proteic inducer and the repressor will be just so that exactly the right amount of recombinase will be produced in order to change state without doing it twice or being shut off before being able to act. We designed a construct to prove this hypothesis, you can check our work on it in Wet Lab.
                             </p>
                         </div>
                         <div class="container  mx-auto p-3 wikicard-12-img">
@@ -1067,7 +1070,7 @@
                                 <!-- <h2>title </h2> -->
                                 <!-- <h3>subtitle </h3> -->
                                 <p>
-                                    content
+                                    Another possible solution to the response of a continuous pulse would be to include an <b>incoherent feedforward loop</b> to regulate the type of pulse the system responds to, as suggested by PhD. Rodrigo Mora. This type of standardized regulation consists of an activator which “regulates both a gene and a repressor of the gene”, similar to the manner in which we proposed our overcount system (Goentoro et al., 2009).
                                 </p>
                             </div>
 
@@ -1076,10 +1079,9 @@
 
                         <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                             <div class="col-sm-6">
-                                <h2>title </h2>
-                                <h3>subtitle </h3>
+                                <h2>Promoters </h2>
                                 <p>
-                                    content
+                                    Additionally, we propose the use of inducible promoters (such as pBAD) instead of pnrd for <b>user-controlled counter systems</b>. These could even involve the association of the counter to specific environmental conditions such as pH, temperature, presence of certain molecules and others can easily be done by changing the initiating module to one dependent on these conditions. 
                                 </p>
                             </div>
 
@@ -1091,20 +1093,19 @@
 
 
                         <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                            <h2>title </h2>
-                            <h3>subtitle </h3>
-
+                            <h2>Containment </h2>
+                            <h3>Plasmid specific:  </h3>
                             <p class="">
-                                content
+                                A <b>toxin-antitoxin</b> could also be used for regulation and the actual kill (fourth device), in our proposal it’s counter effective to have another regulatory device of this magnitude but for systems in which a plasmid needs to be added and contained it could be useful, for example, the toxin could be placed on the plasmid and the respective antitoxin on the genome, avoiding horizontal gene transfer, because the plasmid will get the toxin but not the antitoxin to persist in other microorganisms (Torres et al., 2016). However, the toxin-antitoxin systems are usually complemented by a synthetic auxotrophy in which cells can only grow in the presence of an exogenously supplied metabolite that limits the cell survival under desired conditions, but implicates some risks (Chan et al., 2016). Toxin-antitoxin systems have been reported with high mobility between genomes through horizontal gene transfer and its stability in the genome is still uncertain due to mutations accumulation due to genetic drift (Van Melderen & Saavedra, 2009), and auxotrophy could be satisfied by metabolite cross-feeding or essential small molecules on environmental conditions (Gallagher et al., 2015), besides it requires extensive genome-wide engineering and reprogrammation for different environmental conditions is complicated (Chan et al., 2015). Nevertheless, we propose Gmk (https://www.uniprot.org/uniprot/P60546#sequences) as an auxotrophy gene, which has been reported as an essentialness by single-gene knocking out technique (Baba et al., 2006). It is important to denote that some toxin-antitoxin systems are able to lysate cells (Van Melderen & Saavedra, 2009), which is not beneficial for the optimal work timing of the whole system we propose. 
                             </p>
                         </div>
 
                         <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                             <div class="col-sm-6">
                                 <!-- <h2>title </h2> -->
-                                <h3>subtitle </h3>
+                                <h3>Specific toxins: </h3>
                                 <p>
-                                    content
+                                     If a toxin could be designed to target our strain and only our strain of E. coli it could be released from the cells that first reach the end of the counter, <b>reducing the noise</b> of signal processing from each cell and ensuring that even cells with flaws in the system are killed.
                                 </p>
                             </div>
 
@@ -1117,11 +1118,10 @@
 
 
                         <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                            <h2>title </h2>
-                            <h3>subtitle </h3>
+                            <h2>Growth phase association: quorum sensing  </h2>
 
                             <p class="">
-                                content
+                                Same manner as the one described in the previous “promoters” section. Nonetheless, its implications are much more extensive, since “quorum sensing allows groups of bacteria to synchronously alter behaviour in response to changes in the population density and species composition of the vicinal community” (Mukherjee & Bassler, 2019). “QS is likely to control behaviours that are crucial for the development and success of these communities in diverse environments such as the human gut and chronic infections in humans” (Whiteley et al., 2017). According to (Wu et al., 2020) “<b>Dynamic control of bacterial populations</b> usually includes population size control, dynamic metabolic engineering for desirable products and the regulation of various physiological activities”. This regulation mechanism has been used in the development “of various genetic circuits such as genetic oscillators, toggle switches and logic gates with AHL-based QS devices in Gram-negative bacteria” (Wu et al., 2020).
                             </p>
                         </div>
                         <div class="container  mx-auto p-3 wikicard-12-img">
