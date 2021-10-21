@@ -1961,7 +1961,7 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                                 As mentioned before, the conceptual framework was a set of ideas to guide a computational or manual design, construction, simulation and analysis of synthetic gene circuits as state machines. We decided to apply our framework as a base for software tools’ design, where such tools would aid the exploration of alternative circuit architectures, while offering flexibility in the implementation and optimization. This means, we <b>implemented the concepts described and the coupling of them with sequential logic</b> -specially the {processing workflow}- <b>as computational concepts and a workflow to be used as a software’s guide.</b><br>
 
 
-                                A software framework provides an <b>abstraction for generic software functionalities upon which other software applications can be built. It makes <b>implementation details transparent to other developers</b>, which gets rid of most tedious and repetitive work, while providing a sturdy base for development and allowing most of the development effort to be tailored towards functional and valuable software. Thus this software framework can be easily used as a starting point for implementing software tools.<br>
+                                A software framework provides an <b>abstraction for generic software functionalities</b> upon which other software applications can be built. It makes <b>implementation details transparent to other developers</b>, which gets rid of most tedious and repetitive work, while providing a sturdy base for development and allowing most of the development effort to be tailored towards functional and valuable software. Thus this software framework can be easily used as a starting point for implementing software tools.<br>
 
 
                                 The objective of this software framework is to set a <b>structural guide for facilitating the design of a software</b> to be used for the generation, assessment and manipulation of synthetic gene circuits as state machines. <br>
@@ -2013,19 +2013,21 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#panelsStayOpen-collapseTwo3" aria-expanded="false"
                                         aria-controls="panelsStayOpen-collapseTwo3">
-                                        Accordion Item #2
+                                        Stage 2: Evaluator
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseTwo3" class="accordion-collapse collapse  show "
                                     aria-labelledby="panelsStayOpen-headingTwo3">
                                     <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                                        default, until the collapse plugin adds the appropriate classes that we use to
-                                        style each element. These classes control the overall appearance, as well as the
-                                        showing and hiding via CSS transitions. You can modify any of this with custom
-                                        CSS or overriding our default variables. It's also worth noting that just about
-                                        any HTML can go within the <code>.accordion-body</code>, though the transition
-                                        does limit overflow.
+                                       The evaluator traverses the circuit following its organization -given by the circuit's data structure- to define the parts that are functional, <i>i.e.</i> expressed, by considering relevant dependencies, such as repressors, inducers, promoters, terminators. The functionality relates to the interactions involving coding parts and other parts that promote or inhibit transcription, such as promoters, terminators, operators, recognition sites.
+
+                                        <strong>Input:</strong> a data structure that defines the circuit through its parts and order.
+
+                                        <strong>Base output:</strong> A list of parts that get expressed in this state.
+
+                                        <strong>Extended output:</strong> PRIORIZACION??. The related inputs and interaction that enables the expression of the parts: which promoter and/or which inducer.<br>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -2038,19 +2040,22 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#panelsStayOpen-collapseThree3" aria-expanded="false"
                                         aria-controls="panelsStayOpen-collapseThree3">
-                                        Accordion Item #3
+                                        Stage 3: Actuator
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseThree3" class="accordion-collapse collapse show"
                                     aria-labelledby="panelsStayOpen-headingThree3">
                                     <div class="accordion-body">
-                                        <strong>This is the third item's accordion body.</strong> It is hidden by
-                                        default, until the collapse plugin adds the appropriate classes that we use to
-                                        style each element. These classes control the overall appearance, as well as the
-                                        showing and hiding via CSS transitions. You can modify any of this with custom
-                                        CSS or overriding our default variables. It's also worth noting that just about
-                                        any HTML can go within the <code>.accordion-body</code>, though the transition
-                                        does limit overflow.
+                                        
+
+                                        In the actuator phase, the functions of the previously tagged functional parts are executed. This process must follow the same organization and can consider simultaneous functions, alternate scenarios, or follow a single route. After the function is executed, a different circuit state is obtained. Therefore, the state change is processed by carrying out the functionality.
+
+                                        <strong>Input:</strong> a data structure that defines the circuit through its parts and order, and a list of parts that get expressed in this state.
+
+                                        <strong>Output:</strong> a new state or states as data structures that define each circuit.<br>
+
+                                        At this point, the output circuit or circuits can be cycled back into the validator to redefine the functional parts. Thus, the number of evaluator/actuator cycles is repeated according to the number of desired states/state changes, or until there are no more possible modifications.<br>
+
                                     </div>
                                 </div>
                             </div>
@@ -2061,19 +2066,13 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#panelsStayOpen-collapseForth3" aria-expanded="false"
                                         aria-controls="panelsStayOpen-collapseForth3">
-                                        Accordion Item #3
+                                        Stage 4: Analysis
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseForth3" class="accordion-collapse collapse show"
                                     aria-labelledby="panelsStayOpen-headingForth3">
                                     <div class="accordion-body">
-                                        <strong>This is the third item's accordion body.</strong> It is hidden by
-                                        default, until the collapse plugin adds the appropriate classes that we use to
-                                        style each element. These classes control the overall appearance, as well as the
-                                        showing and hiding via CSS transitions. You can modify any of this with custom
-                                        CSS or overriding our default variables. It's also worth noting that just about
-                                        any HTML can go within the <code>.accordion-body</code>, though the transition
-                                        does limit overflow.
+                                        After the desired set of cycles are runned, or throughout it, the analysis stage is performed. The analysis is based on a database fed the designed and modelled circuits. Everytime a evaluator/actuator cycle is performed, the generated state or states are stored here, thus saving the history of the circuit’s behavior. Through the database, the circuits can be analyzed and filtered using simple queries based on the circuit’s characteristics. The filters allow for the development and exploration of circuits to be oriented.<br>
                                     </div>
                                 </div>
                             </div>
