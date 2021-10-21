@@ -179,13 +179,13 @@
                                 <!-- <h2>title </h2> -->
                                 <!-- <h3>subtitle </h3> -->
                                 <p>
-                                    For the design of said circuit we defined three essential needs:
+                                    For the design of said circuit we defined three essential needs: <br><br>
 
-                                    1. A way to <b>determine the lifetime</b> of our engineered bacteria
+                                    1. A way to <b>determine the lifetime</b> of our engineered bacteria<br>
 
-                                    2. A mechanism to <b>prevent</b> the life span from running out during laboratory manipulation
+                                    2. A mechanism to <b>prevent</b> the life span from running out during laboratory manipulation<br>
 
-                                    3. A multilayered <b>killswitch</b> to ensure a safe death
+                                    3. A multilayered <b>killswitch</b> to ensure a safe death<br>
 
                                 </p>
                             </div>
@@ -201,12 +201,12 @@
                             <!-- <h2>title </h2> -->
                             <!-- <h3>subtitle </h3> -->
 
-                            <p class="wiki-card-2columns">
-                                We tackled our first design requirement by exhaustive brainstorming and research. Our main idea involved a <b>counter system</b>, hence, multiple mechanisms to perform this count were discussed, from binary linear systems dependent on inducible promoters to our final implementation, a <b>sequential logic based recombinase device</b>. Some of the counter systems we assessed and used as inspiration are in the {comparison} section.
+                            <p class="">
+                                We tackled our first design requirement by exhaustive brainstorming and research. Our main idea involved a <b>counter system</b>, hence, multiple mechanisms to perform this count were discussed, from binary linear systems dependent on inducible promoters to our final implementation, a <b>sequential logic based recombinase device</b>. Some of the counter systems we assessed and used as inspiration are in the {comparison} section. <br><br>
 
-                                In spite of the value of the previously mentioned proposals, none of the counters fit our more specific needs which were focused on the complexity, count limit and length of the device. Since we envisioned our circuit being used as an <b>auxiliary</b> to other applications, it was essential that the available count was as high as possible without the length growing exponentially. This left out counters such as the ones proposed by Groningen Team (2011) and Paris Liliane Bettencourt Team (2010), since they behave linearly and “in situations where the same signal is being recorded over multiple occurrences (for example, a series of cell division events), reliably rewritable elements are needed to realize geometric increases in data storage capacity (for example, combinatorial counters capable of recording 2N events given N storage elements)” (ref). Whereas Team: UT-Tokyo’s (2016) approach was not only lengthy but also complex and imposing a high metabolic burden, which were undesired qualities as well. Other proposals, even with 2n capability, displayed undesirable qualities such as the need for very specific regulatory systems such as the delay system presented by Zhao et al. (2019). Also, many of the counters were based on the theoretical assumption that there are n protein-induced promoters or n serine recombinases which don't have crosstalk issues being available, stating the limit at the number of orthogonal characterized recombinases (Yang et al., 2014). While good for stating our counter’s basis, such as the viability of placing several recombinases next to each other and having them behave correctly, we wanted to go even further. This led us to propose our own counter system, which went through several changes and iterations as explained in {engineering success} until we came up with a suitable approach as validated by <b>PhD. Pakpoom Subsoontorn and PhD. Jérôme Bonnet</b>.
+                                In spite of the value of the previously mentioned proposals, none of the counters fit our more specific needs which were focused on the complexity, count limit and length of the device. Since we envisioned our circuit being used as an <b>auxiliary</b> to other applications, it was essential that the available count was as high as possible without the length growing exponentially. This left out counters such as the ones proposed by Groningen Team (2011) and Paris Liliane Bettencourt Team (2010), since they behave linearly and “in situations where the same signal is being recorded over multiple occurrences (for example, a series of cell division events), reliably rewritable elements are needed to realize geometric increases in data storage capacity (for example, combinatorial counters capable of recording 2N events given N storage elements)” (ref). Whereas Team: UT-Tokyo’s (2016) approach was not only lengthy but also complex and imposing a high metabolic burden, which were undesired qualities as well. Other proposals, even with 2n capability, displayed undesirable qualities such as the need for very specific regulatory systems such as the delay system presented by Zhao et al. (2019). Also, many of the counters were based on the theoretical assumption that there are n protein-induced promoters or n serine recombinases which don't have crosstalk issues being available, stating the limit at the number of orthogonal characterized recombinases (Yang et al., 2014). While good for stating our counter’s basis, such as the viability of placing several recombinases next to each other and having them behave correctly, we wanted to go even further. This led us to propose our own counter system, which went through several changes and iterations as explained in {engineering success} until we came up with a suitable approach as validated by <b>PhD. Pakpoom Subsoontorn and PhD. Jérôme Bonnet</b>. <br><br>
 
-                                It’s important to note that our counter is a <b>practical representation</b> and <b>proof of concept</b> for the sequential-logic based development of genetic circuits that we propose in the {conceptual framework}. 
+                                It’s important to note that our counter is a <b>practical representation</b> and <b>proof of concept</b> for the sequential-logic based development of genetic circuits that we propose in the {conceptual framework}. <br><br>
 
                                 The final genetic suicide circuit design consists of different modules, whose functions are explained next.
 
@@ -359,7 +359,7 @@
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-crispr-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-crispr" type="button" role="tab"
                                     aria-controls="pills-crispr" aria-selected="false"
-                                    style=" border-radius: 50px;">Crispr</button>
+                                    style=" border-radius: 50px;">CRISPR+Ligase</button>
 
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-operator-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-operator" type="button" role="tab"
@@ -369,7 +369,7 @@
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-multilay-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-multilay" type="button" role="tab"
                                     aria-controls="pills-multilay" aria-selected="false"
-                                    style=" border-radius: 50px;">Multi layered</button>
+                                    style=" border-radius: 50px;">Multi layered containment system</button>
 
                                 <button class="btn btn-lg btn-outline-primary mx-2 my-2 " id="nav-other-tab"
                                     data-bs-toggle="tab" data-bs-target="#pills-other" type="button" role="tab"
@@ -394,7 +394,7 @@
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>Promoter 1: pBAD {BBa_I0500} </h2>
+                                        <h3>Promoter 1: pBAD {BBa_I0500} </h3>
                                         <p>
                                             This promoter is induced by <b>arabinose</b> and it’s one of the most characterized for heterologous protein expression (Széliová et al., 2016), and commonly used in iGEM and synthetic biology itself (http://parts.igem.org/PBAD_Promoter_Family http://parts.igem.org/Part:BBa_I0500). Many of the other counter systems discussed in this project were developed and characterized with this promoter as its regulatory element (Roquet et al., 2016; Bonnet et al., 2012; Zhao et al., 2019; Yang et al., 2014). 
                                         </p>
@@ -403,7 +403,7 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>Promoter 2: pnrd {BBa_K2070012} </h2>
+                                        <h3>Promoter 2: pnrd {BBa_K2070012} </h3>
                                         <p>
                                             This promoter is <b>cell cycle dependent</b> according to (Sun 1992), since it is a highly regulated promoter region which contains several DnaA boxes, indicating that activity is partly affected by initiation of DNA replication (Messer 2002). The nrd operon itself in E. coli expresses a ribonucleotide reductase, an enzyme that reduces ribonucleotides into deoxyribonucleotides and is involved in bacterial cell cycle in E. coli (Sun 1994).  This part has been used previously by Stanford Brown in 2012 (http://2012.igem.org/Team:Stanford-Brown); they proved that the promoter turned on once every cell cycle. A variation of this promoter was also used by UT-Tokyo 2016 (link) to build a regulatory system in which gene expression changes after each cell division which is very similar to our own purpose. The use of this promoter ensures that our system will be activated only once every cell cycle. 
                                         </p>
@@ -445,16 +445,16 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>Recombinase 1: </h2>
-                                        <h3>Bxb1  </h3>
+                                       <h3>Recombinase 1:Bxb1 </h3>
+                                       
                                         <p>
                                             We chose Bxb1 as the first integrase since it displayed the best recombination efficiency</b> to obtain products with no residual substrates remaining as reported by Wang et al.  (2017), showing that the activity of Bxb1 integrase is obviously superior compared with any other integrase. Bxb1 integrase mediated excellent, efficient site-specific recombination in vitro in this study.
                                         </p>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>Recombinase 2, 3 and 4:  </h2>
-                                        <h3>Represent TP901, Int5 and Int7 respectively. </h3>
+                                        <h3>Recombinase 2, 3 and 4: 
+                                        Represent TP901, Int5 and Int7 respectively. </h3>
                                         <p>
                                             There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other 
                                         </p>
@@ -482,16 +482,16 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>Terminator 1: </h2>
-                                        <h3>{BBa_B1002} </h3>
+                                        <h3>Terminator 1: 
+                                      {BBa_B1002} </h3>
                                         <p>
                                              <b>Bidirectional</b> terminators to ensure the separation of the different modules, i.e. 
                                         </p>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>Terminator 2: </h2>
-                                        <h3>{BBa_B0010} </h3>
+                                        <h3>Terminator 2: 
+                                        {BBa_B0010} </h3>
                                         <p>
                                             Only functions in its <b>forward</b> direction and can be used to regulate translation of polycistronic elements similarly to Friedland et al. (2009)’s proposal, in which they built a DNA Invertase Cascade (DIC).
                                         </p>
@@ -520,17 +520,17 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Cas9 </h2>
+                                    <h3>Cas9 </h3>
                                     <p class="">
                                          http://parts.igem.org/Part:BBa_K1774001:Experience
                                     </p>
 
-                                    <h2>Sg </h2>
+                                    <h3>Sg </h3>
                                     <p class="">
                                         Our single guides are to be designed to fulfill several requirements for an increased specificity and efficiency and decreased off-target effects as proposed by Liu et al. (2020). 
                                     </p>
 
-                                    <h2>Ligase </h2>
+                                    <h3>Ligase </h3>
                                     <p class="">
                                         {BBa_K3917004},  created by basing off of Su et al. (2019). 
                                     </p>
@@ -563,7 +563,8 @@
                                     <h2>Multi-layered containment system </h2>
                                     
                                     <p class="">
-                                        A multi-layered safeguard system is a series of barriers that can decrease the escape frequency of synthetically modified microorganisms (Gallagher et al., 2015). In this device, the main objective is to develop a biocontainment, condition independent, kill switch.
+                                        
+                                        A multi-layered safeguard system is a series of barriers that can decrease the escape frequency of synthetically modified microorganisms (Gallagher et al., 2015). In this device, the main objective is to develop a biocontainment, condition independent, kill switch.<br><br>
                                     </p>
                                     
                                     <h3>RelE: modified {BBa_K2449029}, removing the double terminator. </h3>
@@ -638,9 +639,9 @@
                                 <h2>Evolutionary Stability </h2>
                                 <h3>Evolutionary stability of recombinase based memory circuits  </h3>
                                 <p>
-                                    According to Fernandez-Rodriguez et al. (2015) one of the design principles for long-term stability is the <b>avoidance of constitutive expression</b>, which we have applied in our circuit. They also mention that “Placing the circuit in the <b>genome</b> could also improve stability, as this is a common approach to improve the robustness of strains in metabolic engineering” (Fernandez-Rodriguez et al., 2015). Another consideration that must be made is the <b>prevention of leaky expression</b>, since it can generate a drift into a different state and even disable the ability to hold a state. In our circuit the expression of all recombinases is regulated by the same promoter, so this issue is not expected to be relevant to its performance. Canton et al., (2008) note that the evolutionary stability is also dependent on the <b>state</b> in which the circuit is carried; the authors note that a circuit in the OFF state can easily be carried over many generations, whereas in the ON state it quickly breaks. This specific quality can be problematic for our circuit, since one way or another it’s always turned on because of the dependence on the cell-cycle promoter. Nonetheless, since different activities are carried out in each specific state and there is no constant expression of regulatory proteins, this might not be relevant to the circuit’s stability, since “the burden is a function of regulator expression, the evolutionary stability depends on the state in which the circuit is carried” (Fernandez-Rodriguez et al., 2015).
+                                    According to Fernandez-Rodriguez et al. (2015) one of the design principles for long-term stability is the <b>avoidance of constitutive expression</b>, which we have applied in our circuit. They also mention that “Placing the circuit in the <b>genome</b> could also improve stability, as this is a common approach to improve the robustness of strains in metabolic engineering” (Fernandez-Rodriguez et al., 2015). Another consideration that must be made is the <b>prevention of leaky expression</b>, since it can generate a drift into a different state and even disable the ability to hold a state. In our circuit the expression of all recombinases is regulated by the same promoter, so this issue is not expected to be relevant to its performance. Canton et al., (2008) note that the evolutionary stability is also dependent on the <b>state</b> in which the circuit is carried; the authors note that a circuit in the OFF state can easily be carried over many generations, whereas in the ON state it quickly breaks. This specific quality can be problematic for our circuit, since one way or another it’s always turned on because of the dependence on the cell-cycle promoter. Nonetheless, since different activities are carried out in each specific state and there is no constant expression of regulatory proteins, this might not be relevant to the circuit’s stability, since “the burden is a function of regulator expression, the evolutionary stability depends on the state in which the circuit is carried” (Fernandez-Rodriguez et al., 2015). <br><br>
 
-                                    This was seconded by Sleight et al. (2010), who state that “Evolutionary stability is a problem in genetic circuits if there is no selective pressure to maintain function of the circuit. The current belief is that this loss-of-function occurs because any cell in the population that acquires a mutation in the genetic circuit often has a growth advantage and can outcompete the cells in the population with all functional plasmids”; hence, if there is no <b>significant metabolic burden</b>, there is no advantage.  Finally, we weren’t able to carry out an evolutionary stability experiment of our own; however, extrapolating the results obtained by Fernandez-Rodriguez et al. (2015) shows great promise for our circuit. They report a stability of over 400 hours for their memory switch, and credit its breaking to continuous invertase expression and the host’s evolution towards reducing its expression. More importantly, Fernandez-Rodriguez et al. (2015) indicate that during the 400 hour period, 6 cycles of their circuit, “there was no loss of performance, reduction in dynamic range, or increase in population variability”. The main risk to our circuits stability are transposable insertion elements and even homologous recombination, which can be avoided by using <b>diverse parts</b> in the construction of the circuit and using strains where insertion elements have been deleted from the genome; nevertheless, both these strategies involve challenges on themselves, particularly the need for more robust strains for many applications, as stated by Fernandez-Rodriguez et al. (2015). Finally, although evolutionary stability must be considered when designing a circuit, the main focus should be on the specific end application. The required robustness of a circuit will be directly related to the <b>duration of its application</b>. “For example, circuits do not need to be robust for months if designed for a one week fermentation”(Fernandez-Rodriguez et al., 2015).
+                                    This was seconded by Sleight et al. (2010), who state that “Evolutionary stability is a problem in genetic circuits if there is no selective pressure to maintain function of the circuit. The current belief is that this loss-of-function occurs because any cell in the population that acquires a mutation in the genetic circuit often has a growth advantage and can outcompete the cells in the population with all functional plasmids”; hence, if there is no <b>significant metabolic burden</b>, there is no advantage.  Finally, we weren’t able to carry out an evolutionary stability experiment of our own; however, extrapolating the results obtained by Fernandez-Rodriguez et al. (2015) shows great promise for our circuit. They report a stability of over 400 hours for their memory switch, and credit its breaking to continuous invertase expression and the host’s evolution towards reducing its expression. More importantly, Fernandez-Rodriguez et al. (2015) indicate that during the 400 hour period, 6 cycles of their circuit, “there was no loss of performance, reduction in dynamic range, or increase in population variability”. The main risk to our circuits stability are transposable insertion elements and even homologous recombination, which can be avoided by using <b>diverse parts</b> in the construction of the circuit and using strains where insertion elements have been deleted from the genome; nevertheless, both these strategies involve challenges on themselves, particularly the need for more robust strains for many applications, as stated by Fernandez-Rodriguez et al. (2015). Finally, although evolutionary stability must be considered when designing a circuit, the main focus should be on the specific end application. The required robustness of a circuit will be directly related to the <b>duration of its application</b>. “For example, circuits do not need to be robust for months if designed for a one week fermentation”(Fernandez-Rodriguez et al., 2015). <br><br>
 
                                     The time for the loss of function of a genetic circuit can also be predicted by applying the <b>function</b> developed by Arkin & Fletcher (2006) through a simulation study. 
                                 </p>
@@ -656,9 +657,9 @@
                             <div class="col-sm-6">
                                 <h3>Evolutionary stability of kill switches </h3>
                                 <p>
-                                    According to Stirling et al. (2017),  “any kill switch with leaky, low-level expression of a toxin in permissive conditions may be quickly disabled in rapidly growing microbes.” In our circuit this is highly unlikely, since the expression of the toxins is regulated by the same promoter that controls the expression of recombinases, and between them stand several terminators. Furthermore, the toxins from our kill-switch are to be expressed only once, and induced by the change of state from the previous module (counter circuit), hence <b>avoiding the complexities of an environmentally induced kill switch</b>. The necessity for induction is another decisive factor in the stability of the circuit, since, <b>uninduced there is no selective pressure for it to be dismantled</b>. This was proven by Pasotti et al. (2011), who evaluated the stability of an inducible killswitch, finding it to be stable for a maximum of 100 generations and strain dependent.  
+                                    According to Stirling et al. (2017),  “any kill switch with leaky, low-level expression of a toxin in permissive conditions may be quickly disabled in rapidly growing microbes.” In our circuit this is highly unlikely, since the expression of the toxins is regulated by the same promoter that controls the expression of recombinases, and between them stand several terminators. Furthermore, the toxins from our kill-switch are to be expressed only once, and induced by the change of state from the previous module (counter circuit), hence <b>avoiding the complexities of an environmentally induced kill switch</b>. The necessity for induction is another decisive factor in the stability of the circuit, since, <b>uninduced there is no selective pressure for it to be dismantled</b>. This was proven by Pasotti et al. (2011), who evaluated the stability of an inducible killswitch, finding it to be stable for a maximum of 100 generations and strain dependent. <br><br>
 
-                                    Further optimization for the final application can be done by applying tools such as “Predicting the Genetic Stability of Engineered DNA Sequences with the EFM Calculator” and making the necessary alterations regarding the sequence such as altering codon usage in the different CDSs or swapping out promoters/rbs of equal strength (Jack et al., 2015).
+                                    Further optimization for the final application can be done by applying tools such as “Predicting the Genetic Stability of Engineered DNA Sequences with the EFM Calculator” and making the necessary alterations regarding the sequence such as altering codon usage in the different CDSs or swapping out promoters/rbs of equal strength (Jack et al., 2015).<br><br>
 
                                     For further characterization and application examples, check out our Proposed Implementation page.
                                 </p>
@@ -682,7 +683,7 @@
                             <!-- <h3>subtitle </h3> -->
 
                             <p class="">
-                                The functioning is based on four main premises based on the architecture: 
+                                The functioning is based on four main premises based on the architecture:
                             </p>
                         </div>
 
