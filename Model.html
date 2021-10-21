@@ -191,7 +191,7 @@
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseModel1-1" aria-expanded="true"
                             aria-controls="panelsStayOpen-collapseModel1-1">
-                            Accordion Item #1
+                            Description
                         </button>
 
                     </h2>
@@ -205,7 +205,15 @@
 
 
                                 <p class="  ">
-                                    content
+                                    Our system is a genetic circuit which is based on recombinases, promoters and terminators. Specifically we are relying on serine integrases, because they have the property that in the presence of their recombination directionality factor(RDF), they can switch back and forth between one state or the other, which is essential in the design of our system. We adopted the convention that the two states are called “PB”, and “LR”, to switch from PB to LR you just need the recombinase, to transition from LR to PB you need the recombinase plus its RDF.
+
+<br><br> We present a detailed model of serine recombination based on the paper “A simplified mathematical model of directional DNA site-specific recombination by serine integrases” [1].
+
+
+<br><br> Serine integrases have recently attracted much attention as potential tools for experimental and applied genetic manipulations, because of their recombination efficiency, their short DNA recombination sites (att sites) (typically 40–50 bp) and absence of host factor requirements[1].
+
+<br><br> Here are the equations we are basing on:
+
                                 </p>
                             </div>
 
@@ -257,7 +265,12 @@
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                                 <p class="">
-                                    content
+                                    For detailed explanation on how they modeled the process of serine recombination and how the equations above came up, please refer to our Annex at the bottom of the page.
+
+<br><br> We made some changes to the equations, because we wanted to model serine recombination in vivo and not in vitro as presented in the paper. For that we modified the equations of the integrase and RDF to follow the central dogma of molecular biology, with the respective processes of synthesis and degradation, and not assuming them as constants, as if it were in in vitro conditions, as they did in the paper.
+
+<br><br> Here are the modifications we implemented:
+
                                 </p>
                             </div>
                             <div class="container">
@@ -289,7 +302,9 @@
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                                 <p class="">
-                                    content
+                                    The first four equations represent the process of transcription and  translation of the Recombinases and its respective recombination directionality factor(RDF), following the central dogma of molecular biology. 
+<br> The last equation is how we took into account the action of the promoter, which contributes to the synthesis of the mRNA molecules. Basically we modeled it as a pulse with some on and off state, as presented in [2].
+
                                 </p>
                             </div>
 
@@ -315,7 +330,7 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseModel1-2" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseModel1-2">
-                            Accordion Item #2
+                            Assumptions
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseModel1-2" class="accordion-collapse collapse"
@@ -327,10 +342,19 @@
 
                             <p class="">
                                 <ul>
-                                    <li>sadsa</li>
-                                    <li>sadsad</li>
-                                    <li>asdasd</li>
+                                    <li>Kinetics of recombinases PhiC31, Bxb1 and TP901 are similar</li>
+                                    <li>The mRNA of RDF has similar behaviour as mRNA of its integrase</li>
+                                    <li>Recombinase protein and its Recombination Directionality Factor(RDF) have the same dilution/degradation rate.</li>
                                 </ul>
+                                    <b>Now here begins the part in which we used modeling to obtain useful information about our system.</b>
+<br><br> We are interested in the recombinases Bxb1 and TP901, {link a proof of concept}.
+First we calculated the optimal RBS for the recombinase, for that we did a sweep of a range of values. We measured the percentage of recombination at 1 hour after the process began, and found out the best RBS to be 4 times higher than the one that was reported in the paper. Also, it throwed another interesting result stating that the RBS of the RDF should be around 10 times the one from recombinase{link a parte experimental}.
+You can find the code we used for this optimization in our Github page, in the file “Sweep.m”
+
+<br><br> We characterized the time it would take the two promoters we would like to use(Arabinose promoter(Pbad) and the cell cycle promoter (Pnrd)) to produce recombination.
+
+<br><br> For the Pbad, the concentration of the pulse was the same as the total DNA present, and the duration of the pulse was 12 minutes, as reported in [1]. For the cellular cycle promoter(Pnrd) we calculated the relative strength of the promoter with respect to the Pbad, using our developed method proposed in {link al measurement}. We found out the strength to be about 10 times less than the Pbad.
+
                             </p>
 
 
@@ -340,7 +364,7 @@
                                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
                                         class="w-75">
                                 </div>
-                                <h5>adasda</h5>
+                                <h5>Figure 1.</h5>
                             </div>
 
 
