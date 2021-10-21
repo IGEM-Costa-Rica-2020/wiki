@@ -1,0 +1,439 @@
+<html>
+<head>
+<title>MathJax TeX Test Page</title>
+
+
+
+<script src="https://2020.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</head>
+<body>
+
+	
+			    <h2>ODEs</h2>
+
+    <p>\[
+       \frac{d[LRI_1]}{dt} = k_{+r}[PBI] - k_{-r1}[LRI_1] + k_{-syn}[LRI_2] - k_{+syn}[LRI_1]
+    \]</p>
+	
+	<p>\[
+       \frac{d[PBIR_1]}{dt} = k_{+r}[LRIR] - k_{-r2}[PBIR_1] + k_{-synr}[PBIR_2] - k_{+synr}[PBIR_1]
+    \]</p>
+	
+	<p>\[
+       \frac{d[PB_{tot}]}{dt} = k_{-r1}[LRI_1] - k_{+r}[PBI] + k_{+r}[LRIR] - k_{-r2}[PBIR_1]
+    \]</p>
+	
+	<p>\[
+       [IR] = \frac{[I][R]}{K_{ir}}
+    \]</p>
+	
+	<p>\[
+       [PBI] = \frac{[I]^4[PB]}{K_{bI}}
+    \]</p>
+	
+	<p>\[
+       [LRI_2] = \frac{[I]^4[LR]}{K_{bI}}
+    \]</p>
+	
+	<p>\[
+       [LRIR] = \frac{[IR]^4[LR]}{K_{bI}}
+    \]</p>
+	
+	<p>\[
+       [PBIR_2] = \frac{[IR]^4[PB]}{K_{bI}}
+    \]</p>
+	
+	    <h2>Adaptation-ODEs</h2>
+		
+	<p>\[
+       \frac{d[mRNA_{Recombinase}]}{dt} = k_{tscr}Pulse(t) - k_{rna}[mRNA_{Recombinase}]
+    \]</p>
+		
+	<p>\[
+       \frac{d[Recombinase]}{dt} = k_{int}[mRNA_{Recombinase}] - k_{dil}[Recombinase]
+    \]</p>
+	
+	<p>\[
+       \frac{d[mRNA_{RDF}]}{dt} = k_{tscr}Pulse(t) - k_{rna}[mRNA_{RDF}]
+    \]</p>
+	
+	<p>\[
+       \frac{d[RDF]}{dt} = k_{rdf\_tsl}[mRNA_{RDF}] - k_{dil}[RDF]
+    \]</p>
+	
+	<p>\[
+       Pulse(t) = 0.5(tanh(\frac{t-ara_{on}}{k_t}) - tanh(\frac{t-ara_{off}}{k_t}))
+    \]</p>
+
+	    <h2>Markov Model</h2>
+		
+	<p>\[
+       \begin{pmatrix}
+        0.01 &amp; 0.99 &amp; 0 &amp; 0 \\
+		0 &amp;     0.1 &amp; 0.9 &amp;  0 \\
+		0 &amp;      0 &amp; 0.19 &amp; 0.81 \\
+		0 &amp;      0 &amp;    0 &amp; 1 \\
+       \end{pmatrix}
+    \]</p>
+    
+	
+	    <h2>Promoter Strength</h2>
+
+    <p>\[
+       \frac{d[mRNA]}{dt} = K - \gamma_1 [mRNA]
+    \]</p>
+	
+	<p>\[
+       \frac{d[FP]}{dt} = \alpha [mRNA] - \gamma_2 [FP]
+    \]</p>
+	
+	<p>\[
+       FP(t) = \frac{-\alpha c_1}{(\gamma_2 - \gamma_1)\gamma_1}e^{- \gamma_1t} + c_2e^{- \gamma_2t} + \frac{\alpha K}{\gamma_1 \gamma_2}
+    \]</p>
+
+    <p>\[
+       FP_{max} (t) = \frac{\alpha K}{\gamma_1 \gamma_2}
+    \]</p>
+	
+
+	
+    <h2>Tabla ODE</h2>
+
+		
+	
+	<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky"><span style="font-weight:bold">Parameter</span></th>
+    <th class="tg-0pky"><span style="font-weight:bold">Meaning</span></th>
+    <th class="tg-0pky"><span style="font-weight:bold">Value</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">\(k_{int}\)</td>
+    <td class="tg-0pky">Recombinase translation rate</td>
+    <td class="tg-0pky">\(3 \mu M h^{-1}\)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">\(k_{dil}\)</td>
+    <td class="tg-0pky">Recombinase/RDF dilution/degradation rate</td>
+    <td class="tg-0pky">\(2h^{-1}\)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">\(k_{tscr}\)</td>
+    <td class="tg-0pky">Recombinase mRNA transcription rate</td>
+    <td class="tg-0pky">\(120h^{-1}\)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">\(k_{rna}\)</td>
+    <td class="tg-0pky">Recombinase mRNA degradation rate</td>
+    <td class="tg-0pky">\(4h^{-1}\)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">\(k_{rdf\_{tsl}}\)</td>
+    <td class="tg-0pky">RDF translation rate</td>
+    <td class="tg-0pky">\(0.3h^{-1}\)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">\(k_{t}\)</td>
+    <td class="tg-0pky">Characteristic time of inducer dilution due to cell division</td>
+    <td class="tg-0pky">\(0.3 h\)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">\(ara_{on}\)</td>
+    <td class="tg-0pky">Time at which pulse of inducer is turn on</td>
+    <td class="tg-0pky">\(0 h\)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">\(ara_{off}\)</td>
+    <td class="tg-0pky">Time at which pulse of inducer is turn off</td>
+    <td class="tg-0pky">\(0.2 h\)</td>
+  </tr>
+</tbody>
+</table>
+	
+    <h2>Tabla Metabolic Burden</h2>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow"><span style="font-weight:bold">Part</span></th>
+    <th class="tg-c3ow"><span style="font-weight:bold">Burden Value</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">\(BBa\_B0010\)</td>
+    <td class="tg-c3ow">\(-2.1\pm3.4\%\)</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(BBa\_E1010\)</td>
+    <td class="tg-c3ow">\(-1.1\pm2.5\%\)</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(BBa\_B0030\)</td>
+    <td class="tg-c3ow">\(0.2\pm0.9\%\)</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(BBa\_B0032\)</td>
+    <td class="tg-c3ow">\(3\pm6.2\%\)</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(BBa\_B1006\)</td>
+    <td class="tg-c3ow">\(4.3\pm4.4\%\)</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(BBa\_I0500\)</td>
+    <td class="tg-c3ow">\(6.7\pm9.5\%\)</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(BBa\_J23100\)</td>
+    <td class="tg-c3ow">\(20\pm9.9\%\)</td>
+  </tr>
+</tbody>
+</table>
+
+
+    <h2>Tablas Measurement</h2>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow"><span style="font-weight:bold">Time(minutes)</span></th>
+    <th class="tg-c3ow"><span style="font-weight:bold">Fluorescence</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">0</td>
+    <td class="tg-c3ow">25000</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">18</td>
+    <td class="tg-c3ow">26500</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">45</td>
+    <td class="tg-c3ow">27500</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">63</td>
+    <td class="tg-c3ow">28500</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">81</td>
+    <td class="tg-c3ow">31000</td>
+  </tr>
+</tbody>
+</table>
+
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow"><span style="font-weight:bold">Combination</span></th>
+    <th class="tg-c3ow"><span style="font-weight:bold">Value(protein/s)</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">0.0022</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">0.0022</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">0.0024</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">0.0023</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">0.0025</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">6</td>
+    <td class="tg-baqh">0.0026</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">7</td>
+    <td class="tg-baqh">0.0023</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">8</td>
+    <td class="tg-baqh">0.0025</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">9</td>
+    <td class="tg-baqh">0.0026</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">10</td>
+    <td class="tg-baqh">0.0027</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">Mean</td>
+    <td class="tg-baqh">0.002424</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">Standard Deviation</td>
+    <td class="tg-baqh">0.000181</td>
+  </tr>
+</tbody>
+</table>
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow"><span style="font-weight:bold">Promoter</span></th>
+    <th class="tg-c3ow"><span style="font-weight:bold">Promoter Strength(protein/s)</span></th>
+    <th class="tg-baqh"><span style="font-weight:bold">Relative Strength</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">\(J23100\)</td>
+    <td class="tg-c3ow">0.0263</td>
+    <td class="tg-baqh">1</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(J23102\)</td>
+    <td class="tg-c3ow">0.0163</td>
+    <td class="tg-baqh">0.62</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(J23101\)</td>
+    <td class="tg-c3ow">0.0166</td>
+    <td class="tg-baqh">0.63</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(J23106\)</td>
+    <td class="tg-c3ow">0.0128</td>
+    <td class="tg-baqh">0.49</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">\(J23105\)</td>
+    <td class="tg-c3ow">0.0104</td>
+    <td class="tg-baqh">0.40</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(J23112\)</td>
+    <td class="tg-baqh">0.0073</td>
+    <td class="tg-baqh">0.28</td>
+  </tr>
+</tbody>
+</table>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow"><span style="font-weight:bold">Promoter</span></th>
+    <th class="tg-c3ow"><span style="font-weight:bold">Anderson Lab</span></th>
+    <th class="tg-baqh"><span style="font-weight:bold">Relative Strength Predicted</span></th>
+    <th class="tg-0lax"><span style="font-weight:bold">%Error</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-baqh">1</td>
+    <td class="tg-baqh">0</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">0.86</td>
+    <td class="tg-baqh">0.62</td>
+    <td class="tg-baqh">27.9</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">0.70</td>
+    <td class="tg-baqh">0.63</td>
+    <td class="tg-baqh">10</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">0.47</td>
+    <td class="tg-baqh">0.49</td>
+    <td class="tg-baqh">4.3</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">0.24</td>
+    <td class="tg-baqh">0.40</td>
+    <td class="tg-baqh">66.7</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">6</td>
+    <td class="tg-baqh">0.00</td>
+    <td class="tg-baqh">0.28</td>
+    <td class="tg-baqh">100</td>
+  </tr>
+</tbody>
+</table>
+
+</body>
+</html>
