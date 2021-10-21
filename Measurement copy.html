@@ -1,0 +1,1022 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapMinCSS&action=raw&ctype=text/css" />
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
+
+
+
+    <script src="https://2020.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+
+
+
+<!-- COMPONENTE CAROUSEL -->
+<style>
+    .carousel .carousel-caption {
+        padding-top: 2rem;
+        height: 100%;
+    }
+
+    .carousel .carousel-caption h3 {
+        font-size: 50px;
+        color: white !important;
+
+    }
+
+    .carousel .carousel-caption p {
+        /*font-size: 12px;*/
+    }
+
+    .page_content_sections .page_content_section {
+        display: none;
+        padding: 10%;
+        padding-top: 20px;
+    }
+
+    .page_content_sections .page_content_section_active {
+        display: block;
+    }
+</style>
+
+<script type="text/x-template" id="main_carousel">
+    <div>
+        <div>
+            <div :id="'carouselComponent'+id" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"  ref="maincarousel"  >
+
+
+                <ol class="carousel-indicators">
+                    <li v-for="(slide, index) in slides_content" :data-bs-target="'#carouselComponent'+id"  v-bind:data-bs-slide-to="index" v-bind:class="{ active: index==0 }"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+
+
+                    <div class="carousel-item" v-for="(slide, index) in slides_content"  v-bind:class="{ active: index==0 }">
+                        <svg class="bd-placeholder-img" width="100%" height="250px" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#1A1A1A" />
+                        </svg>
+
+                        <div class="carousel-caption text-start">
+                            <h3 class="slide_tittle">
+                                {{slide.title}}
+
+                            </h3>
+                            <p class="slide_text w-75">
+                                {{slide.content}}
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+
+            <button class="carousel-control-prev" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+    </div>       
+</script>
+
+
+<script>
+    Vue.component("main-carousel", {
+        data: {},
+        props: {
+            current_slide: {
+                type: Object,
+                default: "casa"
+            },
+            slides_content: {
+                type: Array,
+                default: []
+            },
+            id: {
+                type: Number,
+                default: 0
+            }
+        },
+
+        template: "#main_carousel",
+        methods: {
+            updateCurrentSlide: function (event) {
+                this.current_slide.index = event.to;
+            },
+
+        },
+        mounted() {
+            this.$refs.maincarousel.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+        }
+    });
+</script>
+<!-- COMPONENTE CAROUSEL -->
+
+
+
+
+<!-- CONTENIDO PRINCIPAL -->
+
+<body>
+    <div id="app">
+
+
+        <div class="position-relative overflow-hidden pt-5 px-5  text-start  main-title">
+            <img class="main-title-bg" src="https://picsum.photos/id/1042/1200/400" alt="">
+            <h1>Measurement</h1>
+            <h5 class="">Our main motivation to attempt to do this model was because we couldn´t find in literature the
+                promoter strength of Pnrd, which plays an essential role in our modeling. However, data about its
+                fluorescence is available, so we figured out a way in which we can translate this fluorescence into real
+                promoter strength, which will be applicable to all promoters</h5>
+        </div>
+
+
+        <main-carousel v-bind:current_slide="current_slide_index" v-bind:slides_content="slides_content" :id="1">
+        </main-carousel>
+
+        <!-- collaborations -->
+        <div v-if="current_slide_index.index==0" class="container">
+
+            <div class="accordion accordion-flush " id="accordionPanelsShipping">
+
+
+                <div class="accordion-item ">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingMeasurement1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseMeasurement1" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseMeasurement1">
+                            Mathematical derivation of the technique
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseMeasurement1" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingMeasurement1">
+                        <div class="accordion-body">
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    Following the central dogma of molecular biology, we can write down the following pair of ODE ́s,
+describing the process of synthesis and degradation of a fluorescent protein:
+                                </p>
+                            </div>
+
+                            <div class="container text-center">
+
+                                <p>\[
+                                    \frac{d[mRNA]}{dt} = K - \gamma_1 [mRNA]
+                                    \]</p>
+
+                                <p>\[
+                                    \frac{d[FP]}{dt} = \alpha [mRNA] - \gamma_2 [FP]
+                                    \]</p>
+                            </div>
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    Solving the system, we get the equation for fluorescent protein in time:
+                                </p>
+                            </div>
+
+
+                            <p>\[
+                                FP(t) = \frac{-\alpha c_1}{(\gamma_2 - \gamma_1)\gamma_1}e^{- \gamma_1t} + c_2e^{-
+                                \gamma_2t} + \frac{\alpha K}{\gamma_1 \gamma_2}
+                                \]</p>
+
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    From  the equation above,  we  can  see  that  it  consists  of  two  decreasing  exponential  functions  and  one constant term, therefore, we can take the limit when the time tends to infinity to predict what will be the maximum fluorescence.  The two decreasing exponential functions will cancel out as they tend to zero, giving that the maximum fluorescence is completely determined by the constant term:
+                                </p>
+                            </div>
+
+                            <p>\[
+                                FP_{max} (t) = \frac{\alpha K}{\gamma_1 \gamma_2}
+                                \]</p>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingMeasurement2">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseMeasurement2" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseMeasurement2">
+                            Results and Discussion
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseMeasurement2" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingMeasurement2">
+                        <div class="accordion-body">
+
+
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <p class="">
+                                    Here we present the process of obtaining and validating the data with our model.
+                                </p>
+
+                            </div>
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h3>Robustness of the method</h3>
+
+                                <p class="">
+                                    For the Pnrd promoter, we also used a plot from igem parts, as seen in the figure below. The link to iGEM parts page is:
+
+http://parts.igem.org/Part:BBa_K2070012
+
+
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                            </div>
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+                                <p class="">
+                                    As seen in the table below, we extracted 5 points from the experimental data from the plot above.
+                                </p>
+                            </div>
+
+                            <div class="container text-center">
+
+
+                                <table class="tg  mx-auto ">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Time(minutes)</span></th>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Fluorescence</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-c3ow">0</td>
+                                            <td class="tg-c3ow">25000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">18</td>
+                                            <td class="tg-c3ow">26500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">45</td>
+                                            <td class="tg-c3ow">27500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">63</td>
+                                            <td class="tg-c3ow">28500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">81</td>
+                                            <td class="tg-c3ow">31000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                                <h5>Table 3: Data used for measure Pnrd strength. Extracted from figure 3.</h5>
+
+
+
+
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="">
+                                    As we can see from the general equation, we only need 3 points to calculate the 3 unknown coefficients c_1,c_2 and K of the formula, with special interest in K which is the promoter strength. To check reproducibility and statistical significance, we made all the possible combinations of 3 points in a set of 5, which give us 10 different scenarios.
+                                </p>
+                            </div>
+
+
+                            <div class="container text-center">
+
+
+                                <table class="tg  mx-auto ">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Combination</span></th>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Value(protein/s)</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-c3ow">1</td>
+                                            <td class="tg-c3ow">0.0022</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">2</td>
+                                            <td class="tg-c3ow">0.0022</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">3</td>
+                                            <td class="tg-c3ow">0.0024</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">4</td>
+                                            <td class="tg-c3ow">0.0023</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">5</td>
+                                            <td class="tg-c3ow">0.0025</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">6</td>
+                                            <td class="tg-baqh">0.0026</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">7</td>
+                                            <td class="tg-baqh">0.0023</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">8</td>
+                                            <td class="tg-baqh">0.0025</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">9</td>
+                                            <td class="tg-baqh">0.0026</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">10</td>
+                                            <td class="tg-baqh">0.0027</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">Mean</td>
+                                            <td class="tg-baqh">0.002424</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">Standard Deviation</td>
+                                            <td class="tg-baqh">0.000181</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h4>Table 6: Results of the value of promoter strength for Pnrd, for all the possible 3 combinations for 5 data points.</h4>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="">
+                                    As we can see from the table above, a very low standard deviation was obtained, at least one order of magnitude lower than the mean, which means that the promoter strength obtained through all the different combinations was very homogeneous, suggesting that indeed the experimental data fit properly to the model proposed and that it would be okay if we only use 3 points to calculate the promoter strength, without fear of doing a bad generalization.
+                                </p>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h3>Relative Strength Comparison</h3>
+
+                                <p class="">
+                                    Now we are going to try to prove the model´s applicability by comparing the outputs given by the method with real lab data. 
+
+<br> <br> As a first approach, we built upon the work of iGEM Tacoma team of 2019. 
+They collected characterization data on the relative RFP expression rates of Anderson Promoters Bba_J23100, Bba_J23101, Bba_J23102, Bba_J23105, Bba_J23106, and Bba_J23112 in the RFP expression plasmid Bba_J61002 (samples provided in the 2019 iGEM Distribution Kit).
+
+Their protocols were adapted from the iGEM 2018 Interlab protocol. 
+
+<br> As the original characterization of the Anderson promoters and this study performed by the Tacoma iGEM team were done using the red fluorescent protein(RFP), we adapted our model with the new parameters corresponding to this protein, as previously we just took into account the green fluorescent protein for the method. The fluorescence in these experimental results was measured after 0, 3 and 5 hours of growth.
+
+<br> <br> In the table below we summarized the results obtained as well as the relative strength of the promoters compared to J23100.
+
+                                </p>
+                            </div>
+
+
+
+                            <div class="container text-center">
+
+
+
+
+                                <table class="tg mx-auto">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Promoter</span></th>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Promoter
+                                                    Strength(protein/s)</span></th>
+                                            <th class="tg-baqh"><span style="font-weight:bold">Relative Strength</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23100\)</td>
+                                            <td class="tg-c3ow">0.0263</td>
+                                            <td class="tg-baqh">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23102\)</td>
+                                            <td class="tg-c3ow">0.0163</td>
+                                            <td class="tg-baqh">0.62</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23101\)</td>
+                                            <td class="tg-c3ow">0.0166</td>
+                                            <td class="tg-baqh">0.63</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23106\)</td>
+                                            <td class="tg-c3ow">0.0128</td>
+                                            <td class="tg-baqh">0.49</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">\(J23105\)</td>
+                                            <td class="tg-c3ow">0.0104</td>
+                                            <td class="tg-baqh">0.40</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">\(J23112\)</td>
+                                            <td class="tg-baqh">0.0073</td>
+                                            <td class="tg-baqh">0.28</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h4></h4>
+                            </div>
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+                                <p class="">
+                                   In the table below we compare our results against the original characterization from the Anderson Lab.
+                                </p>
+                            </div>
+
+
+                            <div class="container text-center">
+
+
+
+
+                                <table class="tg mx-auto">
+                                    <thead>
+                                        <tr>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Promoter</span></th>
+                                            <th class="tg-c3ow"><span style="font-weight:bold">Anderson Lab</span></th>
+                                            <th class="tg-baqh"><span style="font-weight:bold">Relative Strength
+                                                    Predicted</span></th>
+                                            <th class="tg-0lax"><span style="font-weight:bold">%Error</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tg-c3ow">1</td>
+                                            <td class="tg-c3ow">1</td>
+                                            <td class="tg-baqh">1</td>
+                                            <td class="tg-baqh">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">2</td>
+                                            <td class="tg-c3ow">0.86</td>
+                                            <td class="tg-baqh">0.62</td>
+                                            <td class="tg-baqh">27.9</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">3</td>
+                                            <td class="tg-c3ow">0.70</td>
+                                            <td class="tg-baqh">0.63</td>
+                                            <td class="tg-baqh">10</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">4</td>
+                                            <td class="tg-c3ow">0.47</td>
+                                            <td class="tg-baqh">0.49</td>
+                                            <td class="tg-baqh">4.3</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-c3ow">5</td>
+                                            <td class="tg-c3ow">0.24</td>
+                                            <td class="tg-baqh">0.40</td>
+                                            <td class="tg-baqh">66.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">6</td>
+                                            <td class="tg-baqh">0.00</td>
+                                            <td class="tg-baqh">0.28</td>
+                                            <td class="tg-baqh">100</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h4></h4>
+                            </div>
+
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="">
+                                    It is important to notice that(as seen in the table above)  the comparison against BBa_J23100 is consistent with the original Anderson characterization, except for position 2 and 3, where it is supposed that the promoter J23102 is stronger than J23101. A possible error that could explain this difference is that the OD660 values were still increasing from 3 hours and 5 hours, which indicates the cultures were still growing. 
+                                     Allowing the cultures to grow further would allow a better determination regarding the difference in promoter strength of BBa_J23101 and BBa_J23102, as Anderson promoters were measured until they reached saturation. 
+
+<br><br> Also the relative values obtained by our method present a good consensus with the 3 data points in time the iGEM Tacoma team reported.
+
+                                </p>
+                            </div>
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h3>Direct Comparison</h3>
+
+                                <p class="">
+                                    We tried to make a direct comparison between values of promoter strength predicted by our model and the corresponding reported literature values, however, we have failed until now mainly because of lack of biological units on fluorescence data(the vast majority is reported in arbitrary units) and the great variance that exists between labs because of lack of standardized methods of measurement and calibration. 
+                                   <br><br> We have tried to compare the values obtained by our method of promoter J23101 and J23106(precisely were the ones which presented the least percentage relative error) against the values in biological units established in the iGEM Interlab study, which also take into account these two promoters. We have data in arbitrary fluorescence units of these promoters, as well as their optical density, however we have failed or don´t know how to convert that into the proposed units of Molecules of Equivalent Fluorescein(MEFL)/cell in order to be able to compare them. 
+
+                                </p>
+                            </div>
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                                <h3>Other sources of possible error in our method and things to improve:</h3>
+
+                                <p class="">
+                                    <ul>
+                                        <li>Our equation describes fluorescent protein, and data available and used to calculate promoter strength is fluorescence, so there is a slight mismatch. It is known that the relation between the fluorescent protein and its fluorescence is linear, however this has to be measured and computed by the lab that performed the measurements.</li>
+                                        <li>It is important to take into account and report the RBS strength of the RBS used in the experiments.</li>
+                                        <li>It is very important to reach an agreement about what biological unit to use to report promoter strength. We propose the unit of Molecules of Equivalent Fluorescein(MEFL)/cell, as proposed in the iGEM Interlab study.</li>
+                                        <li>Calibration methods and materials should be reported along with fluorescence data, because it describes the conditions in which the experiment was performed and this data could be useful in the comparison process.</li>
+
+
+                                    </ul>
+                                </p>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingMeasurement3">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseMeasurement3" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseMeasurement3">
+                            Software Tool
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseMeasurement3" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingMeasurement3">
+                        <div class="accordion-body">
+
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                                <p class="">
+                                   Lastly, we created a software tool to translate fluorescence into promoter strength in order that other iGEM teams could use it, as seen in the figure below. The app can receive data in GFP or RFP, but we plan to include other fluorescent proteins. You can download it on our Github page, it is named “Promoter_Strength.mlapp”.
+                                  <br><br> Please refer to the next PDF document in order to see the detailed mathematical derivation of the technique as well as more validations that we did.
+                                </p>
+                            </div>
+
+                            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                                <div class="text-center">
+                                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
+                                        class="w-75">
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+
+                                <button type="button" class="btn btn-primary btn-lg mx-auto">Descargar Archivos pegar
+                                    link</button>
+
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- meetsups -->
+        <div v-if="current_slide_index.index==1" class="container">
+
+            meetsups
+        </div>
+
+        <!-- interviews -->
+        <div v-if="current_slide_index.index==2" class="container">
+
+            interviews
+        </div>
+
+
+
+
+        <!-- publick engagement -->
+        <div v-if="current_slide_index.index==3" class="container">
+            publick engagement
+        </div>
+
+
+        <!-- publick engagement -->
+        <!-- <div v-if="current_slide_index.index==0" class="container">
+
+            
+        </div> -->
+
+
+
+
+
+
+
+    </div>
+
+</body>
+<!-- CONTENIDO PRINCIPAL -->
+
+<style>
+
+</style>
+
+<style>
+    #globalWrapper {
+        font-size: 100% !important;
+    }
+
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: var(--bs-body-font-family) !important;
+        overflow: visible !important
+    }
+
+    #HQ_page p {
+        font-family: var(--bs-body-font-family) !important;
+        font-size: var(--bs-body-font-size) !important;
+    }
+
+
+
+    /*
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+     font-family:"Arial",Gadget,sans-serif;
+     border-bottom:none;
+     font-weight:bold
+    }
+
+    #HQ_page p {
+        font-family:"Arial",Helvetica,sans-serif;
+        font-size:13px;
+        text-align:justify
+       }
+       
+    /*body {
+        font-family: var(--bs-body-font-family) !important;
+    }*/
+
+    .double-text {
+        background-color: #1A1A1A;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        -webkit-text-stroke-color: rgb(255, 255, 255);
+        font-size: 90px;
+        font-family: 'Open Sans';
+        font-weight: 800 !important;
+
+        text-shadow:
+            6px 8px 0px rgb(255, 255, 255);
+        opacity: 1;
+        text-transform: uppercase;
+        letter-spacing: -1.03px;
+    }
+
+
+    .main-title h1 {
+        /*font-family: 'Open Sans'; */
+        font-weight: 800 !important;
+        font-size: 55px;
+        -webkit-text-fill-color: #ffffff00;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: #ffffff;
+    }
+
+
+    .main-title h5 {
+        /*font-family: 'Open Sans'; */
+        font-size: 15px;
+        color: #ffffff;
+        width: 40%
+    }
+
+    .main-title-bg {
+        opacity: 0.9;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -99;
+    }
+
+    .wiki-card {}
+
+    .wiki-card .img-round {
+        border-radius: 50%;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .wiki-card .img-square {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .wiki-card h1 {
+        /*margin-right: 10vw;*/
+        color: #E2474B;
+        font-size: calc(2rem + 1.5vw);
+        /*font-size: 56px;*/
+        font-weight: bold;
+        letter-spacing: -0.8px;
+    }
+
+    .wiki-card h2 {
+        color: #27262D;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    .wiki-card h3 {
+        color: #626262;
+        font-size: 18px;
+        letter-spacing: -0.2px;
+        line-height: 19px;
+    }
+
+    .wiki-card p {
+        color: #27262D;
+        /*line-height: 24px;*/
+    }
+
+    .wiki-card p.wiki-card-2columns {
+        columns: 2;
+    }
+</style>
+
+
+
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                isActive: true,
+                message: 'hello app',
+                current_slide_index: {
+                    index: 0
+                },
+                current_slide_index2: {
+                    index: 0
+                },
+                slides_content:
+
+                    [{
+                            title: "Promoter Strength",
+                            content: ""
+                        }
+
+                    ],
+
+            }
+        },
+        methods: {},
+        mounted() {}
+    })
+</script>
+
+
+
+<!-- TABLAS -->
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-0pky {
+        border-color: inherit;
+        text-align: left;
+        vertical-align: top
+    }
+</style>
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+</style>
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+</style>
+
+
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-0lax {
+        text-align: left;
+        vertical-align: top
+    }
+</style>
+
+</html>
