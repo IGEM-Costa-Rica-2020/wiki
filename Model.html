@@ -370,7 +370,18 @@ You can find the code we used for this optimization in our Github page, in the f
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    content
+                                    Forward recombination with Pnrd promoter with Bxb1 recombinase. LR,PB and Inducer units are normalized by the total DNA, which is 10nM. Integrase is normalized against its maximum value to be able to see it in the plot, in reality Integrase levels are 3 times higher than shown.
+
+<br><br> Defining recombination time as the time when the LR state reaches 70%, we can see from the Figure 1 that it would take the counter around 28 minutes to reach this level, so the cell cycle promoter would be non-viable for our circuit, because it expresses every 20 minutes(doubling time)[2]{link a parte experimental}. 
+
+<br><br> So hereafter we use Pbad for the modeling,which we predict to need around 23 minutes to produce recombination{link a parte experimental}.
+
+<br><br> In order to calculate this threshold at which recombination occurs, we developed a script in Matlab called “Threshold.m”, which you can access in our Github page.
+
+<br><br> Also, we characterized the optimal pulse of inducer concentration and the time of exposure of the promoter, as seen in the plot below, which happened to be at 1 uM of concentration relative to the total DNA concentration and with a pulse length of 0.2 hours. In the graph red means higher values and blue means lower values.
+
+<br><br> In order to do this optimization, we developed a script in Matlab called “Plot3D.m”, which you can access in our Github page.
+
                                 </p>
                             </div>
 
@@ -380,13 +391,18 @@ You can find the code we used for this optimization in our Github page, in the f
                                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
                                         class="w-75">
                                 </div>
-                                <h5>adasda</h5>
+                                <h5>Figure 2.</h5>
                             </div>
 
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    content
+                                    Percentage of recombination as a function of inducer concentration and induced time.
+
+<br><br> Now we wanted to simulate the process of how the species´ concentrations would behave as if we were doing the counting, and also to know if that would be sufficient to reach recombination.
+
+<br><br> Our models are based on using two recombinases, Bxb1 and TP901, so with we would be able to count up to four using our genetic counting circuit, making three steps of transitions of recombinations: Bxb1 forward, TP901 forward and Bxb1 reverse(using its RDF), see {slides Marco}. <b>Reminder:</b> our counter with n recombinases allows counting up to 2^n.
+
                                 </p>
                             </div>
 
@@ -396,13 +412,20 @@ You can find the code we used for this optimization in our Github page, in the f
                                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
                                         class="w-75">
                                 </div>
-                                <h5>adasda</h5>
+                                <h5>Figure 3.</h5>
                             </div>
 
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    content
+                                    Forward recombination of Bxb1 using Pbad promoter. LR,PB and Inducer units are normalized by the total DNA, which is 10nM. Integrase is normalized against its maximum value to be able to see it in the plot,
+
+<br><br> In reality Integrase levels are 30 times higher than shown, agreeing with the experimental results reported in [1], which state that in order for recombination to happen, typically much higher concentrations(more than 10-fold) than the concentration of the DNA substrate are needed.
+
+<br><br> As seen in Figure 3, recombination is effectively performed. After about half an hour, recombination levels remain almost constant. 
+
+<br><br> In order to do this plot, we developed a script in Matlab called “single_counter1.m”, which you can access in our Github page.
+
                                 </p>
                             </div>
 
@@ -412,13 +435,18 @@ You can find the code we used for this optimization in our Github page, in the f
                                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
                                         class="w-75">
                                 </div>
-                                <h5>adasda</h5>
+                                <h5>Figure 4.</h5>
                             </div>
 
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    content
+                                    Forward recombination of TP901 using Pbad promoter. LR,PB and Inducer units are normalized by the total DNA, which is 10nM. Integrase is normalized against its maximum value to be able to see it in the plot.
+
+<br><br> In reality Integrase levels are 30 times higher than shown, agreeing with the experimental results reported in [1], which state that in order for recombination to happen, typically much higher concentrations(more than 10-fold) than the concentration of the DNA substrate are needed.
+
+<br><br> In order to do this plot, we developed a script in Matlab called “single_counter2.m”, which you can access in our Github page.
+
                                 </p>
                             </div>
 
@@ -428,13 +456,20 @@ You can find the code we used for this optimization in our Github page, in the f
                                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center"
                                         class="w-75">
                                 </div>
-                                <h5>adasda</h5>
+                                <h5>Figure 5.</h5>
                             </div>
 
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    content
+                                   Reverse recombination of Bxb1 using Pbad promoter. Integrase and RDF  are normalized against the maximum value of RDF, to be able to see it in the plot. 
+
+<br><br> In reality Integrase and RDF levels are 30 and 42 times higher than shown, respectively, agreeing with the experimental results reported in [1], which state that in order for recombination to happen, typically much higher concentrations(more than 10-fold) than the concentration of the DNA substrate are needed, and the RDF concentration needs to be higher than the Integrase´s one.
+
+<br><br> In order to do this plot, we developed a script in Matlab called “single_counter3.m”, which you can access in our Github page.
+
+<br><br> As seen in the figures above, satisfactory recombination occurs in each of the three steps, so with those initial concentrations of reactants it is predicted that our circuit should perform the counting well.
+
                                 </p>
                             </div>
 
@@ -448,7 +483,7 @@ You can find the code we used for this optimization in our Github page, in the f
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseModel1-3" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseModel1-3">
-                            Accordion Item #3
+                            List of parameters used
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseModel1-3" class="accordion-collapse collapse"
@@ -511,7 +546,7 @@ You can find the code we used for this optimization in our Github page, in the f
                                         </tr>
                                     </tbody>
                                 </table>
-                                <h5 class="text-center">asds</h5>
+                                <h5 class="text-center">Values estimated on 20 minutes doubling time. Extracted from [2].</h5>
                             </div>
 
                         </div>
@@ -524,7 +559,7 @@ You can find the code we used for this optimization in our Github page, in the f
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseModel1-4" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseModel1-4">
-                            Accordion Item 4
+                            Annex: Detailed model explanation
 
 
                         </button>
@@ -535,10 +570,13 @@ You can find the code we used for this optimization in our Github page, in the f
                         aria-labelledby="panelsStayOpen-headingModel1-4">
                         <div class="accordion-body">
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                <h2>title </h2>
+                                <h2>All of the following is a excerpt from [1]:</h2>
 
                                 <p class="">
-                                    content
+                                    Serine integrases catalyse integration of a circular bacteriophage genomic DNA molecule into the bacterial host chromosomal DNA, by recombination between an attP site in the phage DNA and an attB site in the host DNA. In the resulting ‘lysogenic’ state, the phage genome is integrated in the host genome, and is flanked by recombinant attL and attR sites, each consisting of an attP half and an attB half (figure 1a). To resume its replicative life cycle, the phage DNA must be excised from its bacterial host genome. To accomplish this, a phage-encoded recombination directionality factor (the RDF protein) is expressed together with the integrase protein. RDF interacts with integrase and alters its properties so that it recombines the attL and attR sites to release the circular phage genomic DNA with an attP site, and leave an attB site in the host genome (figure 1a). (Hereafter, we refer to recombination between attP and attB as PxB recombination, and recombination between attL and attR as LxR recombination)
+
+<br><br> PxB recombination is efficient (i.e. most of the substrate molecules are recombined) when only integrase protein is present, and the reaction is unidirectional (i.e. no LxR recombination is observed under these conditions). However, when RDF is also present,LxR recombination is efficient and most of the sites are converted to attP and attB products. In addition to stimulating the LxR reaction, the presence of RDF inhibits the PxB reaction.
+
                                 </p>
                             </div>
 
@@ -549,13 +587,33 @@ You can find the code we used for this optimization in our Github page, in the f
                                         class="w-75">
                                 </div>
 
-                                <h5 class="text-center">asdas</h5>
+                                <h5 class="text-center">Figure 1.</h5>
                             </div>
 
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    content
+                                    Schematic representations of serine integrase-mediated recombination reactions. <b>(a)</b> Overview, showing integrase (I) reacting to convert a PB (attP + attB) substrate to LR (attL + attR) product in the absence of RDF (red), whereas integrase plus RDF (I + R) converts LR (attL + attR) to PB (blue). <b>(b)</b> Scheme of reaction steps in Model M. Blue and red solid arrows show integrase-catalysed steps with and without RDF respectively. PBI, PBIR1, PBIR2 and LRI1, LRI2, LRIR are complexes containing four molecules of the integrase protein with PB or LR DNA substrates (with or without four molecules of RDF). The PxB(-R) reaction starts with the binding of four molecules of integrase (I) to PB substrate, followed by a recombination step and formation of the final product LRI1. The LxR(+R) reaction starts with the binding of four molecules of an integrase–RDF complex (IR) to LR substrates, followed by a recombination step and formation of the final product PBIR1. The ‘forbidden’ PxB(+R) and LxR(-R) reactions form ‘blocked’ LRI2 and PBIR2 complexes, which delay recombination due to their very slow conformational change to the productive LRI1 and PBIR1 complexes (grey dotted arrows). The favourable directions of reaction steps are shown by big arrowheads. Step names are shown near arrows. The cartoons show hypothetical structures of intermediates; note that alternative structures might be involved. <b>(c)</b> Core structure of reactions after reduction of the fast variables. Substrates and products are shown by cartoons. Very slow steps are indicated by grey lines.
+
+<br><br> The minimal model (referred to hereafter as ‘Model M’) was fitted to in vitro experimental data on recombination by phiC31 integrase (I) with its RDF gp3 (R). In the experiments used to produce these data, the extent of recombination at different concentrations of integrase and RDF was determined after 3 h reactions. Recombination was intramolecular, between attP and attB sites (PB) or attL and attR sites (LR) in inverted repeat orientation on supercoiled plasmid substrates.
+
+<br><br> Model M consists of a set of reversible reaction steps, each described by first or second order kinetics. The PxB(-R) reaction starts by binding of four molecules of I to the PB substrate (two molecules to each att site) and formation of the PB synapse (PBI), in which the attP and attB sites in the PB plasmid are held together by an integrase tetramer. Model M describes the formation of PBI synapse from free PB substrate as a single binding step (step ‘b1’), although the process requires multiple molecular events. This simplification was based on our earlier assumption that integrase binding is faster than synapsis and therefore is not a rate-limiting step. The next step (recombination ‘r1’) transforms PBI to LRI1, comprising recombinant attL and attR sites bound together by an integrase tetramer which synapses the two sites (figure 1b). Here again, this single step describes a series of molecular events. Model M proposes that LRI1 is the predominant endpoint of the PxB(-R) reaction at short reaction times (of the order of 3 h), because the next step on the pathway is very slow.
+
+<br><br> In Model M, the ‘forbidden’ attL  attR reaction in the absence of RDF (LxR(-R)) starts with the binding of four I molecules to LR (step b2 in figure 1b), forming the LRI2 complex. Crucially, the LRI2 complex is conformationally distinct from LRI1, the immediate product of P  B recombination. Conversion of LRI2 into LRI1 (step ‘syn’) and its reverse are assumed to be very slow reactions, of the order of days). A hypothetical structure-based interpretation of these two complexes has
+been presented (figure 1c). The very slow interconversion of LRI1 and LRI2 complexes is the key feature that explains why the LxR(-R) reaction does not yield detectable levels of PB recombination product in short reactions (of the order of hours).
+
+<br><br> In Model M, the reaction of the LR substrate in the presence of RDF (LxR(+R)) starts by binding of integrase–RDF complexes to the attL and attR sites. We assume (based on published data) that each integrase monomer interacts in solution with one RDF monomer to form a 1:1 complex (IR). Therefore, four IR complexes bind to
+LR, forming a synaptic complex LRIR (figure 1b, step ‘b3’. Synapsis is followed by
+strand exchange step ‘r2’, forming a PB product synapse comprising IR-bound recombinant attP and attB sites, PBIR1 (figure 1b). Analogously to our hypothesis for PxB(-R) recombination (see above), we propose that PBIR1 is the typical endpoint of the LxR(+R) reaction. In the ‘forbidden’ PxB(+R) reaction, we assume that a different complex PBIR2 is formed by binding four IR complexes to PB, and that conversion of PBIR2 to PBIR1 (step ‘synr’) and its reverse are very slow.
+
+<br><br> We assume that all reaction steps except recombination (r1, r2) and the slow synaptic conformational change steps (syn,synr) are fast. This assumption allows us to reduce the dimensionality of the model by applying rapid equilibrium approximations to the other steps, including formation of integrase–RDF complex IR in solution and binding of integrase(with or without RDF) to DNA. After these simplifications, four slowly changing variables (the concentrations of LRI1, PBIR1, total PB and total LR) remain, of which only three are independent, because of conservation of the total DNA pool. We chose the three quantities LRI1, PBIR1 and total PB as the independent slow dynamic variables, with total LR being determined by the difference between total DNA and total PB. 
+
+<br><br> Applying the rapid equilibrium approximation yields expressions for the concentrations of the equilibrating complexes as functions of free I, R, LR and PB. Kir, KbI and KLRi are the dissociation constants for the respective complexes.
+For simplicity and because it was sufficient to describe the data, we assume that all of the complexes of integrase (or integrase and RDF) with DNA (complexes formed
+in steps b1, b2, b3, b4) have the same dissociation constant KbI.
+
+<br><br> For more detail please refer to the paper in [1].
+
                                 </p>
                             </div>
 
@@ -574,7 +632,7 @@ You can find the code we used for this optimization in our Github page, in the f
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseModel1-5" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseModel1-5">
-                            Accordion Item 5
+                            References
 
 
                         </button>
@@ -590,7 +648,18 @@ You can find the code we used for this optimization in our Github page, in the f
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    content
+                                    [1]Pokhilko, Alexandra & Zhao, Jia & Stark, W. & Colloms, Sean & Ebenhöh, Oliver. (2017). A simplified mathematical model of directional DNA site-specific recombination by serine integrases. Journal of The Royal Society Interface. 14. 20160618. 10.1098/rsif.2016.0618. <br>
+
+<br><br> [2] Zhao J, Pokhilko A, Ebenhöh O, Rosser SJ, Colloms SD. A single-input binary counting module based on serine integrase site-specific recombination. Nucleic Acids Res. 2019 May 21;47(9):4896-4909. doi: 10.1093/nar/gkz245. PMID: 30957849; PMCID: PMC6511857. <br>
+
+<br><br> [3] Pokhilko A, Zhao J, Ebenhöh O, Smith MCM, Stark WM, Colloms SD. 2016.The mechanism of φC31 integrase directionality: experimental analysis and computational modelling. Nucleic Acids Res. 44, 7360–7372. (doi:10.1093/nar/gkw616) PubMed, ISI, Google Scholar <br>
+
+<br><br> [4] W Marshall Stark, Making serine integrases work for us, Current Opinion in Microbiology, Volume 38, 2017, Pages 130-136, ISSN 1369-5274, https://doi.org/10.1016/j.mib.2017.04.006. <br>
+
+<br><br> [5] Bowyer, Jack & Zhao, Jia & Subsoontorn, Pakpoom & Wong, Wilson & Rosser, Susan & Bates, Declan. (2016). Mechanistic Modeling of a Rewritable Recombinase Addressable Data Module. IEEE Transactions on Biomedical Circuits and Systems. 10. 1-10. 10.1109/TBCAS.2016.2526668. <br>
+
+<br><br> [6] Pokhilko, Alexandra & Ebenhöh, Oliver & Stark, W. & Colloms, Sean. (2018). Mathematical model of a serine integrase-controlled toggle switch with a single input. Journal of The Royal Society Interface. 15. 20180160. 10.1098/rsif.2018.0160. <br>
+
                                 </p>
                             </div>
                         </div>
@@ -617,7 +686,9 @@ You can find the code we used for this optimization in our Github page, in the f
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                 <p class="">
-                    content
+                    Traditional continuous and deterministic biochemical rate equations do not accurately predict cellular reactions since they rely on bulk reactions that require the interactions of millions of molecules. They are typically modeled as a set of coupled ordinary differential equations. 
+
+<br><br> We would like to explore the different possible outcomes and have a look at the extreme cases of what could happen to our genetic circuit assuming the premise of randomness of the reactions to be true, to properly model the inherent uncertainty of the system.  For this part we used the Gillespie Algorithm, which generates a statistically correct trajectory (possible solution) of a stochastic equation system for which the reaction rates are known. 
                 </p>
             </div>
             <div class="container  mx-auto p-3 wikicard-12-img">
@@ -626,7 +697,7 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 1.</b> Stochastic trajectory for forward recombination</h5>
             </div>
             <div class="container  mx-auto p-3 wikicard-12-img">
 
@@ -634,12 +705,17 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 2.</b> Stochastic trajectory for reverse recombination</h5>
             </div>
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                 <p class="">
-                    content
+                    Figures 1,2 assume an initial population of 50 molecules. We can see how the stochastic trajectories are in good agreement with the ones from the deterministic approach. As one increases the number of molecules, the concentrations´ trajectories are seen cleaner and converge to the results obtained from the ODE model. So we would expect even if we use a small number of concentrations the process of recombination still would happen.
+
+<br><br> Here we present a document with all the steps to execute and reproduce our implementation of the Gillespie Algorithm, hopefully it will be helpful for some iGEM teams.
+
+<br><br> Also, you can find our code and instructions on how to execute it in the files “GillespiePB.m” and “GillespieLR.m” in our Github page.
+
                 </p>
             </div>
 
@@ -663,7 +739,9 @@ You can find the code we used for this optimization in our Github page, in the f
 
 
                 <p class="">
-                    content
+                    A Markov model is a stochastic model used to model pseudo-randomly changing systems. It is assumed that future states depend only on the current state, not on the events that occurred before it (that is, it assumes the Markov property). Generally, this assumption enables reasoning and computation with the model that would otherwise be intractable. It is highly used in modeling finite state machines. We think that this description perfectly fits in our case, because as we are working with a sequential logic device, our circuit is basically a state machine.
+<br> In Figure 1 we can see the transition probabilities diagram for the case of two recombinases. Transition probabilities were extracted from [1].
+
                 </p>
             </div>
 
@@ -673,7 +751,7 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 1.</b> Transition probabilities diagram for the proposed Markov model <br><br> Based on Figure 1 we can fill our transition probability matrix:</h5>
             </div>
 
 
@@ -723,7 +801,10 @@ You can find the code we used for this optimization in our Github page, in the f
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                 <p class="">
-                    content
+                    Where each row represents the probability to move to other states, being the first row for state 1, row 2 state 2, row 3 state 3 and row 4 state 4. The rows must sum up to 1. Columns represent the state to which we arrive, being column 1 state 1 and so on.
+
+<br><br> Our initial vector would be [1 0 0 0], which means that we want to start at the state 1 of our counter and what we want to calculate is the probability to be at state 4(end of the counter) after a certain number of steps, let's say n steps. Following the Markov processes theory this can be found by multiplying the initial vector times the probability transition matrix raised to the nth power, that would give us a vector and as we are interested in finding the probability to reach the final state so we have to retrieve the last entry of the vector.
+
                 </p>
             </div>
 
@@ -733,14 +814,15 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 2.</b> Cumulative probability of having reached the final state of the counter.</h5>
             </div>
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    In Figure 2 we can see the probability of bacteria to complete the counting cycle for 2 recombinases, in a certain number of steps. As there is a certain probability that in a step does not occur recombination, so that step would need to be completed again, so the Markov model takes into account all those possible combinations of delays in the counting sequence. As seen in Figure 2, by step 7 we can expect the whole population to finish the process. Notice that for example for the ideal case(making only 3 recombinations to finish the process) there is a probability of 70% to happen. For this model is only needed as an input the number of recombinases and their respective probability to recombine.
+
                 </p>
             </div>
 
@@ -751,14 +833,22 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 3.</b> Probability to reach the final state of the counter in a certain number of steps.</h5>
             </div>
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    Figure 3 is a variation of Figure 2, in this case it is useful to know the proportion of the whole population of bacteria that will complete the process in exactly a certain number of steps. As we can see a greater percentage of the bacteria will finish the counting without any delay(3 recombinations), and from this point on the probability is decreasing with every step.
+
+<br><br> In order to do the plots and calculate the probabilities, we developed a script in Matlab called “MarkovModel.m”, which you can access in our Github page.
+<br><br> <b>References</b>
+<br> [1] Song-Yuan, Zhang & Qiu, Jianhui. (2018). Design of recombinase and terminator-based genetic switches for cell state control. 
+
+
+
+
                 </p>
             </div>
 
@@ -778,7 +868,12 @@ You can find the code we used for this optimization in our Github page, in the f
 
 
                 <p class="">
-                    content
+                    We thought of modeling to help us at all stages of the project, therefore we imagined the situation in which we already liberated the bacteria with our counter and how the population would change in time in those cases. For example, if we want to use bacteria to decompose oil in the open sea, how many initial bacteria would we need to do such a task? How do we know if that bacteria will eventually die, and not colonize the ecosystem? 
+
+<br><br> To answer these questions, we propose this model, which predicts the population of bacteria over time. It is tightly connected with the markov model we presented, because it uses the probabilities given by it. The model works as follows: Each 20 minutes(doubling time) we perform a “killing” stage given by the probability of the markov model of the percentage of the whole population that should be alive given that it already completed the counting cycle and therefore activated the killswitch mechanism and died, but also the quantity of bacteria left after that process duplicates following binary fission. It is important to mention that we assume that every child cell inherits the counting stage from its parent cell.
+
+<br><br>  We did an application aiming to be useful if someone wants to simulate such a scenario. You only need to proportionate the number of recombinases you are using and the initial population of bacteria. You can find it as “Max_population.mlapp” in our Github repository.
+
                 </p>
             </div>
             <div class="container  mx-auto p-3 wikicard-12-img">
@@ -787,13 +882,18 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 1.</b> Population of bacteria over time, using 4 recombinases with an initial population of a million bacteria.</h5>
             </div>
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    This model presents a consensus between the growth of the population and how the counting circuit would affect this, assuming the bacteria are in an exponential phase.
+
+<br><br> We also kept track of the total population of bacteria that was present in the process, which was for this case 89564 million of bacteria.
+
+<br><br> As a part of the engineering cycle, we got some feedback about this model, and realised that the premise of exponential growth is not applicable in many cases, due to lack of infinite resources in order for the bacteria to grow indefinitely. For that reason, we also implemented a scenario in which the bacteria follow the typical growth curve and its phases(lag, exponential, log and dead), to be more realistic and useful for example in environments such as laboratories where no infinite resources or space exists.
+
                 </p>
             </div>
             <div class="container  mx-auto p-3 wikicard-12-img">
@@ -802,13 +902,14 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 2.</b> Population of bacteria over time, using 4 recombinases with an initial population of a million bacteria, following bacterial growth phases.</h5>
             </div>
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    As we see in Figure 2, although the form of the graph does not change, the maximum value attained is 100 times smaller than the one reported in Figure 1. The total population of bacteria that was present in the process was 1399 million of bacteria, about 64 times less than the reported for the case in Figure 1. These results were expected as in this limited growth condition the overall population will be fewer than in the infinite resource case.
+
                 </p>
             </div>
 
@@ -831,7 +932,9 @@ You can find the code we used for this optimization in our Github page, in the f
 
 
                 <p class="">
-                    content
+                    This model allows us to predict the sequence of the counting circuit(which of the integrase expresses at each time). Also, as the way the circuit does the counting seems to not make sense, we can translate the way it looks into the number it represents to have a clear conceptualization, and also we can determine given a specific decimal number, how it would translate into the architecture of our counter.
+
+<br><br> To develop a single model that can give us the answer to all of the above, we proposed a concept used in computer science and other branches of engineering and mathematics, a decision tree. A decision tree is a graph, in which each node has two children, and it is constructed in a manner that follows simple rules. For example, in our tree the parent node(the one at the top), will always be the recombinase that encompasses the others in our genetic circuit or equivalently the one that is furthest to the right in the initial state.  We are following a convention of colors inspired by this animation {link slides Marco}, in which green recombinase encompasses the blue one, the pink encompasses the green one and the blue, and the yellow recombinase encompasses all of the former. In that way we construct each layer of the tree. Now, to construct how we could walk the tree, we can ask a simple question: <b>Is the terminator corresponding to each recombinase down in the sequence?</b> If the answer is “no”, then go always to the left of the node, if the answer is “yes” then go always to the right.
                 </p>
             </div>
 
@@ -845,13 +948,17 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"></b>Figure 1.</b> Construction of our recombinase-based decision tree.</h5>
             </div>
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    By following this construction we found that all of the numbers from 1 to 2^n(where n is the number of recombinases) can be achieved, and more surprisingly it does the counting in an ordered way, as seen in Figure 1.
+
+<br><br> Another important and interesting aspect of this construction is its modularity. For example, look in Figure 1 that the tree for 4 recombinases is just composed by two decision trees of 3 recombinases, the tree for 3 recombinases is composed by two trees of 2 recombinases and so on. This modularity makes it possible to construct the tree recursively regardless of its size.
+
+<br><br> <b>We can derived a way to translate from the genetic circuit sequence to a decimal number:</b>
                 </p>
             </div>
 
@@ -864,13 +971,13 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 2.</b> Animation of how the counting is done and what recombinases are expressed at each time.</h5>
             </div>
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    As seen in Figure 2, we can know (based on the rules of construction of the tree) which terminators are going to be up or down in every step of the counting, so just by seeing them we can know which decimal number they represent. It is important to notice that each combination of terminators up or down for every recombinase is unique by the construction rules of the tree i.e. you can not have two numbers that possess the same combination of terminators up or down.
                 </p>
             </div>
 
@@ -883,33 +990,21 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 3.</b> Representation of decimal number 11 in our circuit architecture</h5>
             </div>
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
-                </p>
-            </div>
+                    For example, by seeing only the genetic circuit in Figure 3, how can we know which number represents that configuration? Well, we just have to ask ourselves the question, are terminators down? So for the yellow recombinase that would be a yes, for the pink no, for the green yes and for the blue no. So we come back to Figure 2 and search for the path yes->no->yes->no, and as we see we encounter number 11 at the end of the road.
 
+<br><br> <b>Also, we can translate from the decimal number into how it will look in our genetic circuit:</b>
 
+<br><br> By the construction of our circuit, we designed it in a way such that when the furthest recombinase to the right in the initial state recombinases(or flips), the others are flipped with it as well, because its recombinant sides are placed on the edges of the circuit. Notice that in this case of 4 recombinases, once the yellow recombinases flip there is nothing we can do to change its state because there is nothing in the counter which allows us to flip it again, so if we see the terminators of the counter as four empty ordered boxes, the terminator for the yellow recombinase can be only either in the las box up of in the first one down, if it already made the process of recombination. The same reasoning applies for the rest, the pink recombinase can only be either in the last or in the first box available depending on if it has already flipped and so on.
 
+<br><br> So, let's suppose we want to know how number 7 would look like in our architecture. So again we refer to Figure 2, we stand on where number 7 is and walk the tree upwards saving the “yes” and “no”´s that we find. That would be:  yellow no, pink yes, green yes and blue no. 
+<br> So as the yellow terminator is up, it means it has not been flipped or has not made the process of recombination yet, so the yellow terminator would be in the last of the four available spaces up. The pink terminator is down, which means it has already flipped and has to be in the first space on the left that is available, so that would be position one. The green terminator is down, so it is in the second position from left to right and finally the blue terminator can only be in the third position. We can see our correct prediction in Figure 4.
 
-
-            <div class="container  mx-auto p-3 wikicard-12-img">
-
-                <div class="text-center">
-                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
-                </div>
-
-                <h5 class="text-center">asdas</h5>
-            </div>
-            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-
-
-                <p class="">
-                    content
                 </p>
             </div>
 
@@ -923,13 +1018,40 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 4.</b> Representation of decimal number 7 in our circuit architecture</h5>
             </div>
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    Finally we found another interesting property, taking a concept from binary search trees, if we traverse the tree In-Order, we get the sequence of what recombinase is expressed at what time. This is very important because it allows us to predict how many times a recombinase will flip, and base on that take decisions, for example the blue recombinase expresses once every two recombinations, the green once every four, the pink once every 8, the yellow once every 16 recombinations and so on, so it makes sense to put the recombinase that exhibits the best flipping efficiency as the first one in our circuit to increase the probability of success, since it is the one which will be more used.
+
+                </p>
+            </div>
+
+
+
+
+
+            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                <div class="text-center">
+                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
+                </div>
+
+                <h5 class="text-center"><b>Figure 5.</b> In-Order traversal of our tree.</h5>
+            </div>
+            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+
+                <p class="">
+                    The algorithm for In-Order traversal is as follows:<br>
+1. Traverse the left subtree, i.e., call Inorder(left-subtree) <br>
+2. Visit the root. <br>
+3. Traverse the right subtree, i.e., call Inorder(right-subtree)<br>
+<br>
+A more casual and easy way to visualize it is if we imagine that there is a huge piano at the top of the tree, and when it falls crashes the tree nodes projecting them into the floor, as seen in Figure 5.
+
                 </p>
             </div>
 
@@ -946,7 +1068,10 @@ You can find the code we used for this optimization in our Github page, in the f
 
 
                 <p class="">
-                    content
+                    As stated by Austin UTexas iGEM team 2019: “A  major problem in synthetic biology is evolutionary instability: when a genetic construct is transformed into a cell, some resources are allocated towards expression of the construct. This introduces a cellular resource competition between it and the host genome, creating additional cellular burden. This makes engineered bacterial populations less fit than the wild type. Over time, cells accumulate loss-of-function mutations within the construct, freeing cellular resources for the genome and increasing cell fitness. The population cannot withstand the burden associated with the construct for a sustained number of generations, so individual cells' constructs evolve as a way to relieve this burden and, eventually, the mutation sweeps the population” [1]. <br><br>
+
+<br><br> We used their approach in order to study the impact of metabolic burden in our system´s performance. The 2020 Austin UTexas iGEM team created a list of measurements of burden value for 304 biobricks. We were able to find 7 that are part of our circuit. You can find the entire list in [2].
+
                 </p>
             </div>
 
@@ -991,14 +1116,21 @@ You can find the code we used for this optimization in our Github page, in the f
                         </tr>
                     </tbody>
                 </table>
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Table 1.</b> Parts of our circuit with their respective metabolic burden value.</h5>
             </div>
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    The model shows when parts break within a population of E. coli according to that part’s burden value. Therefore, the model marries the concepts of burden and evolutionary stability within our project to create a predictive tool simulating the evolutionary stability of parts based on their burden values. <br>
+
+Higher burden values (percent reduction in growth rate), correspond to parts breaking at an earlier generation time. For example, a part that has a burden value of 0.4 and thus imparts a 40% reduction in growth rate.<br>
+
+Also they made a tool to simulate the behaviour of the part, you can change the burden value,mutation rate, the culture in which you are going to perform the experiment and stochastic simulations. You can use the tool in [3].<br>
+
+As to date only individual parts burden has been studied, it's currently hard to predict the burden of an entire device from that of its parts. So we adopted an approach of modeling the part with the higher burden value, in our case BBa_J23100, to have an idea that in a best case scenario how our circuit is going to behave.<br>
+
                 </p>
             </div>
             <div class="container  mx-auto p-3 wikicard-12-img">
@@ -1007,13 +1139,19 @@ You can find the code we used for this optimization in our Github page, in the f
                     <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
                 </div>
 
-                <h5 class="text-center">asdas</h5>
+                <h5 class="text-center"><b>Figure 1.</b> Evolutionary Failure of an Engineered Cell Population</h5>
             </div>
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
 
                 <p class="">
-                    content
+                    As seen in the above figure, it is predicted that our circuit would likely break at 100 generations or cell doublings. The red lines are stochastic simulations and the black one the deterministic. The straight blue lines mean the number of generations at which saturation is reached, depending on the environment in which we perform the experiment, from left to right they are colony, test tube, flask and bioreactor. <br><br>
+                    <b>References</b>
+[1] https://2019.igem.org/Team:Austin_UTexas/Model <br>
+[2] https://2020.igem.org/Team:Austin_UTexas/Contribution<br>
+[3] https://barricklab.org/shiny/burden-model/<br>
+
+
                 </p>
             </div>
 
