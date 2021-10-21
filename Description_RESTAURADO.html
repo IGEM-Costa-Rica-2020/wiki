@@ -1803,7 +1803,7 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                         <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                             <div class="col-sm-6">
                                 <h2>Functions </h2>
-                                <h3>subtitle </h3>
+                                <h3> </h3>
                                 <p>
                                     A function is an <b>action carried out by a part or group of parts determined by a set of interactions</b>. Some functions are: inversion, excision, edition, insertion, repression, expression.<br>
 
@@ -1841,7 +1841,7 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                                         <div
                                             class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                             <h2>Application </h2>
-                                            <h3>subtitle </h3>
+                                            <h3> </h3>
 
                                             <p class="">
                                                 The application refers to how the <b>actions</b>, based on the <b>structure and relationships</b>, are <b>carried out</b>. This stage focuses on the execution of the parts’ functions from a previously defined circuit and its environment, as a processing workflow. Therefore, the <b>input</b> necessary to develop this workflow is a <b>defined environment</b> -which includes a circuit-, and the final <b>output</b> is <b>one or more modified circuits in their environments</b>. Multiple outputs might be necessary when considering alternative scenarios for the execution of the parts functions. One cycle of this workflow could encompass one or multiple circuit modifications, simultaneous or not, depending on the desired output.<br>
@@ -1954,11 +1954,22 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                     <div v-if="current_slide_index['framework'].index==7" class="container">
 
                         <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                            <h2>title </h2>
-                            <h3>subtitle </h3>
+                            <h2> </h2>
+                            <h3> </h3>
 
                             <p class="">
-                                content
+                                As mentioned before, the conceptual framework was a set of ideas to guide a computational or manual design, construction, simulation and analysis of synthetic gene circuits as state machines. We decided to apply our framework as a base for software tools’ design, where such tools would aid the exploration of alternative circuit architectures, while offering flexibility in the implementation and optimization. This means, we <b>implemented the concepts described and the coupling of them with sequential logic</b> -specially the {processing workflow}- <b>as computational concepts and a workflow to be used as a software’s guide.</b><br>
+
+
+                                A software framework provides an <b>abstraction for generic software functionalities upon which other software applications can be built. It makes <b>implementation details transparent to other developers</b>, which gets rid of most tedious and repetitive work, while providing a sturdy base for development and allowing most of the development effort to be tailored towards functional and valuable software. Thus this software framework can be easily used as a starting point for implementing software tools.<br>
+
+
+                                The objective of this software framework is to set a <b>structural guide for facilitating the design of a software</b> to be used for the generation, assessment and manipulation of synthetic gene circuits as state machines. <br>
+
+
+                                The workflow presented begins from the premise that the desired parts and their properties are defined. The software framework is divided into four: an initialization stage, two core processing stages and a post-processing stage.<br>
+
+
                             </p>
                         </div>
 
@@ -1976,19 +1987,21 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#panelsStayOpen-collapseOne3" aria-expanded="true"
                                         aria-controls="panelsStayOpen-collapseOne3">
-                                        Accordion Item #1
+                                        Stage 1: Generator
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseOne3" class="accordion-collapse collapse show"
                                     aria-labelledby="panelsStayOpen-headingOne3">
                                     <div class="accordion-body">
-                                        <strong>This is the first item's accordion body.</strong> It is shown by
-                                        default, until the collapse plugin adds the appropriate classes that we use to
-                                        style each element. These classes control the overall appearance, as well as the
-                                        showing and hiding via CSS transitions. You can modify any of this with custom
-                                        CSS or overriding our default variables. It's also worth noting that just about
-                                        any HTML can go within the <code>.accordion-body</code>, though the transition
-                                        does limit overflow.
+                                       The initialization stage, which precedes the processing, is a circuit generator, where the environment with the circuit is defined. The circuit can be a preexisting one, built upon another one, or designed from scratch using a set of parts. The construction of the circuit can consider different levels of randomness and/or certain constraints, such as base pair length, number of parts, obligatory parts, number of promoters, etc. This stage can also tap into machine learning for a guided design of the circuits by, for example, clustering the generated outputs and using that data to generate artificial new circuits with similar characteristics. The chosen parameters for the circuit generation can direct the process to have a starting point more suitable for the specific objective.
+
+                                        <strong>Input:</strong> defined parts with their corresponding properties.
+
+                                        <strong>Output:</strong> a data structure that defines the circuit through its parts and order. <br>
+
+
+                                        From a defined circuit, a cycle of two core stages is executed, this cycle processes the change from one state to another, <i>i.e.</i> the modification of the circuit architecture. A single cycle, or state change, consists of evaluation and action.<br>
+
                                     </div>
                                 </div>
                             </div>
@@ -2400,7 +2413,7 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                             content: "The implementation of the conceptual framework as a guide for software design"
                         },
                         {
-                            title: "Conceptual Framework APPLIED TO DEVELOP THE SOFTWARE FRAMEWORK",
+                            title: "Conceptual Framework Applied To Develop The Software Framework",
                             content: "As mentioned before, the software framework is a direct implementation of the conceptual framework, by applying the concepts described and the coupling of them with sequential logic as computational concepts and a workflow."
                         }
                     ]
