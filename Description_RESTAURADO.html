@@ -1345,7 +1345,7 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                             <h3> </h3>
 
                             <p class="">
-                                The conceptualization of a genetic circuit's function as sequential logic can be daunting and hard to replicate consistently. There are a number of elements that must be considered to properly represent the circuit's structure and behavior. In a sequential system, the <b>output depends not only on the present inputs but also on the current state<b>. For <b>synthetic biology</b>, a circuit and its environment can be portrayed as a sequential system or state machine when the <b>behavior can be described by states whose transitions are controlled by time-ordered inputs and are affected by past behavior and inputs</b>. The modification and behavior of circuits can be explored through the sequential progress of states. Exploring the potential states of a circuit requires recurrent simulations of its changes and behavior; hence, there must exist an iterable ready approach to tackle these types of problems. A biological process, natural or engineered, that has characteristics such as: being time-dependent, having highly interconnected regulatory networks, behaving differently with repeating inputs, requiring information to be saved stably (Letsou & Cai, 2016; Madec, Rosati, & Lallement, 2021; Magdevska <i>et al</i>., 2017; Oishi and Klavins, 2014; Roquet <i>et al.</i>, 2016), would greatly benefit from being conceptualized and analyzed as a sequential logic problem. Moreover, the ability to sequentially modulate the system's response offers high scalability as it enables larger or more complex applications (Zúñiga <i>et al</i>., 2020).<br>
+                                The conceptualization of a genetic circuit's function as sequential logic can be daunting and hard to replicate consistently. There are a number of elements that must be considered to properly represent the circuit's structure and behavior. In a sequential system, the <b>output depends not only on the present inputs but also on the current state</b>. For <b>synthetic biology</b>, a circuit and its environment can be portrayed as a sequential system or state machine when the <b>behavior can be described by states whose transitions are controlled by time-ordered inputs and are affected by past behavior and inputs</b>. The modification and behavior of circuits can be explored through the sequential progress of states. Exploring the potential states of a circuit requires recurrent simulations of its changes and behavior; hence, there must exist an iterable ready approach to tackle these types of problems. A biological process, natural or engineered, that has characteristics such as: being time-dependent, having highly interconnected regulatory networks, behaving differently with repeating inputs, requiring information to be saved stably (Letsou & Cai, 2016; Madec, Rosati, & Lallement, 2021; Magdevska <i>et al</i>., 2017; Oishi and Klavins, 2014; Roquet <i>et al.</i>, 2016), would greatly benefit from being conceptualized and analyzed as a sequential logic problem. Moreover, the ability to sequentially modulate the system's response offers high scalability as it enables larger or more complex applications (Zúñiga <i>et al</i>., 2020).<br>
                             </p>
                         </div>
 
@@ -1440,7 +1440,36 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
                             <h3> </h3>
 
                             <p class="">
-                                content
+                                The system’s <b>input</b> is the <b>composition of the circuit's environment. Meanwhile, the <b>output</b> is an <b>expression profile</b> related to the state.<br>
+
+                                A <b>state</b>, is defined by two elements: the <b>circuit architecture</b>, <i>i.e.</i> the disposition of genetic parts or pair bases, and the <b>gene expression profile</b>. These elements were inspired by previous literature (Fritz <i>et al</i>., 2007; Oishi & Klavins, 2014; Roquet <i>et al</i>., 2016), as we considered multiple perspectives required and advantageous. Therefore, a change in state would be caused by a change in the DNA sequence, by a change in a gene's expression, or by a change in both. The first element, the circuit's architecture, corresponds to the order, orientation and sequence of parts; thus DNA modification caused by insertion, deletion, substitution, inversion, mutation, would cause a change in state. For this, enzymes that modify the DNA strand are essential. This is a highly evolutionary stable way to store the state as it is coded in the DNA and does not require a constant gene expression (with the corresponding metabolic burden) (Roquet <i>et al</i>., 2016). On the other hand, the expression profile refers to determined transcribed genes and their expression levels, which can be reflected in the environment. By extension, it considers gene regulatory networks and epigenetic mechanisms that affect the functionality of the circuit. Although a state defined by this aspect is not as stable, the objective is focused on considering relevant alterations as state changes, since they will affect the response to future inputs. If a change in expression causes a change in architecture or the other way around: if a change in architecture causes a change in expression, both could be grouped into the same state change.<br>
+                                To exemplify, we can consider the following system. 
+
+                                A circuit with two different inducible promoters that achieves five states depending on the order of inputs. 
+
+                                State A is the initial state without any induction. <br>
+
+
+                                If inducer 1 is the first input, the promoter 1 is activated, the rfp and recombinase 1 are expressed. The rec inverts the sequence between the sites, which changes the circuit architecture and generates state B. <br>
+
+
+                                If inducer 1 is added again, the rfp and rec 1 are expressed again but there is no relevant change and therefore there is no change of state.
+
+                                If inducer 2 follows instead, the rec 2 is expressed and the sequence between the sites is excised, which generates state C. 
+
+                                With input 1 next, the gfp is expressed, but if input 2 is inserted instead, the rec 2 is expressed but has no effect.<br>
+
+
+                                If instead of this order of inputs, the system in state A starts with inducer 2, the rec 2 is expressed, which excises the sequence between the sites generating state D. <br>
+
+
+                                In state D, if the inducer 2 is input, the recombinase 2 is expressed but nothing happens. 
+
+                                Instead, if inducer 1 is added next, the yfp and repressor are expressed. The repressor associates to the operator site, which modifies the expression profile, generating state E. <br>
+
+
+                                In state E, with time as an input, the repressor degrades, which deactivates the operator site, going back to state D.<br>
+
                             </p>
                         </div>
 
@@ -1460,7 +1489,7 @@ Zhao, J., Pokhilko, A., Ebenhöh, O., Rosser, S. J., & Colloms, S. D. (2019). A 
 
 
                         <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                            <h2>characteristics </h2>
+                            <h2>Characteristics </h2>
                             <h3>subtitle </h3>
 
                             <p class="">
