@@ -427,7 +427,7 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Recombinases: </h2>
+                                    <h2>Recombinases </h2>
 
                                     <p class="">
                                         DNA site-specific recombinases are enzymes that catalyse breaking and rejoining of DNA strands at specific points, thereby bringing about precise genetic <b>rearrangements</b>. Serine integrases are a group of recombinases with unusual properties such as recombination <b>directionality</b> and simple site requirements (Stark, 2017). According to Zhao et al. (2019) when inverting, serine recombinases recognize specific genetic sites, attB and attP (PB state), and invert the sequence between these sites generating the new sites attL and attR (LR state). This inversion is unidirectional, meaning that another component must be present for the inversion to be reversed. This component is the <b>RDF</b> (recombination directionality factor), and, when co-expressed with the recombinase, allows to switch the LR state back to PB (Zhao et al., 2019). Depending on the DNA arrangement, the use of integrases allow the control of the flow of RNA polymerase along the DNA, hence <b>regulating genetic expression</b> (Merrick et al., 2018). The selected recombinases have been tried out together and display orthogonality (Guiziou et al., 2019). They have also been characterized in several other chassises, making our circuit easier to extrapolate (Tomimatsu et al., 2017; Xu & Brown, 2016).  BXB1 and TP901 particularly have been used in similar proposals such as Hsiao et al. (2016) y Roquet et al. (2016). 
@@ -445,17 +445,18 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>Recombinase 1:Bxb1 </h2>
-                                        
+                                        <h2>Recombinase 1:</h2>
+                                        <h3>Bxb1  </h3>
                                         <p>
                                             We chose Bxb1 as the first integrase since it displayed the best recombination efficiency</b> to obtain products with no residual substrates remaining as reported by Wang et al.  (2017), showing that the activity of Bxb1 integrase is obviously superior compared with any other integrase. Bxb1 integrase mediated excellent, efficient site-specific recombination in vitro in this study.
                                         </p>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h2>Recombinase 2, 3 and 4 represent TP901, Int5 and Int7 respectively. </h2>
+                                        <h2>Recombinase 2, 3 and 4: </h2>
+                                        <h3>represent TP901, Int5 and Int7 respectively  </h3>
                                         <p>
-                                            (There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other )
+                                            There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other
                                         </p>
                                     </div>
                                 </div>
@@ -472,7 +473,7 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Terminator:   </h2>
+                                    <h2>Terminator   </h2>
 
                                     <p class="">
                                         Terminators define the <b>end of translation</b>, they can be uni or bidirectional and are relevant to correct protein expression (iGEM, s.f.b). 
@@ -490,7 +491,7 @@
 
                                     <div class="col-sm-6">
                                         <h2>Terminator 2: </h2>
-                                        <h3>T1({BBa_B0010}) </h3>
+                                        <h3>{BBa_B0010} </h3>
                                         <p>
                                             Only functions in its <b>forward</b> direction and can be used to regulate translation of polycistronic elements similarly to Friedland et al. (2009)’s proposal, in which they built a DNA Invertase Cascade (DIC).
                                         </p>
@@ -510,7 +511,7 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>CRISPR+ligase: </h2>
+                                    <h2>CRISPR+ligase </h2>
 
                                     <p class="">
                                         The CRISPR-Cas9 system, a gene editing system, depends on two main elements, a small RNA fragment that contains the guide sequence that binds to the target DNA sequence and the Cas9 enzyme joined to the guide RNA sequence. When the guide is transcribed, it binds to the Cas9 in order to recognize the target DNA sequence which is then cut by the enzyme, creating a double strand  break. This break can be used to delete, insert or replace DNA if used coupled with the cell’s own repair machinery (MedlinePlus, s.f.). In our case E. coli doesn’t have a non-homologous end joining (NHEJ) repair system, so a double stranded break can only be fixed by homologous recombination. Since we don’t want the insertion of a template to be required, we searched for a different alternative, and found that a T4 ligase can fix the break creating indels that <b>knockout</b> the gene and prevent the cell from committing suicide because of the broken DNA (Su et al., 2016). This is according to Su et al. (2019), who report using a ligase for repairing a DSB made by Cas9 in LacZ gene in E. coli, leading to the survival of cells. In turn Su et al. (2016) report using a different strategy: which involved the design of sg to avoid HR and the use of conserved prokaryotic NHEJ proteins from Mycobacterium tuberculosis H37Rv instead for repairing complete gene deletions, proving that this is in fact possible even though in their case it had only 36% efficiency. We believe that by joining the best of each strategy, the ligase and the sg design, and having a much smaller deletion target (which in turn is closer to DNA deletion consistency at 200bp) we can have a much better efficiency in both deletion and repair.
@@ -544,7 +545,7 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Operator sites: </h2>
+                                    <h2>Operator sites </h2>
 
                                     <p class="">
                                         “A common method of <b>repressing gene expression</b> in prokaryotes involves the binding of a protein to a DNA sequence (a.k.a. operator) near or overlapping its promoter” (Politz et al., 2013). These operators, in our design, were purposely ambiguous, since their identity can vary depending on available technology. The common requirement they must fulfill is binding to specific DNA sequences. A readily available mechanism to do this is taking advantage of already existing repressors such as LacI from the Lac operon or the phage encoded lambda repressor (cI) (Lewis, 2011). The deactivated version of the cas9 protein is also an alternative, but its location would have to be rethought, since it would need to be active and functional for all three cases (Xu & Qi, 2019). Finally, other synthetically designed DNA-binding proteins can be used, TALEs being one of the most used of these categories (Politz et al., 2013). 
@@ -559,7 +560,7 @@
                                 aria-labelledby="pills-multilay-tab">
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Multi-layered containment system: </h2>
+                                    <h2>Multi-layered containment system </h2>
 
                                     <p class="">
                                         A multi-layered safeguard system is a series of barriers that can decrease the escape frequency of synthetically modified microorganisms (Gallagher et al., 2015). In this device, the main objective is to develop a biocontainment, condition independent, kill switch.
