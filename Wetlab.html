@@ -297,7 +297,12 @@
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                 <p class="">
-                    content
+                    The parts will be replicated in a high copy plasmid (PONER BIOBRICK), but a low-copy plasmid (PONER BIOBRICK) was chosen for characterization based on the importance of reducing the noise associated with having multiple copies of the fluorescent proteins’ sequence to be recombined (referencia). E. coli will be our chassis because of the previously executed recombinase characterization and counter circuits implementations. 
+
+                    Strain BL21 was chosen because of its notable productivity in recombinant protein production and low protease activity (Kim et al., 2017)). 
+
+                    For the assembly digestion, ligation, chemically competent cells production, and chemical transformation and colony PCR methodologies will be executed. You can find these in Protocols.
+
                 </p>
             </div>
 
@@ -320,31 +325,17 @@
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                 <p class="">
-                    content
+                    For the fluorescence characterization we propose four different approaches:
                 </p>
             </div>
 
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                <h2>title </h2>
+                <h2>Plate Reader </h2>
 
                 <p class="wiki-card-2columns">
-                    content
-                </p>
-            </div>
-
-            <div class="container  mx-auto p-3 wikicard-12-img">
-
-                <div class="text-center">
-                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
-                </div>
-            </div>
-
-            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                <h2>title </h2>
-
-                <p class="wiki-card-2columns">
-                    content
+                    Characterization of fluorescent protein expression via plate reader is a very common approach as shown by Beal et al. (2021). The main advantage is that even when our different constructs are designed to give us different pieces of information they can all be characterized at the same time, given that this is a high throughput methodology that allows bulk measurements (Fedorec et al., 2020), by simply inducing with arabinose and setting up the plate reader to the right wavelength according to the fluorescent protein of interest. The fact that even three different wavelengths could be processed at a time was a great advantage, since our plan consisted of inducing our counter circuit and continuously measuring the fluorescence of the three selected proteins, which, if working correctly, should be expressed sequentially as shown in description. 
+                    This would also allow us to try out different arabinose concentration and induction times in order to normalize the pulse needed by our counter in order to count a single time. In the case of the pnrd promoter, which is endogenously induced, the plate reader should be able to capture the different expression peaks. Finally, the recombination rate of our recombinases can be easily extracted from this experimental procedure.
                 </p>
             </div>
 
@@ -356,10 +347,10 @@
             </div>
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                <h2>title </h2>
+                <h2>Flow Cytometry </h2>
 
                 <p class="wiki-card-2columns">
-                    content
+                    Flow cytometry is also a very usual procedure to measure fluorescence (Beal et al., 2021), and, as with plate reading, behaves with the versatility needed to characterize our different constructs. This technique also presents the added bonus of segregating each specific cell by its expression phenotype (McKinnon, 2018), which allows the “detailed analysis of complex populations in short periods of time” (Adan et al., 2017). This technique will grant a much more accurate reading of our circuit’s behavior and probability profile, even allowing to directly correlate the obtained results with the Markov modelling of our counter circuit. 
                 </p>
             </div>
 
@@ -371,10 +362,10 @@
             </div>
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                <h2>title </h2>
+                <h2>Live Cell Imaging </h2>
 
                 <p class="wiki-card-2columns">
-                    content
+                    Finally, live cell imaging is proposed to characterize our counter circuit in a visual manner. Direct observation of fluorescence through microscopy can be very effective to determine live changes on a single cells’ behavior, as shown by Howell et al. (2017), which is what we would expect from our counter circuit. 
                 </p>
             </div>
 
@@ -386,10 +377,25 @@
             </div>
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                <h2>title </h2>
+                <h2>DNA sequencing </h2>
 
                 <p class="wiki-card-2columns">
-                    content
+                    DNA sequencing was suggested to us by several of the experts we interviewed, since it’s a direct outlook on the circuit’s state, compared to the indirect measurement obtained by fluorescence readings. For this approach the culture is to be induced and samples taken at different timepoints. After this a plasmid-DNA extraction and PCR amplification of the specific sequence should be performed. The samples would then be sent out to sequence and the results analyzed for qualitative information to be obtained.
+                </p>
+            </div>
+
+            <div class="container  mx-auto p-3 wikicard-12-img">
+
+                <div class="text-center">
+                    <img src="//placehold.co/1200x600?text=snippet" alt="" style="width:100% center" class="w-75">
+                </div>
+            </div>
+
+            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+                <h2>Data Analysis </h2>
+
+                <p class="wiki-card-2columns">
+                    Both plate reading and flow cytometry are quantitative measurements that allow standardization via calibration and their execution can be designed in order to obtain comparable, replicable units (Beal et al., 2018). From these experiments we expect to obtain a behavioral pattern (counter circuit characterization) along with quantitative fluorescence measurements in which generation and degradation of the different fluorescent proteins are evident and allow the procurement of data for our mathematical model (overcount & recombinase characterization). The information obtained from live cell imaging will be used as qualitative visual characterization for our counter circuit. Nonetheless, arabinose concentration and elapsed time will be measured, allowing some data to characterize the induction system of our circuit. The pnrd promoter’s behavior will also be assessed by this mechanism. 
                 </p>
             </div>
 
