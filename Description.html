@@ -424,10 +424,11 @@
 
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
-                                    <h2>Bxb1 </h2>
+                                    <h2>Recombinases: </h2>
 
                                     <p class="">
-                                        We chose Bxb1 as the first integrase since it displayed the best recombination efficiency</b> to obtain products with no residual substrates remaining as reported by Wang et al.  (2017), showing that the activity of Bxb1 integrase is obviously superior compared with any other integrase. Bxb1 integrase mediated excellent, efficient site-specific recombination in vitro in this study.
+                                        DNA site-specific recombinases are enzymes that catalyse breaking and rejoining of DNA strands at specific points, thereby bringing about precise genetic <b>rearrangements</b>. Serine integrases are a group of recombinases with unusual properties such as recombination <b>directionality</b> and simple site requirements (Stark, 2017). According to Zhao et al. (2019) when inverting, serine recombinases recognize specific genetic sites, attB and attP (PB state), and invert the sequence between these sites generating the new sites attL and attR (LR state). This inversion is unidirectional, meaning that another component must be present for the inversion to be reversed. This component is the <b>RDF</b> (recombination directionality factor), and, when co-expressed with the recombinase, allows to switch the LR state back to PB (Zhao et al., 2019). Depending on the DNA arrangement, the use of integrases allow the control of the flow of RNA polymerase along the DNA, hence <b>regulating genetic expression</b> (Merrick et al., 2018). The selected recombinases have been tried out together and display orthogonality (Guiziou et al., 2019). They have also been characterized in several other chassises, making our circuit easier to extrapolate (Tomimatsu et al., 2017; Xu & Brown, 2016).  BXB1 and TP901 particularly have been used in similar proposals such as Hsiao et al. (2016) y Roquet et al. (2016). 
+                                        It’s important to highlight that the order assigned to these recombinases is not random, and was supported by our mathematical model. 
                                     </p>
                                 </div>
 
@@ -441,14 +442,15 @@
 
                                 <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                                     <div class="col-sm-6">
-                                        <h2>TP901, Int5 and Int7 </h2>
+                                        <h2>Recombinase 1:Bxb1 </h2>
+                                        
                                         <p>
-                                            There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other
+                                            We chose Bxb1 as the first integrase since it displayed the best recombination efficiency</b> to obtain products with no residual substrates remaining as reported by Wang et al.  (2017), showing that the activity of Bxb1 integrase is obviously superior compared with any other integrase. Bxb1 integrase mediated excellent, efficient site-specific recombination in vitro in this study.
                                         </p>
                                     </div>
 
                                     <div class="col-sm-6">
-
+                                        <h2>Recombinase 2, 3 and 4 represent TP901, Int5 and Int7 respectively. </h2>
                                         <p>
                                             (There are several versions of each recombinase and other recombinases available in the registry http://parts.igem.org/Recombination/Other )
                                         </p>
@@ -555,7 +557,6 @@
 
                                 <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                     <h2>Multi-layered containment system: </h2>
-                                    <h3>subtitle </h3>
 
                                     <p class="">
                                         A multi-layered safeguard system is a series of barriers that can decrease the escape frequency of synthetically modified microorganisms (Gallagher et al., 2015). In this device, the main objective is to develop a biocontainment, condition independent, kill switch.
@@ -632,7 +633,6 @@
                         <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                             <div class="col-sm-6">
                                 <h2>Modularity </h2>
-                                <h3>subtitle </h3>
                                 <p>
                                     Each of these modules can be <b>applied separately</b> to other proposals, and modified accordingly, and even <b>exchanged</b> for others. For example,  the final module can be changed to execute a specific function instead of inducing the cell’s death. Even the toxins from the multilayered containment system can be changed if a different death approach is desired, like having specific conditions (like pH) unfold.
 
@@ -653,9 +653,9 @@
                                 <p>
                                     According to Fernandez-Rodriguez et al. (2015) one of the design principles for long-term stability is the <b>avoidance of constitutive expression</b>, which we have applied in our circuit. They also mention that “Placing the circuit in the <b>genome</b> could also improve stability, as this is a common approach to improve the robustness of strains in metabolic engineering” (Fernandez-Rodriguez et al., 2015). Another consideration that must be made is the <b>prevention of leaky expression</b>, since it can generate a drift into a different state and even disable the ability to hold a state. In our circuit the expression of all recombinases is regulated by the same promoter, so this issue is not expected to be relevant to its performance. Canton et al., (2008) note that the evolutionary stability is also dependent on the <b>state</b> in which the circuit is carried; the authors note that a circuit in the OFF state can easily be carried over many generations, whereas in the ON state it quickly breaks. This specific quality can be problematic for our circuit, since one way or another it’s always turned on because of the dependence on the cell-cycle promoter. Nonetheless, since different activities are carried out in each specific state and there is no constant expression of regulatory proteins, this might not be relevant to the circuit’s stability, since “the burden is a function of regulator expression, the evolutionary stability depends on the state in which the circuit is carried” (Fernandez-Rodriguez et al., 2015).
 
-                                    This was seconded by Sleight et al. (2010), who state that “Evolutionary stability is a problem in genetic circuits if there is no selective pressure to maintain function of the circuit. The current belief is that this loss-of-function occurs because any cell in the population that acquires a mutation in the genetic circuit often has a growth advantage and can outcompete the cells in the population with all functional plasmids”; hence, if there is no <b>significant metabolic burden</b>, there is no advantage.  Finally, we weren’t able to carry out an evolutionary stability experiment of our own; however, extrapolating the results obtained by Fernandez-Rodriguez et al. (2015) shows great promise for our circuit. They report a stability of over 400 hours for their memory switch, and credit its breaking to continuous invertase expression and the host’s evolution towards reducing its expression. More importantly, Fernandez-Rodriguez et al. (2015) indicate that during the 400 hour period, 6 cycles of their circuit, “there was no loss of performance, reduction in dynamic range, or increase in population variability”. The main risk to our circuits stability are transposable insertion elements and even homologous recombination, which can be avoided by using <b>diverse parts</b> in the construction of the circuit and using strains where insertion elements have been deleted from the genome; nevertheless, both these strategies involve challenges on themselves, particularly the need for more robust strains for many applications, as stated by Fernandez-Rodriguez et al. (2015). Finally, although evolutionary stability must be considered when designing a circuit, the main focus should be on the specific end application. The required robustness of a circuit will be directly related to the <b>duration of its application. “For example, circuits do not need to be robust for months if designed for a one week fermentation”(Fernandez-Rodriguez et al., 2015).
+                                    This was seconded by Sleight et al. (2010), who state that “Evolutionary stability is a problem in genetic circuits if there is no selective pressure to maintain function of the circuit. The current belief is that this loss-of-function occurs because any cell in the population that acquires a mutation in the genetic circuit often has a growth advantage and can outcompete the cells in the population with all functional plasmids”; hence, if there is no <b>significant metabolic burden</b>, there is no advantage.  Finally, we weren’t able to carry out an evolutionary stability experiment of our own; however, extrapolating the results obtained by Fernandez-Rodriguez et al. (2015) shows great promise for our circuit. They report a stability of over 400 hours for their memory switch, and credit its breaking to continuous invertase expression and the host’s evolution towards reducing its expression. More importantly, Fernandez-Rodriguez et al. (2015) indicate that during the 400 hour period, 6 cycles of their circuit, “there was no loss of performance, reduction in dynamic range, or increase in population variability”. The main risk to our circuits stability are transposable insertion elements and even homologous recombination, which can be avoided by using <b>diverse parts</b> in the construction of the circuit and using strains where insertion elements have been deleted from the genome; nevertheless, both these strategies involve challenges on themselves, particularly the need for more robust strains for many applications, as stated by Fernandez-Rodriguez et al. (2015). Finally, although evolutionary stability must be considered when designing a circuit, the main focus should be on the specific end application. The required robustness of a circuit will be directly related to the <b>duration of its application</b>. “For example, circuits do not need to be robust for months if designed for a one week fermentation”(Fernandez-Rodriguez et al., 2015).
 
-                                    The time for the loss of function of a genetic circuit can also be predicted by applying the <b>function developed by Arkin & Fletcher (2006) through a simulation study. 
+                                    The time for the loss of function of a genetic circuit can also be predicted by applying the <b>function</b> developed by Arkin & Fletcher (2006) through a simulation study. 
                                 </p>
                             </div>              
                                 <h3>Evolutionary stability of kill switches  </h3>
