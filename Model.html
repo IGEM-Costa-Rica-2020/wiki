@@ -350,13 +350,13 @@
                                     <li>Recombinase protein and its Recombination Directionality Factor(RDF) have the same dilution/degradation rate.</li>
                                 </ul>
                                     <b>Now here begins the part in which we used modeling to obtain useful information about our system.</b>
-<br><br> We are interested in the recombinases Bxb1 and TP901, {link a proof of concept}.
-First we calculated the optimal RBS for the recombinase, for that we did a sweep of a range of values. We measured the percentage of recombination at 1 hour after the process began, and found out the best RBS to be 4 times higher than the one that was reported in the paper. Also, it throwed another interesting result stating that the RBS of the RDF should be around 10 times the one from recombinase{link a parte experimental}.
+<br><br> We are interested in the recombinases Bxb1 and TP901, {proof of concept}.
+First we calculated the optimal RBS for the recombinase, for that we did a sweep of a range of values. We measured the percentage of recombination at 1 hour after the process began, and found out the best RBS to be 4 times higher than the one that was reported in the paper. Also, it throwed another interesting result stating that the RBS of the RDF should be around 10 times the one from recombinase{Wet Lab}.
 You can find the code we used for this optimization in our Github page, in the file “Sweep.m”
 
 <br><br> We characterized the time it would take the two promoters we would like to use(Arabinose promoter(Pbad) and the cell cycle promoter (Pnrd)) to produce recombination.
 
-<br><br> For the Pbad, the concentration of the pulse was the same as the total DNA present, and the duration of the pulse was 12 minutes, as reported in [1]. For the cellular cycle promoter(Pnrd) we calculated the relative strength of the promoter with respect to the Pbad, using our developed method proposed in {link al measurement}. We found out the strength to be about 10 times less than the Pbad.
+<br><br> For the Pbad, the concentration of the pulse was the same as the total DNA present, and the duration of the pulse was 12 minutes, as reported in [1]. For the cellular cycle promoter(Pnrd) we calculated the relative strength of the promoter with respect to the Pbad, using our developed method proposed in {Measurement}. We found out the strength to be about 10 times less than the Pbad.
 
                             </p>
 
@@ -375,9 +375,9 @@ You can find the code we used for this optimization in our Github page, in the f
                                 <p class="">
                                     Forward recombination with Pnrd promoter with Bxb1 recombinase. LR,PB and Inducer units are normalized by the total DNA, which is 10nM. Integrase is normalized against its maximum value to be able to see it in the plot, in reality Integrase levels are 3 times higher than shown.
 
-<br><br> Defining recombination time as the time when the LR state reaches 70%, we can see from the Figure 1 that it would take the counter around 28 minutes to reach this level, so the cell cycle promoter would be non-viable for our circuit, because it expresses every 20 minutes(doubling time)[2]{link a parte experimental}. 
+<br><br> Defining recombination time as the time when the LR state reaches 70%, we can see from the Figure 1 that it would take the counter around 28 minutes to reach this level, so the cell cycle promoter would be non-viable for our circuit, because it expresses every 20 minutes(doubling time)[2]{Wet Lab}. 
 
-<br><br> So hereafter we use Pbad for the modeling,which we predict to need around 23 minutes to produce recombination{link a parte experimental}.
+<br><br> So hereafter we use Pbad for the modeling,which we predict to need around 23 minutes to produce recombination{Wet Lab}.
 
 <br><br> In order to calculate this threshold at which recombination occurs, we developed a script in Matlab called “Threshold.m”, which you can access in our Github page.
 
@@ -459,13 +459,13 @@ You can find the code we used for this optimization in our Github page, in the f
                                     <img src="https://2021.igem.org/wiki/images/4/40/T--TEC_COSTA_RICA--mathmodel_05_odes5.png" alt="" style="width:100% center"
                                         class="w-75">
                                 </div>
-                                <h5>Figure 5.</h5>
+                                <h5>Figure 5. Reverse recombination of Bxb1 using Pbad promoter. Integrase and RDF  are normalized against the maximum value of RDF, to be able to see it in the plot. </h5>
                             </div>
 
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                   Reverse recombination of Bxb1 using Pbad promoter. Integrase and RDF  are normalized against the maximum value of RDF, to be able to see it in the plot. 
+                                   
 
 <br><br> In reality Integrase and RDF levels are 30 and 42 times higher than shown, respectively, agreeing with the experimental results reported in [1], which state that in order for recombination to happen, typically much higher concentrations(more than 10-fold) than the concentration of the DNA substrate are needed, and the RDF concentration needs to be higher than the Integrase´s one.
 
