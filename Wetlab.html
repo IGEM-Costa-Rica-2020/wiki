@@ -164,7 +164,8 @@
 
 
         <div class="position-relative overflow-hidden p-3 p-md-5  text-start  main-title">
-            <img class="main-title-bg" src="https://2021.igem.org/wiki/images/2/22/T--TEC_COSTA_RICA--Header_4.png" alt="">
+            <img class="main-title-bg" src="https://2021.igem.org/wiki/images/2/22/T--TEC_COSTA_RICA--Header_4.png"
+                alt="">
             <h1>Wetlab</h1>
             <h5 class="">The wet-lab characterization of our genetic suicide circuit serves as a proof of concept for
                 the proposal presented in the description.</h5>
@@ -188,8 +189,10 @@
                 <p class="">
                     <ul>
                         <li>Characterizing the behavior of our counter both associated to pBAD and pnrd.</li>
-                        <li>Characterizing the behavior of our overcount prevention system on itself and associated with the counter circuit.</li>
-                        <li>Obtaining our own recombination rate for the two selected recombinases for the optimization of the math model.</li>
+                        <li>Characterizing the behavior of our overcount prevention system on itself and associated with
+                            the counter circuit.</li>
+                        <li>Obtaining our own recombination rate for the two selected recombinases for the optimization
+                            of the math model.</li>
                     </ul>
                 </p>
             </div>
@@ -212,7 +215,7 @@
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                 <p class="">
-                    You can check out the parts we used in Parts. 
+                    You can check out the parts we used in Parts.
                 </p>
 
             </div>
@@ -233,11 +236,15 @@
                 <h2>Description</h2>
 
                 <p class="">
-                    Our math modelling was used as reference for the specific RBS-sequence pairings, specifically regarding the RDF - recombinase ratio as well as the recombinase order. 
+                    Our math modelling was used as reference for the specific RBS-sequence pairings, specifically
+                    regarding the RDF - recombinase ratio as well as the recombinase order.
 
-                    The biobrick system was chosen because of our need to use parts from the distribution making the assembly incompatible with either golden gate and gibson methods.
+                    The biobrick system was chosen because of our need to use parts from the distribution making the
+                    assembly incompatible with either golden gate and gibson methods.
 
-                    A restriction site for HindIII was added to the counter and overcount constructs in order to make them compatible with each other and for different promoters to be tried out with the counter system. This also allows further modifications and optimizations.
+                    A restriction site for HindIII was added to the counter and overcount constructs in order to make
+                    them compatible with each other and for different promoters to be tried out with the counter system.
+                    This also allows further modifications and optimizations.
 
                 </p>
 
@@ -252,7 +259,7 @@
 
                     COUNT1: pBAD + site1A + site2A + BXB1 <br>
 
-                    COUNT2: RFP +  site1B + BXB1 RDF rev <br>
+                    COUNT2: RFP + site1B + BXB1 RDF rev <br>
 
                     COUNT3: TP901 + GFP + site2B + TP901 RDF rev <br>
 
@@ -289,7 +296,8 @@
             <div class="container  mx-auto p-3 wikicard-12-img">
 
                 <div class="text-center">
-                    <img src="https://2021.igem.org/wiki/images/d/d8/T--TEC_COSTA_RICA--WetLab_01_AssemblyFlowchart.png" alt="" style="width:100% center" class="w-75">
+                    <img src="https://2021.igem.org/wiki/images/d/d8/T--TEC_COSTA_RICA--WetLab_01_AssemblyFlowchart.png"
+                        alt="" style="width:100% center" class="w-75">
                 </div>
             </div>
 
@@ -297,11 +305,17 @@
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                 <p class="">
-                    The parts will be replicated in a high copy plasmid, but a low-copy plasmid was chosen for characterization based on the importance of reducing the noise associated with having multiple copies of the fluorescent proteins’ sequence to be recombined. <i>E. coli </i> will be our chassis because of the previously executed recombinase characterization and counter circuits implementations. 
+                    The parts will be replicated in a high copy plasmid, but a low-copy plasmid was chosen for
+                    characterization based on the importance of reducing the noise associated with having multiple
+                    copies of the fluorescent proteins’ sequence to be recombined. <i>E. coli </i> will be our chassis
+                    because of the previously executed recombinase characterization and counter circuits
+                    implementations.
 
-                    Strain BL21 was chosen because of its notable productivity in recombinant protein production and low protease activity (Kim et al., 2017)). 
+                    Strain BL21 was chosen because of its notable productivity in recombinant protein production and low
+                    protease activity (Kim et al., 2017)).
 
-                    For the assembly digestion, ligation, chemically competent cells production, and chemical transformation and colony PCR methodologies will be executed. You can find these in Protocols.
+                    For the assembly digestion, ligation, chemically competent cells production, and chemical
+                    transformation and colony PCR methodologies will be executed. You can find these in Protocols.
 
                 </p>
             </div>
@@ -334,15 +348,28 @@
                 <h2>Plate Reader </h2>
 
                 <p class="">
-                    Characterization of fluorescent protein expression via plate reader is a very common approach as shown by Beal et al. (2021). The main advantage is that even when our different constructs are designed to give us different pieces of information they can all be characterized at the same time, given that this is a high throughput methodology that allows bulk measurements (Fedorec et al., 2020), by simply inducing with arabinose and setting up the plate reader to the right wavelength according to the fluorescent protein of interest. The fact that even three different wavelengths could be processed at a time was a great advantage, since our plan consisted of inducing our counter circuit and continuously measuring the fluorescence of the three selected proteins, which, if working correctly, should be expressed sequentially as shown in description. 
-                    This would also allow us to try out different arabinose concentration and induction times in order to normalize the pulse needed by our counter in order to count a single time. In the case of the pnrd promoter, which is endogenously induced, the plate reader should be able to capture the different expression peaks. Finally, the recombination rate of our recombinases can be easily extracted from this experimental procedure.
+                    Characterization of fluorescent protein expression via plate reader is a very common approach as
+                    shown by Beal et al. (2021). The main advantage is that even when our different constructs are
+                    designed to give us different pieces of information they can all be characterized at the same time,
+                    given that this is a high throughput methodology that allows bulk measurements (Fedorec et al.,
+                    2020), by simply inducing with arabinose and setting up the plate reader to the right wavelength
+                    according to the fluorescent protein of interest. The fact that even three different wavelengths
+                    could be processed at a time was a great advantage, since our plan consisted of inducing our counter
+                    circuit and continuously measuring the fluorescence of the three selected proteins, which, if
+                    working correctly, should be expressed sequentially as shown in description.
+                    This would also allow us to try out different arabinose concentration and induction times in order
+                    to normalize the pulse needed by our counter in order to count a single time. In the case of the
+                    pnrd promoter, which is endogenously induced, the plate reader should be able to capture the
+                    different expression peaks. Finally, the recombination rate of our recombinases can be easily
+                    extracted from this experimental procedure.
                 </p>
             </div>
 
             <div class="container  mx-auto p-3 wikicard-12-img">
 
                 <div class="text-center">
-                    <img src="https://2021.igem.org/wiki/images/0/0f/T--TEC_COSTA_RICA--WetLab_02_PlateReaderIcon.png" alt="" style="width:100% center" class="w-75">
+                    <img src="https://2021.igem.org/wiki/images/0/0f/T--TEC_COSTA_RICA--WetLab_02_PlateReaderIcon.png"
+                        alt="" style="width:100% center" class="w-75">
                 </div>
             </div>
 
@@ -350,14 +377,21 @@
                 <h2>Flow Cytometry </h2>
 
                 <p class="">
-                    Flow cytometry is also a very usual procedure to measure fluorescence (Beal et al., 2021), and, as with plate reading, behaves with the versatility needed to characterize our different constructs. This technique also presents the added bonus of segregating each specific cell by its expression phenotype (McKinnon, 2018), which allows the “detailed analysis of complex populations in short periods of time” (Adan et al., 2017). This technique will grant a much more accurate reading of our circuit’s behavior and probability profile, even allowing to directly correlate the obtained results with the Markov modelling of our counter circuit. 
+                    Flow cytometry is also a very usual procedure to measure fluorescence (Beal et al., 2021), and, as
+                    with plate reading, behaves with the versatility needed to characterize our different constructs.
+                    This technique also presents the added bonus of segregating each specific cell by its expression
+                    phenotype (McKinnon, 2018), which allows the “detailed analysis of complex populations in short
+                    periods of time” (Adan et al., 2017). This technique will grant a much more accurate reading of our
+                    circuit’s behavior and probability profile, even allowing to directly correlate the obtained results
+                    with the Markov modelling of our counter circuit.
                 </p>
             </div>
 
             <div class="">
 
                 <div class="text-center">
-                    <img src="https://2021.igem.org/wiki/images/c/cf/T--TEC_COSTA_RICA--WetLab_03_FlowCytometryIcon.png" alt="" style="width:100% center" class="w-75">
+                    <img src="https://2021.igem.org/wiki/images/c/cf/T--TEC_COSTA_RICA--WetLab_03_FlowCytometryIcon.png"
+                        alt="" style="width:100% center" class="w-75">
                 </div>
             </div>
 
@@ -365,14 +399,18 @@
                 <h2>Live Cell Imaging </h2>
 
                 <p class="">
-                    Finally, live cell imaging is proposed to characterize our counter circuit in a visual manner. Direct observation of fluorescence through microscopy can be very effective to determine live changes on a single cells’ behavior, as shown by Howell et al. (2017), which is what we would expect from our counter circuit. 
+                    Finally, live cell imaging is proposed to characterize our counter circuit in a visual manner.
+                    Direct observation of fluorescence through microscopy can be very effective to determine live
+                    changes on a single cells’ behavior, as shown by Howell et al. (2017), which is what we would expect
+                    from our counter circuit.
                 </p>
             </div>
 
             <div class="container  mx-auto p-3 wikicard-12-img">
 
                 <div class="text-center">
-                    <img src="https://2021.igem.org/wiki/images/a/a2/T--TEC_COSTA_RICA--WetLab_04_CellImagingIcon.png" alt="" style="width:100% center" class="w-75">
+                    <img src="https://2021.igem.org/wiki/images/a/a2/T--TEC_COSTA_RICA--WetLab_04_CellImagingIcon.png"
+                        alt="" style="width:100% center" class="w-75">
                 </div>
             </div>
 
@@ -380,14 +418,20 @@
                 <h2>DNA sequencing </h2>
 
                 <p class="">
-                    DNA sequencing was suggested to us by several of the experts we interviewed, since it’s a direct outlook on the circuit’s state, compared to the indirect measurement obtained by fluorescence readings. For this approach the culture is to be induced and samples taken at different timepoints. After this a plasmid-DNA extraction and PCR amplification of the specific sequence should be performed. The samples would then be sent out to sequence and the results analyzed for qualitative information to be obtained.
+                    DNA sequencing was suggested to us by several of the experts we interviewed, since it’s a direct
+                    outlook on the circuit’s state, compared to the indirect measurement obtained by fluorescence
+                    readings. For this approach the culture is to be induced and samples taken at different timepoints.
+                    After this a plasmid-DNA extraction and PCR amplification of the specific sequence should be
+                    performed. The samples would then be sent out to sequence and the results analyzed for qualitative
+                    information to be obtained.
                 </p>
             </div>
 
             <div class="container  mx-auto p-3 wikicard-12-img">
 
                 <div class="text-center">
-                    <img src="https://2021.igem.org/wiki/images/c/c9/T--TEC_COSTA_RICA--WetLab_05_DNASequencingIcon.png" alt="" style="width:100% center" class="w-75">
+                    <img src="https://2021.igem.org/wiki/images/c/c9/T--TEC_COSTA_RICA--WetLab_05_DNASequencingIcon.png"
+                        alt="" style="width:100% center" class="w-75">
                 </div>
             </div>
 
@@ -395,7 +439,16 @@
                 <h2>Data Analysis </h2>
 
                 <p class="">
-                    Both plate reading and flow cytometry are quantitative measurements that allow standardization via calibration and their execution can be designed in order to obtain comparable, replicable units (Beal et al., 2018). From these experiments we expect to obtain a behavioral pattern (counter circuit characterization) along with quantitative fluorescence measurements in which generation and degradation of the different fluorescent proteins are evident and allow the procurement of data for our mathematical model (overcount & recombinase characterization). The information obtained from live cell imaging will be used as qualitative visual characterization for our counter circuit. Nonetheless, arabinose concentration and elapsed time will be measured, allowing some data to characterize the induction system of our circuit. The pnrd promoter’s behavior will also be assessed by this mechanism. 
+                    Both plate reading and flow cytometry are quantitative measurements that allow standardization via
+                    calibration and their execution can be designed in order to obtain comparable, replicable units
+                    (Beal et al., 2018). From these experiments we expect to obtain a behavioral pattern (counter
+                    circuit characterization) along with quantitative fluorescence measurements in which generation and
+                    degradation of the different fluorescent proteins are evident and allow the procurement of data for
+                    our mathematical model (overcount & recombinase characterization). The information obtained from
+                    live cell imaging will be used as qualitative visual characterization for our counter circuit.
+                    Nonetheless, arabinose concentration and elapsed time will be measured, allowing some data to
+                    characterize the induction system of our circuit. The pnrd promoter’s behavior will also be assessed
+                    by this mechanism.
                 </p>
             </div>
 
@@ -415,7 +468,9 @@
                     <div class="col-sm-10">
                         <h2> </h2>
                         <p>
-                            Metabolic burden of our circuit, as implemented by https://2019.igem.org/Team:Austin_UTexas , who didn’t address recombinases in their study and haven’t established whether the total burden is equal to the sum of each individual part’s burden.
+                            Metabolic burden of our circuit, as implemented by https://2019.igem.org/Team:Austin_UTexas
+                            , who didn’t address recombinases in their study and haven’t established whether the total
+                            burden is equal to the sum of each individual part’s burden.
                         </p>
                     </div>
                 </div>
@@ -429,7 +484,8 @@
                     <div class="col-sm-10">
                         <h2> </h2>
                         <p>
-                            Anderson promoter characterization via standardized measurement in order to use as reference input for our promoter strength prediction tool. 
+                            Anderson promoter characterization via standardized measurement in order to use as reference
+                            input for our promoter strength prediction tool.
                         </p>
                     </div>
                 </div>
@@ -445,7 +501,8 @@
                     <div class="col-sm-10">
                         <h2> </h2>
                         <p>
-                            Measurement of synthesis and degradation constants for recombinases, along transcription, translation and degradation rates for these proteins to allow an improved ODE’s model. 
+                            Measurement of synthesis and degradation constants for recombinases, along transcription,
+                            translation and degradation rates for these proteins to allow an improved ODE’s model.
                         </p>
                     </div>
                 </div>
@@ -481,9 +538,10 @@
                         </h1>
                     </div>
                     <div class="col-sm-10">
-                        <h2>In vitro behavioral study  </h2>
+                        <h2>In vitro behavioral study </h2>
                         <p>
-                            Studying the behavior of the engineered organism in similar conditions to the ones it will be subjected to.
+                            Studying the behavior of the engineered organism in similar conditions to the ones it will
+                            be subjected to.
                         </p>
                     </div>
                 </div>
@@ -497,7 +555,7 @@
                     <div class="col-sm-10">
                         <h2>Specific assays directed towards the gain of critical knowledge </h2>
                         <p>
-                            Robustness, escape rate, optimal conditions, effectiveness of the desired function, etc. 
+                            Robustness, escape rate, optimal conditions, effectiveness of the desired function, etc.
                         </p>
                     </div>
                 </div>
@@ -512,7 +570,8 @@
                     <div class="col-sm-10">
                         <h2>In vitro interaction study </h2>
                         <p>
-                            Understanding the interactions between the organism and some of the key organisms in the environment’s microbiome.
+                            Understanding the interactions between the organism and some of the key organisms in the
+                            environment’s microbiome.
                         </p>
                     </div>
                 </div>
@@ -526,7 +585,8 @@
                     <div class="col-sm-10">
                         <h2>In vivo (enclosed) interaction study </h2>
                         <p>
-                            Looking for the effect the engineered organism has in the environment it’s intended to target under controlled conditions.
+                            Looking for the effect the engineered organism has in the environment it’s intended to
+                            target under controlled conditions.
                         </p>
                     </div>
                 </div>
@@ -541,7 +601,8 @@
                     <div class="col-sm-10">
                         <h2>In vivo interaction study (open, semi - controlled) </h2>
                         <p>
-                            Observing the behavior of the engineered organisms and its repercussions in a semi-controlled context (i.e: waste-water treatment).
+                            Observing the behavior of the engineered organisms and its repercussions in a
+                            semi-controlled context (i.e: waste-water treatment).
                         </p>
                     </div>
                 </div>
@@ -553,9 +614,10 @@
                         </h1>
                     </div>
                     <div class="col-sm-10">
-                        <h2>Small in situ study  </h2>
+                        <h2>Small in situ study </h2>
                         <p>
-                            Direct application of the organism for its intended purpose, small in scale, homogeneous conditions, simple interactions and as isolated as possible.
+                            Direct application of the organism for its intended purpose, small in scale, homogeneous
+                            conditions, simple interactions and as isolated as possible.
                         </p>
                     </div>
                 </div>
@@ -568,9 +630,10 @@
                         </h1>
                     </div>
                     <div class="col-sm-10">
-                        <h2>Large in situ study  </h2>
+                        <h2>Large in situ study </h2>
                         <p>
-                            Same as before, but testing different areas/conditions which are larger in scale, more diverse or complex.
+                            Same as before, but testing different areas/conditions which are larger in scale, more
+                            diverse or complex.
                         </p>
                     </div>
                 </div>
@@ -584,7 +647,7 @@
                     <div class="col-sm-10">
                         <h2>Final application </h2>
                         <p>
-                            
+
                         </p>
                     </div>
                 </div>
@@ -595,7 +658,9 @@
                 <div class="col-sm-12">
 
                     <p>
-                        *It is important to take into consideration that each of these stages might require separate approval by regulatory agencies. Experimental design will be key for the correct planning and execution of these phases, as well as for the obtaining of correct and valid data.
+                        *It is important to take into consideration that each of these stages might require separate
+                        approval by regulatory agencies. Experimental design will be key for the correct planning and
+                        execution of these phases, as well as for the obtaining of correct and valid data.
                     </p>
                 </div>
 
@@ -623,8 +688,84 @@
 
             <div class="text-center">
 
-                <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Descargar Archivos pegar
-                    link</button>
+
+               
+
+                
+
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/5/5d/T--TEC_COSTA_RICA--WetLab_12_Protocol_DNADigestion.pdf">
+                        DNA Digestion</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/8/82/T--TEC_COSTA_RICA--WetLab_13_Protocol_DNALigation.pdf">
+                        DNA Ligation</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/8/84/T--TEC_COSTA_RICA--WetLab_14_Protocol_TransformationofEscherichiacoliDH5andTop10.pdf">
+                        Transformation</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/7/70/T--TEC_COSTA_RICA--WetLab_15_Protocol_Colony_PCR.pdf">
+                        Colony PCR</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/2/27/T--TEC_COSTA_RICA--WetLab_16_Protocol_Quantificationofbacterialfluorescence.pdf">
+                        Fluorescence</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/c/c0/T--TEC_COSTA_RICA--WetLab_17_Protocol_ChemicallyCompetentCellsPreparation.pdf">
+                        Competent Cells</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/0/01/T--TEC_COSTA_RICA--WetLab_18_Protocol_Cryopreservation.pdf">
+                        Cryopreservation</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/2/25/T--TEC_COSTA_RICA--WetLab_19_Protocol_Growthcurvedetermination.pdf">
+                        Growth Curve</a>
+                </li>
+
+
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="URLLLLLLLL">
+                        Notebook</a>
+                </li> -->
+
+
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="URLLLLLLLL">
+                        Notebook</a>
+                </li> -->
+<!-- 
+                <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Notebook</button>
+
+                <button type="button" class="btn btn-primary btn-lg mx-auto  my-3" href=""> download </button>
+
+
 
                 <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Descargar Archivos pegar
                     link</button>
@@ -645,7 +786,7 @@
                     link</button>
 
                 <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Descargar Archivos pegar
-                    link</button>
+                    link</button> -->
 
             </div>
 
@@ -664,19 +805,29 @@
             <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                 <div class="col-sm-6">
                     <p>
-                        We took a record of every lab work day to have a register of the process and results. Each day of work, register the experiment, person in charge, a short description and results. In every description is stated the protocol used to achieve the goal of each specific experiment. Those protocols are punctually described in {Protocols}
+                        We took a record of every lab work day to have a register of the process and results. Each day
+                        of work, register the experiment, person in charge, a short description and results. In every
+                        description is stated the protocol used to achieve the goal of each specific experiment. Those
+                        protocols are punctually described in {Protocols}
                     </p>
                 </div>
 
                 <div class="col-sm-6 justify-content-md-center">
-                    <img class="img-square align-middle " src="https://2021.igem.org/wiki/images/b/b7/T--TEC_COSTA_RICA--WetLab_06_NotebookIcon.png" all="">
+                    <img class="img-square align-middle "
+                        src="https://2021.igem.org/wiki/images/b/b7/T--TEC_COSTA_RICA--WetLab_06_NotebookIcon.png"
+                        all="">
                 </div>
             </div>
 
             <div class="text-center">
 
-                <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Descargar Archivos pegar
-                    link</>
+                
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="https://2021.igem.org/wiki/images/4/4e/T--TEC_COSTA_RICA--Description_GSC_Notebook_01.pdf">
+                            Notebook</a>
+                    </li>
             </div>
 
 
@@ -687,7 +838,8 @@
 
             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                 <p class="">
-                    The composite constructs created for our characterization were added to the repository, along with a DNA Ligase, the only part completely missing for the fulfillment of our suicide circuit design. 
+                    The composite constructs created for our characterization were added to the repository, along with a
+                    DNA Ligase, the only part completely missing for the fulfillment of our suicide circuit design.
                 </p>
             </div>
 
@@ -750,7 +902,8 @@
             <div class="container  mx-auto p-3 wikicard-12-img">
 
                 <div class="text-center">
-                    <img src="https://2021.igem.org/wiki/images/2/25/T--TEC_COSTA_RICA--WetLab_Parts_2_BBa_K3917001.png" alt="" style="width:100% center" class="w-75">
+                    <img src="https://2021.igem.org/wiki/images/2/25/T--TEC_COSTA_RICA--WetLab_Parts_2_BBa_K3917001.png"
+                        alt="" style="width:100% center" class="w-75">
                 </div>
             </div>
 
@@ -763,7 +916,8 @@
             <div class="container  mx-auto p-3 wikicard-12-img">
 
                 <div class="text-center">
-                    <img src="https://2021.igem.org/wiki/images/d/da/T--TEC_COSTA_RICA--WetLab_Parts_1_BBa_K3917003.png" alt="" style="width:100% center" class="w-75">
+                    <img src="https://2021.igem.org/wiki/images/d/da/T--TEC_COSTA_RICA--WetLab_Parts_1_BBa_K3917003.png"
+                        alt="" style="width:100% center" class="w-75">
                 </div>
             </div>
 
@@ -784,25 +938,36 @@
                 <div class="col-sm-6">
 
                     <p>
-                        Due to the pandemic and the difficulties to access the laboratory, team members transportation, capacity of the lab and other external setbacks as delays in customs and shipment,  the characterization of the composite parts in the laboratory was not possible. Nevertheless we made some in silico characterizations of the protein structure model and protein motif predictions for each protein of our composite parts BBa_K3917001 (Counter) and BBa_K3917003 (Module to prevent Overcount).
+                        Due to the pandemic and the difficulties to access the laboratory, team members transportation,
+                        capacity of the lab and other external setbacks as delays in customs and shipment, the
+                        characterization of the composite parts in the laboratory was not possible. Nevertheless we made
+                        some in silico characterizations of the protein structure model and protein motif predictions
+                        for each protein of our composite parts BBa_K3917001 (Counter) and BBa_K3917003 (Module to
+                        prevent Overcount).
 
                         The results of those in silico characterization are in the following documents:
                     </p>
                 </div>
 
                 <div class="col-sm-6 justify-content-md-center">
-                    <img class="img-square align-middle " src="https://2021.igem.org/wiki/images/7/76/T--TEC_COSTA_RICA--WetLab_Results_09_Protein.png" all="">
+                    <img class="img-square align-middle "
+                        src="https://2021.igem.org/wiki/images/7/76/T--TEC_COSTA_RICA--WetLab_Results_09_Protein.png"
+                        all="">
                 </div>
             </div>
             <div class="text-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/8/89/T--TEC_COSTA_RICA--Description_GSC_RESULTS_01_InSilicoCounter.pdf">
+                        Results Counter (wet lab también)</a>
+                </li>
 
-                <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Descargar Archivos pegar
-                    link</button>
-
-                <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Descargar Archivos pegar
-                    link</button>
-            </div>
-
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/f/fb/T--TEC_COSTA_RICA--Description_GSC_RESULTS_02_InSilicoOvercount.pdf">
+                        Results overcount</a>
+                </li>
+               
 
 
 
