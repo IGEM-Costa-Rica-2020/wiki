@@ -176,8 +176,9 @@
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    Following the central dogma of molecular biology, we can write down the following pair of ODE ́s,
-describing the process of synthesis and degradation of a fluorescent protein:
+                                    Following the central dogma of molecular biology, we can write down the following
+                                    pair of ODE ́s,
+                                    describing the process of synthesis and degradation of a fluorescent protein:
                                 </p>
                             </div>
 
@@ -191,24 +192,37 @@ describing the process of synthesis and degradation of a fluorescent protein:
                                     \frac{d[FP]}{dt} = \alpha [mRNA] - \gamma_2 [FP]
                                     \]</p>
                             </div>
+
+                            <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
+
+                                <p class="">
+                                    Where \(K\) is the promoter strength, \(\gamma_{1}\) the mRNA degradation constant,
+                                    \(\alpha\) the protein synthesizing constant and \(\gamma_{2}\) the protein
+                                    degradation constant.
+                                </p>
+                            </div>
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
                                     Solving the system, we get the equation for fluorescent protein in time:
                                 </p>
                             </div>
-                 
+
                             <p>\[
                                 FP(t) = \frac{-\alpha c_1}{(\gamma_2 - \gamma_1)\gamma_1}e^{- \gamma_1t} + c_2e^{-
                                 \gamma_2t} + \frac{\alpha K}{\gamma_1 \gamma_2}
                                 \]</p>
-                            
+
 
 
 
 
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
                                 <p class="">
-                                    From  the equation above,  we  can  see  that  it  consists  of  two  decreasing  exponential  functions  and  one constant term, therefore, we can take the limit when the time tends to infinity to predict what will be the maximum fluorescence.  The two decreasing exponential functions will cancel out as they tend to zero, giving that the maximum fluorescence is completely determined by the constant term:
+                                    From the equation above, we can see that it consists of two decreasing exponential
+                                    functions and one constant term, therefore, we can take the limit when the time
+                                    tends to infinity to predict what will be the maximum fluorescence. The two
+                                    decreasing exponential functions will cancel out as they tend to zero, giving that
+                                    the maximum fluorescence is completely determined by the constant term:
                                 </p>
                             </div>
 
@@ -253,9 +267,10 @@ describing the process of synthesis and degradation of a fluorescent protein:
                                 <h3>Robustness of the method</h3>
 
                                 <p class="">
-                                    For the Pnrd promoter, we also used a plot from igem parts, as seen in the figure below. The link to iGEM parts page is:
+                                    For the Pnrd promoter, we also used a plot from igem parts, as seen in the figure
+                                    below. The link to iGEM parts page is:
 
-http://parts.igem.org/Part:BBa_K2070012
+                                    http://parts.igem.org/Part:BBa_K2070012
 
 
                                 </p>
@@ -263,14 +278,15 @@ http://parts.igem.org/Part:BBa_K2070012
 
                             <div class="container  mx-auto p-3 wikicard-12-img">
                                 <div class="text-center">
-                                    <img src="https://2021.igem.org/wiki/images/6/62/T--TEC_COSTA_RICA--measurement_01_pnrd.png" alt="" style="width:100% center"
-                                        class="w-75">
+                                    <img src="https://2021.igem.org/wiki/images/6/62/T--TEC_COSTA_RICA--measurement_01_pnrd.png"
+                                        alt="" style="width:100% center" class="w-75">
                                 </div>
                             </div>
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                                 <p class="">
-                                    As seen in the table below, we extracted 5 points from the experimental data from the plot above.
+                                    As seen in the table below, we extracted 5 points from the experimental data from
+                                    the plot above.
                                 </p>
                             </div>
 
@@ -320,7 +336,11 @@ http://parts.igem.org/Part:BBa_K2070012
 
 
                                 <p class="">
-                                    As we can see from the general equation, we only need 3 points to calculate the 3 unknown coefficients \(c_1\),\(c_2\) and \(K\) of the formula, with special interest in K which is the promoter strength. To check reproducibility and statistical significance, we made all the possible combinations of 3 points in a set of 5, which give us 10 different scenarios.
+                                    As we can see from the general equation, we only need 3 points to calculate the 3
+                                    unknown coefficients \(c_1\),\(c_2\) and \(K\) of the formula, with special interest
+                                    in K which is the promoter strength. To check reproducibility and statistical
+                                    significance, we made all the possible combinations of 3 points in a set of 5, which
+                                    give us 10 different scenarios.
                                 </p>
                             </div>
 
@@ -388,7 +408,8 @@ http://parts.igem.org/Part:BBa_K2070012
                                     </tbody>
                                 </table>
 
-                                <h4>Table 6: Results of the value of promoter strength for Pnrd, for all the possible 3 combinations for 5 data points.</h4>
+                                <h4>Table 6: Results of the value of promoter strength for Pnrd, for all the possible 3
+                                    combinations for 5 data points.</h4>
                             </div>
 
 
@@ -396,7 +417,12 @@ http://parts.igem.org/Part:BBa_K2070012
 
 
                                 <p class="">
-                                    As we can see from the table above, a very low standard deviation was obtained, at least one order of magnitude lower than the mean, which means that the promoter strength obtained through all the different combinations was very homogeneous, suggesting that indeed the experimental data fit properly to the model proposed and that it would be okay if we only use 3 points to calculate the promoter strength, without fear of doing a bad generalization.
+                                    As we can see from the table above, a very low standard deviation was obtained, at
+                                    least one order of magnitude lower than the mean, which means that the promoter
+                                    strength obtained through all the different combinations was very homogeneous,
+                                    suggesting that indeed the experimental data fit properly to the model proposed and
+                                    that it would be okay if we only use 3 points to calculate the promoter strength,
+                                    without fear of doing a bad generalization.
                                 </p>
                             </div>
 
@@ -405,16 +431,26 @@ http://parts.igem.org/Part:BBa_K2070012
                                 <h3>Relative Strength Comparison</h3>
 
                                 <p class="">
-                                    Now we are going to try to prove the model´s applicability by comparing the outputs given by the method with real lab data. 
+                                    Now we are going to try to prove the model´s applicability by comparing the outputs
+                                    given by the method with real lab data.
 
-<br> <br> As a first approach, we built upon the work of iGEM Tacoma team of 2019. 
-They collected characterization data on the relative RFP expression rates of Anderson Promoters Bba_J23100, Bba_J23101, Bba_J23102, Bba_J23105, Bba_J23106, and Bba_J23112 in the RFP expression plasmid Bba_J61002 (samples provided in the 2019 iGEM Distribution Kit).
+                                    <br> <br> As a first approach, we built upon the work of iGEM Tacoma team of 2019.
+                                    They collected characterization data on the relative RFP expression rates of
+                                    Anderson Promoters Bba_J23100, Bba_J23101, Bba_J23102, Bba_J23105, Bba_J23106, and
+                                    Bba_J23112 in the RFP expression plasmid Bba_J61002 (samples provided in the 2019
+                                    iGEM Distribution Kit).
 
-Their protocols were adapted from the iGEM 2018 Interlab protocol. 
+                                    Their protocols were adapted from the iGEM 2018 Interlab protocol.
 
-<br> As the original characterization of the Anderson promoters and this study performed by the Tacoma iGEM team were done using the red fluorescent protein(RFP), we adapted our model with the new parameters corresponding to this protein, as previously we just took into account the green fluorescent protein for the method. The fluorescence in these experimental results was measured after 0, 3 and 5 hours of growth.
+                                    <br> As the original characterization of the Anderson promoters and this study
+                                    performed by the Tacoma iGEM team were done using the red fluorescent protein(RFP),
+                                    we adapted our model with the new parameters corresponding to this protein, as
+                                    previously we just took into account the green fluorescent protein for the method.
+                                    The fluorescence in these experimental results was measured after 0, 3 and 5 hours
+                                    of growth.
 
-<br> <br> In the table below we summarized the results obtained as well as the relative strength of the promoters compared to J23100.
+                                    <br> <br> In the table below we summarized the results obtained as well as the
+                                    relative strength of the promoters compared to J23100.
 
                                 </p>
                             </div>
@@ -477,7 +513,8 @@ Their protocols were adapted from the iGEM 2018 Interlab protocol.
                             <div class="container wiki-card wikicard-12 mx-auto p-3 row  wikicard-12-double-col">
 
                                 <p class="">
-                                   In the table below we compare our results against the original characterization from the Anderson Lab.
+                                    In the table below we compare our results against the original characterization from
+                                    the Anderson Lab.
                                 </p>
                             </div>
 
@@ -545,10 +582,18 @@ Their protocols were adapted from the iGEM 2018 Interlab protocol.
 
 
                                 <p class="">
-                                    It is important to notice that(as seen in the table above)  the comparison against BBa_J23100 is consistent with the original Anderson characterization, except for position 2 and 3, where it is supposed that the promoter J23102 is stronger than J23101. A possible error that could explain this difference is that the OD660 values were still increasing from 3 hours and 5 hours, which indicates the cultures were still growing. 
-                                     Allowing the cultures to grow further would allow a better determination regarding the difference in promoter strength of BBa_J23101 and BBa_J23102, as Anderson promoters were measured until they reached saturation. 
+                                    It is important to notice that(as seen in the table above) the comparison against
+                                    BBa_J23100 is consistent with the original Anderson characterization, except for
+                                    position 2 and 3, where it is supposed that the promoter J23102 is stronger than
+                                    J23101. A possible error that could explain this difference is that the OD660 values
+                                    were still increasing from 3 hours and 5 hours, which indicates the cultures were
+                                    still growing.
+                                    Allowing the cultures to grow further would allow a better determination regarding
+                                    the difference in promoter strength of BBa_J23101 and BBa_J23102, as Anderson
+                                    promoters were measured until they reached saturation.
 
-<br><br> Also the relative values obtained by our method present a good consensus with the 3 data points in time the iGEM Tacoma team reported.
+                                    <br><br> Also the relative values obtained by our method present a good consensus
+                                    with the 3 data points in time the iGEM Tacoma team reported.
 
                                 </p>
                             </div>
@@ -558,8 +603,18 @@ Their protocols were adapted from the iGEM 2018 Interlab protocol.
                                 <h3>Direct Comparison</h3>
 
                                 <p class="">
-                                    We tried to make a direct comparison between values of promoter strength predicted by our model and the corresponding reported literature values, however, we have failed until now mainly because of lack of biological units on fluorescence data(the vast majority is reported in arbitrary units) and the great variance that exists between labs because of lack of standardized methods of measurement and calibration. 
-                                   <br><br> We have tried to compare the values obtained by our method of promoter J23101 and J23106(precisely were the ones which presented the least percentage relative error) against the values in biological units established in the iGEM Interlab study, which also take into account these two promoters. We have data in arbitrary fluorescence units of these promoters, as well as their optical density, however we have failed or don´t know how to convert that into the proposed units of Molecules of Equivalent Fluorescein(MEFL)/cell in order to be able to compare them. 
+                                    We tried to make a direct comparison between values of promoter strength predicted
+                                    by our model and the corresponding reported literature values, however, we have
+                                    failed until now mainly because of lack of biological units on fluorescence data(the
+                                    vast majority is reported in arbitrary units) and the great variance that exists
+                                    between labs because of lack of standardized methods of measurement and calibration.
+                                    <br><br> We have tried to compare the values obtained by our method of promoter
+                                    J23101 and J23106(precisely were the ones which presented the least percentage
+                                    relative error) against the values in biological units established in the iGEM
+                                    Interlab study, which also take into account these two promoters. We have data in
+                                    arbitrary fluorescence units of these promoters, as well as their optical density,
+                                    however we have failed or don´t know how to convert that into the proposed units of
+                                    Molecules of Equivalent Fluorescein(MEFL)/cell in order to be able to compare them.
 
                                 </p>
                             </div>
@@ -569,10 +624,19 @@ Their protocols were adapted from the iGEM 2018 Interlab protocol.
 
                                 <p class="">
                                     <ul>
-                                        <li>Our equation describes fluorescent protein, and data available and used to calculate promoter strength is fluorescence, so there is a slight mismatch. It is known that the relation between the fluorescent protein and its fluorescence is linear, however this has to be measured and computed by the lab that performed the measurements.</li>
-                                        <li>It is important to take into account and report the RBS strength of the RBS used in the experiments.</li>
-                                        <li>It is very important to reach an agreement about what biological unit to use to report promoter strength. We propose the unit of Molecules of Equivalent Fluorescein(MEFL)/cell, as proposed in the iGEM Interlab study.</li>
-                                        <li>Calibration methods and materials should be reported along with fluorescence data, because it describes the conditions in which the experiment was performed and this data could be useful in the comparison process.</li>
+                                        <li>Our equation describes fluorescent protein, and data available and used to
+                                            calculate promoter strength is fluorescence, so there is a slight mismatch.
+                                            It is known that the relation between the fluorescent protein and its
+                                            fluorescence is linear, however this has to be measured and computed by the
+                                            lab that performed the measurements.</li>
+                                        <li>It is important to take into account and report the RBS strength of the RBS
+                                            used in the experiments.</li>
+                                        <li>It is very important to reach an agreement about what biological unit to use
+                                            to report promoter strength. We propose the unit of Molecules of Equivalent
+                                            Fluorescein(MEFL)/cell, as proposed in the iGEM Interlab study.</li>
+                                        <li>Calibration methods and materials should be reported along with fluorescence
+                                            data, because it describes the conditions in which the experiment was
+                                            performed and this data could be useful in the comparison process.</li>
 
 
                                     </ul>
@@ -605,16 +669,20 @@ Their protocols were adapted from the iGEM 2018 Interlab protocol.
 
 
                                 <p class="">
-                                   Lastly, we created a software tool to translate fluorescence into promoter strength in order that other iGEM teams could use it, as seen in the figure below. The app can receive data in GFP or RFP, but we plan to include other fluorescent proteins. You can download it on our Github page, it is named “Promoter_Strength.mlapp”.
-                                  <br><br> Please refer to the next PDF document in order to see the detailed mathematical derivation of the technique as well as more validations that we did.
+                                    Lastly, we created a software tool to translate fluorescence into promoter strength
+                                    in order that other iGEM teams could use it, as seen in the figure below. The app
+                                    can receive data in GFP or RFP, but we plan to include other fluorescent proteins.
+                                    You can download it on our Github page, it is named “Promoter_Strength.mlapp”.
+                                    <br><br> Please refer to the next PDF document in order to see the detailed
+                                    mathematical derivation of the technique as well as more validations that we did.
                                 </p>
                             </div>
 
                             <div class="container  mx-auto p-3 wikicard-12-img">
 
                                 <div class="text-center">
-                                    <img src="https://2021.igem.org/wiki/images/5/59/T--TEC_COSTA_RICA--measurement_02_app.png" alt="" style="width:100% center"
-                                        class="w-75">
+                                    <img src="https://2021.igem.org/wiki/images/5/59/T--TEC_COSTA_RICA--measurement_02_app.png"
+                                        alt="" style="width:100% center" class="w-75">
                                 </div>
                             </div>
 
