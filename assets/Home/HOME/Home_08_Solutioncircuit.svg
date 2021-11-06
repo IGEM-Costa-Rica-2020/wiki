@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="306px" height="84px" viewBox="0 0 306 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Solution circuit</title>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home/Solutionsss" transform="translate(-306.000000, -589.000000)" stroke="#E2474B" stroke-width="1.11702128">
+            <g id="Group-4" transform="translate(229.000000, 424.000000)">
+                <g id="Solution-circuit" transform="translate(78.000000, 165.000000)">
+                    <line x1="0" y1="58.0775106" x2="305" y2="58.0775106" id="Path"></line>
+                    <line x1="226.724664" y1="16.0477979" x2="278.650873" y2="16.0477979" id="Path"></line>
+                    <line x1="252.685312" y1="16.0477979" x2="252.685312" y2="58.529234" id="Path"></line>
+                    <path d="M117.067392,58.1708936 L67.4631249,58.1708936 C67.4631249,44.2602702 78.5450385,33.0246894 92.2650352,33.0246894 C105.985478,33.0246894 117.067392,44.2602702 117.067392,58.1708936 Z" id="Path" fill="#E2474B" fill-rule="nonzero"></path>
+                    <polyline id="Path" points="4.77217081 58.0775106 4.77217081 15.304934 54.5870648 15.304934"></polyline>
+                    <line x1="0.340128746" y1="0" x2="0.340128746" y2="84" id="Path" stroke-dasharray="1.340425531914894"></line>
+                    <polygon id="Path" fill="#E2474B" fill-rule="nonzero" points="126.670854 37.346266 126.670854 79.6136809 181.55218 79.6136809 201.921414 58.9617447 181.446353 37.5602872"></polygon>
+                    <polyline id="Path" points="44.5616347 4.3858366 55.2211335 15.3005106 44.4562542 26.2151043"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="123px" height="69px" viewBox="0 0 123 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Results</title>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home/Parts" transform="translate(-798.000000, -359.000000)">
+            <g id="Results" transform="translate(799.000000, 359.000000)">
+                <rect id="Rectangle" fill="#E2474B" fill-rule="nonzero" opacity="0.2" x="8.07357787" y="40.2631778" width="13.4558874" height="25.9473644"></rect>
+                <rect id="Rectangle" fill="#E2474B" fill-rule="nonzero" opacity="0.3" x="26.0146853" y="27.7367844" width="13.4558874" height="38.4736444"></rect>
+                <rect id="Rectangle" fill="#E2474B" fill-rule="nonzero" opacity="0.7" x="61.8970895" y="9.84213111" width="13.4558874" height="56.3686"></rect>
+                <rect id="Rectangle" fill="#E2474B" fill-rule="nonzero" opacity="0.5" x="43.9560578" y="42.0527111" width="13.4558874" height="24.1579067"></rect>
+                <rect id="Rectangle" fill="#E2474B" fill-rule="nonzero" opacity="0.9" x="79.8384999" y="47.4209333" width="13.4558874" height="18.7894578"></rect>
+                <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="97.7795315" y="61.7368222" width="13.4558874" height="4.47368222"></rect>
+                <polyline id="Path" stroke="#E2474B" stroke-width="1.8937924" points="0 0 0 68 122 68"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
