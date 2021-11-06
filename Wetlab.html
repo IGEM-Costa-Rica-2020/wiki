@@ -163,6 +163,7 @@
     <div id="app">
 
 
+
         <div class="position-relative overflow-hidden p-3 p-md-5  text-start  main-title">
             <img class="main-title-bg" src="https://2021.igem.org/wiki/images/2/22/T--TEC_COSTA_RICA--Header_4.png"
                 alt="">
@@ -170,7 +171,6 @@
             <h5 class="">The wet-lab characterization of our genetic suicide circuit serves as a proof of concept for
                 the proposal presented in the description.</h5>
         </div>
-
 
         <main-carousel v-bind:current_slide="current_slide_index" v-bind:slides_content="slides_content" :id="1">
         </main-carousel>
@@ -223,9 +223,6 @@
 
 
         </div>
-
-
-
 
         <!-- Scope -->
         <div v-if="current_slide_index.index==1" class="container">
@@ -297,7 +294,7 @@
 
                 <div class="text-center">
                     <img src="https://2021.igem.org/wiki/images/d/d8/T--TEC_COSTA_RICA--WetLab_01_AssemblyFlowchart.png"
-                        alt="" style="width:100% center" class="w-75">
+                        alt=""  class="w-50">
                 </div>
             </div>
 
@@ -328,10 +325,6 @@
 
 
         </div>
-
-
-
-
 
         <!-- experimental -->
         <div v-if="current_slide_index.index==2" class="container">
@@ -369,7 +362,7 @@
 
                 <div class="text-center">
                     <img src="https://2021.igem.org/wiki/images/0/0f/T--TEC_COSTA_RICA--WetLab_02_PlateReaderIcon.png"
-                        alt="" style="width:100% center" class="w-75">
+                        alt=""  class="w-50">
                 </div>
             </div>
 
@@ -391,7 +384,7 @@
 
                 <div class="text-center">
                     <img src="https://2021.igem.org/wiki/images/c/cf/T--TEC_COSTA_RICA--WetLab_03_FlowCytometryIcon.png"
-                        alt="" style="width:100% center" class="w-75">
+                        alt="" class="w-25">
                 </div>
             </div>
 
@@ -410,7 +403,7 @@
 
                 <div class="text-center">
                     <img src="https://2021.igem.org/wiki/images/a/a2/T--TEC_COSTA_RICA--WetLab_04_CellImagingIcon.png"
-                        alt="" style="width:100% center" class="w-75">
+                        alt=""  class="w-25">
                 </div>
             </div>
 
@@ -431,7 +424,7 @@
 
                 <div class="text-center">
                     <img src="https://2021.igem.org/wiki/images/c/c9/T--TEC_COSTA_RICA--WetLab_05_DNASequencingIcon.png"
-                        alt="" style="width:100% center" class="w-75">
+                        alt=""  class="w-50">
                 </div>
             </div>
 
@@ -672,10 +665,6 @@
 
         </div>
 
-
-
-
-
         <!-- protocolst -->
         <div v-if="current_slide_index.index==4" class="container">
 
@@ -689,9 +678,9 @@
             <div class="text-center">
 
 
-               
 
-                
+
+
 
 
                 <li class="nav-item">
@@ -760,7 +749,7 @@
                         href="URLLLLLLLL">
                         Notebook</a>
                 </li> -->
-<!-- 
+                <!-- 
                 <button type="button" class="btn btn-primary btn-lg mx-auto  my-3">Notebook</button>
 
                 <button type="button" class="btn btn-primary btn-lg mx-auto  my-3" href=""> download </button>
@@ -795,8 +784,6 @@
 
         </div>
 
-
-
         <!-- publick engagement -->
         <div v-if="current_slide_index.index==5" class="container">
 
@@ -813,7 +800,7 @@
                 </div>
 
                 <div class="col-sm-6 justify-content-md-center">
-                    <img class="img-square align-middle "
+                    <img class=" align-middle "  style="max-height: 300px;"
                         src="https://2021.igem.org/wiki/images/b/b7/T--TEC_COSTA_RICA--WetLab_06_NotebookIcon.png"
                         all="">
                 </div>
@@ -821,13 +808,13 @@
 
             <div class="text-center">
 
-                
 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="https://2021.igem.org/wiki/images/4/4e/T--TEC_COSTA_RICA--Description_GSC_Notebook_01.pdf">
-                            Notebook</a>
-                    </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="https://2021.igem.org/wiki/images/4/4e/T--TEC_COSTA_RICA--Description_GSC_Notebook_01.pdf">
+                        Notebook</a>
+                </li>
             </div>
 
 
@@ -925,14 +912,7 @@
 
         </div>
 
-
-
-
-
         <!-- results -->
-
-
-
         <div v-if="current_slide_index.index==7" class="container">
             <div class="container wiki-card mx-auto p-3 row wikicard-6-2-img-no-number">
                 <div class="col-sm-6">
@@ -950,7 +930,7 @@
                 </div>
 
                 <div class="col-sm-6 justify-content-md-center">
-                    <img class="img-square align-middle "
+                    <img class=" align-middle " style="max-height: 300px;"
                         src="https://2021.igem.org/wiki/images/7/76/T--TEC_COSTA_RICA--WetLab_Results_09_Protein.png"
                         all="">
                 </div>
@@ -967,22 +947,22 @@
                         href="https://2021.igem.org/wiki/images/f/fb/T--TEC_COSTA_RICA--Description_GSC_RESULTS_02_InSilicoOvercount.pdf">
                         Results Overcount</a>
                 </li>
-               
+
+
+
+
+
+
+            </div>
+
+
 
 
 
 
 
         </div>
-
-
-
-
-
-
-
     </div>
-
 </body>
 <!-- CONTENIDO PRINCIPAL -->
 
