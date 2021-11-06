@@ -1,0 +1,623 @@
+<html>
+
+<!-- BORRAR -->
+
+
+
+<!-- BORRAR -->
+
+
+
+<head>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapMinCSS&action=raw&ctype=text/css" />
+
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
+    </script>
+
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
+
+
+
+    <script src="https://2020.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+ 
+
+
+
+<!-- COMPONENTE CAROUSEL -->
+<style>
+    .carousel .carousel-caption {
+        padding-top: 2rem;
+        height: 100%;
+    }
+
+    .carousel .carousel-caption h3 {
+        font-size: 50px;
+        color: white !important;
+
+    }
+
+    .carousel .carousel-caption p {
+        /*font-size: 12px;*/
+    }
+
+    .page_content_sections .page_content_section {
+        display: none;
+        padding: 10%;
+        padding-top: 20px;
+    }
+
+    .page_content_sections .page_content_section_active {
+        display: block;
+    }
+</style>
+
+<script type="text/x-template" id="main_carousel">
+    <div>
+        <div>
+            <div :id="'carouselComponent'+id" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false"  ref="maincarousel"  >
+
+
+                <ol class="carousel-indicators">
+                    <li v-for="(slide, index) in slides_content" :data-bs-target="'#carouselComponent'+id"  v-bind:data-bs-slide-to="index" v-bind:class="{ active: index==0 }"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+
+
+                    <div class="carousel-item" v-for="(slide, index) in slides_content"  v-bind:class="{ active: index==0 }">
+                        <svg class="bd-placeholder-img" width="100%" height="250px" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#1A1A1A" />
+                        </svg>
+
+                        <div class="carousel-caption text-start">
+                            <h3 class="slide_tittle">
+                                {{slide.title}}
+
+                            </h3>
+                            <p class="slide_text w-75">
+                                {{slide.content}}
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+
+            <button class="carousel-control-prev" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" :data-bs-target="'#carouselComponent'+id"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+    </div>       
+</script>
+
+
+<script>
+    Vue.component("main-carousel", {
+        data: {},
+        props: {
+            current_slide: {
+                type: Object,
+                default: "casa"
+            },
+            slides_content: {
+                type: Array,
+                default: []
+            },
+            id: {
+                type: Number,
+                default: 0
+            }
+        },
+
+        template: "#main_carousel",
+        methods: {
+            updateCurrentSlide: function (event) {
+                this.current_slide.index = event.to;
+            },
+
+        },
+        mounted() {
+            this.$refs.maincarousel.addEventListener('slide.bs.carousel', this.updateCurrentSlide);
+        }
+    });
+</script>
+<!-- COMPONENTE CAROUSEL -->
+
+
+
+
+<!-- CONTENIDO PRINCIPAL -->
+
+<body>
+    <div id="app" class="">
+
+
+        <div class="position-relative overflow-hidden pt-5 px-5  text-start  main-title">
+            <img class="main-title-bg" src="https://picsum.photos/id/1042/1200/400" alt="">
+            <h1>Judging form</h1>
+            <h5 class=""></h5>
+        </div>
+
+
+        <div class="container">
+
+            <h1>Medals</h1>
+
+            <div class="container wiki-card mx-auto p-3 row wikicard-6-small-img-no-number">
+                <div class="col-sm-8">
+                    <h1>Bronze </h1>
+                    <h3>
+                        <ul>
+                            <li> Every effort matters and must be <a
+                                    href="/Attributions.html">attributed.</a> </li>
+                            <li> The groundwork of our project is its <a
+                                    href="/Description.html">description.</a> </li>
+                            <li> Find out how we <a href="/Contribution.html">contributed</a>
+                                    to the scientific community as well as current and
+                                    future.iGEMers: Contribution </li>
+
+                        </ul>
+
+
+                    </h3>
+
+                </div>
+
+                <div class="col-sm-4 justify-content-md-center">
+                    <img class="img-round align-middle " src="https://2021.igem.org/wiki/images/b/bf/T--TEC_COSTA_RICA--Judging_01_Bronze.png" all="">
+                </div>
+            </div>
+
+            <div class="container wiki-card mx-auto p-3 row wikicard-6-small-img-no-number">
+                <div class="col-sm-4 justify-content-md-center">
+                    <img class="img-round align-middle " src="https://2021.igem.org/wiki/images/d/db/T--TEC_COSTA_RICA--Judging_02_Silver.png" all="">
+                </div>
+                <div class="col-sm-8">
+                    <h1>Silver </h1>
+                    <h3>
+                        <ul>
+                            <li> <a href="/Engineering.html">Engineering</a> was crucial to
+                                achieve excellence. </li>
+
+                            <li><a href="/Collaborations.html">Collaborations</a> were key to
+                                our experience in the competition.</li>
+
+                            <li>We conducted a thorough assessment of our project in our <a
+                                    href="/Human_Practices.html">Human Practices.</a></li>
+
+                            </li>The applications of our project and their possible impact were showcased in our
+                            <a href="/Implementation.html">Proposed Implementation</a></li>
+
+                        </ul>
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="container wiki-card mx-auto p-3 row wikicard-6-small-img-no-number">
+                <div class="col-sm-8">
+                    <h1>Gold </h1>
+                    <h3>
+                        <ul>
+                            <li> One of our key goals was to <a
+                                    href="/Human_Practices.html">integrate human practices</a>
+                                into our project.</li>
+
+                            <li>Our project design would have not been the same without <a
+                                    href="/Model.html">mathematical modelling.</a>
+                            </li>
+
+                            <li>We accomplished the goal of establishing a <a
+                                    href="/Proof_Of_Concept.html">proof of concept</a> for both
+                                our software and
+                            </li>genetic circuit.
+
+                            <li>We made our mark with our contribution in <a
+                                    href="/Education.html">Education & Communication</a>
+                            </li>
+
+                            <li>By harnessing our interdisciplinarity we achieved <a
+                                    href="/ExcellenceInAnotherArea.html">excellence in another area.</a>
+                            </li>
+                        </ul>
+                    </h3>
+                </div>
+                <div class="col-sm-4 justify-content-md-center">
+                    <img class="img-round align-middle " src="https://2021.igem.org/wiki/images/0/03/T--TEC_COSTA_RICA--Judging_03_Gold.png" all="">
+                </div>
+            </div>
+
+
+
+            <div class="container wiki-card mx-auto p-3 row wikicard-6-small-img-no-number">
+                <div class="col-sm-4 justify-content-md-center">
+                    <img class="img-round align-middle " src="https://2021.igem.org/wiki/images/3/3b/T--TEC_COSTA_RICA--Judging_04_Special.png" all="">
+                </div>
+                <div class="col-sm-8">
+                    <h1>Special Prizes Nominations </h1>
+                    <h3>
+                        <ul>
+                            <li><a href="/Education.html">Best education</a> </li>
+                            <li><a href="/Human_Practices.html">Best IHP</a> </li>
+                            <li><a href="/Measurement.html">Best measurement</a> </li>
+                            <li><a href="/Model.html">Best model</a> </li>
+                            <li><a href="/URL">Best presentation</a> </li>
+                            <li><a href="/Software.html">Best software tool</a> </li>
+                            <li><a href="https://2021.igem.org/Team:TEC_COSTA_RICA">Best wiki</a> </li>
+                            <li><a href="/URL">Best promotion video</a> </li>
+                        </ul>
+                    </h3>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</body>
+<!-- CONTENIDO PRINCIPAL -->
+
+<style>
+
+</style>
+
+<style>
+    #globalWrapper {
+        font-size: 100% !important;
+    }
+
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: var(--bs-body-font-family) !important;
+        overflow: visible !important
+    }
+
+    #HQ_page p {
+        font-family: var(--bs-body-font-family) !important;
+        font-size: var(--bs-body-font-size) !important;
+    }
+
+
+
+    /*
+    #HQ_page h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+     font-family:"Arial",Gadget,sans-serif;
+     border-bottom:none;
+     font-weight:bold
+    }
+
+    #HQ_page p {
+        font-family:"Arial",Helvetica,sans-serif;
+        font-size:13px;
+        text-align:justify
+       }
+       
+    /*body {
+        font-family: var(--bs-body-font-family) !important;
+    }*/
+
+    .double-text {
+        background-color: #1A1A1A;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        -webkit-text-stroke-color: rgb(255, 255, 255);
+        font-size: 90px;
+        font-family: 'Open Sans';
+        font-weight: 800 !important;
+
+        text-shadow:
+            6px 8px 0px rgb(255, 255, 255);
+        opacity: 1;
+        text-transform: uppercase;
+        letter-spacing: -1.03px;
+    }
+
+
+    .main-title h1 {
+        /*font-family: 'Open Sans'; */
+        font-weight: 800 !important;
+        font-size: 55px;
+        -webkit-text-fill-color: #ffffff00;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: #ffffff;
+    }
+
+
+    .main-title h5 {
+        /*font-family: 'Open Sans'; */
+        font-size: 15px;
+        color: #ffffff;
+        width: 40%
+    }
+
+    .main-title-bg {
+        opacity: 0.9;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -99;
+    }
+
+    .wiki-card {}
+
+    .wiki-card .img-round {
+        border-radius: 50%;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .wiki-card .img-square {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .wiki-card h1 {
+        /*margin-right: 10vw;*/
+        color: #E2474B;
+        font-size: calc(2rem + 1.5vw);
+        /*font-size: 56px;*/
+        font-weight: bold;
+        letter-spacing: -0.8px;
+    }
+
+    .wiki-card h2 {
+        color: #27262D;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 33px;
+    }
+
+    .wiki-card h3 {
+        color: #626262;
+        font-size: 18px;
+        letter-spacing: -0.2px;
+        line-height: 19px;
+    }
+
+    .wiki-card p {
+        color: #27262D;
+        /*line-height: 24px;*/
+    }
+
+    .wiki-card p.wiki-card-2columns {
+        columns: 2;
+    }
+</style>
+
+
+
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                isActive: true,
+                message: 'hello app',
+                current_slide_index: {
+                    index: 0
+                },
+                current_slide_index2: {
+                    index: 0
+                },
+                slides_content:
+
+                    [{
+                            title: "Promoter Strength",
+                            content: ""
+                        }
+
+                    ],
+
+            }
+        },
+        methods: {},
+        mounted() {}
+    })
+</script>
+
+
+
+<!-- TABLAS -->
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-0pky {
+        border-color: inherit;
+        text-align: left;
+        vertical-align: top
+    }
+</style>
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+</style>
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+</style>
+
+
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+    }
+
+    .tg .tg-baqh {
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-c3ow {
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+
+    .tg .tg-0lax {
+        text-align: left;
+        vertical-align: top
+    }
+</style>
+
+</html>
