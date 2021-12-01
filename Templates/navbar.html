@@ -1,4 +1,3 @@
-{{TEC_COSTA_RICA/Bootstrap}}
 <html>
 
 <link rel="stylesheet" type="text/css"
@@ -6,15 +5,22 @@
 <script
   src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
 </script>
+<script
+        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript">
+</script>
+
+
 
 </html>
-
-
 <html>
 
 <header>
 
   <style>
+    p
+    {
+      margin: 0px!important;
+    }
     :root {
       --team-navbar-height: 50px;
     }
@@ -49,66 +55,6 @@
       max-height: 20vmin;
     }
   </style>
-
-
-  <!-- <nav id="TeamNavBar" class="navbar navbar-expand-md fixed-top navbar-custom navbar-dark "
-    style="margin-bottom:500px;">
-
-
-    <div class="container-fluid">
-
-
-      <a class="navbar-brand" href="#">
-        <img class="d-inline-block align-top" src="https://2021.igem.org/wiki/images/0/09/T--TEC_COSTA_RICA--navbar_icon.png" alt="CronoBacter Logo">
-      </a>
-
-
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-      <div class=" navbar-expand" id="navbarSupportedContent">
-          <ul class="navbar-nav ">
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">CONTRIBUTION</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">PROJECT</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ENGAGEMENT</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">TEAM</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">SAFETY</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">JUDGING FORM</a>
-          </li>
-
-
-        </ul>
-      </div>
-
-
-
-
-    </div>
-
-
-
-  </nav> -->
 
   <body>
 
@@ -186,7 +132,7 @@
                     Software
                   </a></li>
 
-                <li><a class="dropdown-item" href="https://2021.igem.org/Team:TEC_COSTA_RICA/Wet_Labt">
+                <li><a class="dropdown-item" href="https://2021.igem.org/Team:TEC_COSTA_RICA/Wet_Lab">
                     Wet Lab
                   </a></li>
               </ul>
@@ -223,7 +169,7 @@
            
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://2021.igem.org/Team:TEC_COSTA_RICA/Atributions">Team</a>
+              <a class="nav-link active" aria-current="page" href="https://2021.igem.org/Team:TEC_COSTA_RICA/Attributions">Team</a>
             </li>
 
             
@@ -256,15 +202,14 @@
       display: none;
     }
 
-    /*
     #bodyContent {
       padding-top: var(--team-navbar-height);
     }
-*/
+
   </style>
   <script>
-    //let root = document.documentElement;
-    //root.style.setProperty('--team-navbar-height', document.getElementById('TeamNavBar').clientHeight + "px");
+    let root = document.documentElement;
+    root.style.setProperty('--team-navbar-height', document.getElementById('TeamNavBar').clientHeight + "px");
   </script>
 
 </header>
