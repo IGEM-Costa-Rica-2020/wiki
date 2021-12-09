@@ -1,22 +1,15 @@
+{{TEC_COSTA_RICA/navbar}}
+{{TEC_COSTA_RICA/custom_CSS}}
 <html>
 
 <head>
-
-    <link rel="stylesheet" type="text/css"
-        href="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapMinCSS&action=raw&ctype=text/css" />
-
+    <!-- Load Vue followed by BootstrapVue -->
     <script
         src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/VueJS&action=raw&ctype=text/javascript">
     </script>
-
-    <script
-        src="https://2021.igem.org/wiki/index.php?title=Template:TEC_COSTA_RICA/BootstrapJS&action=raw&ctype=text/javascript">
-    </script>
-
     <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap' rel='stylesheet'>
-
+    <script src="https://2020.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
-
 
 
 
@@ -136,10 +129,10 @@
 <!-- CONTENIDO PRINCIPAL -->
 
 <body>
-    <div id="app">
+    <div id="app" class="position-absolute top-0 start-0 w-100">
 
         <div class="position-relative overflow-hidden pt-5 px-5 text-start  main-title">
-            <img class="main-title-bg" src="https://2021.igem.org/wiki/images/f/f8/T--TEC_COSTA_RICA--Header_10.png"
+            <img class="main-title-bg" style="min-height: 100%; min-width: 100%;" src="https://2021.igem.org/wiki/images/f/f8/T--TEC_COSTA_RICA--Header_10.png"
                 alt="">
             <h1>Excellence in Another Area</h1>
             <h5 class="">Interdisciplinarity has the ambition and objective of integrating knowledge to give a new
@@ -1532,11 +1525,11 @@
 </body>
 <!-- CONTENIDO PRINCIPAL -->
 
-<style>
 
-</style>
+<!-- STYLE -->
 
-<style>
+
+<!-- <style>
     #globalWrapper {
         font-size: 100% !important;
     }
@@ -1617,7 +1610,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 100%;
+        /*width: 100%;*/
         height: auto;
         z-index: -99;
     }
@@ -1695,7 +1688,34 @@
     /*button:focus{
         background-color:olive!important;
     }*/
+</style>  -->
+
+<style>
+
+    .wiki-tab-btn {
+        background-color: #ffffff20 !important;
+        border-color: #ffffff00 !important;
+        border-radius: 0px;
+        margin: 0px;
+        padding: .2rem .5rem;
+        color: #ffffff;
+        font-size: 20px;
+        font-family: 'Open Sans';
+
+    }
+
+    .wiki-tab-btn.active {
+        border-bottom: 10px solid rgb(255, 0, 0) !important;
+        color: #ffffff;
+    }
+
+    .wiki-tab-btn:hover {
+        color: #ffffff;
+    }
+
 </style>
+
+
 <style type="text/css">
     .tg {
         border-collapse: collapse;
@@ -1801,7 +1821,7 @@
                             "content": "Our means of understanding each other. It is our tool to get what we need and what we want, as well as what we are."
                         },
                         {
-                            "title": "Design & Development",
+                            "title": "Design and Development",
                             "content": "It seeks to ensure that the person who comes to the site has a good browsing experience, and can understand and interact correctly with the resources they need."
                         }
                     ],
